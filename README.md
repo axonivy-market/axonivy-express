@@ -1,7 +1,7 @@
-# MY-PRODUCT-NAME
+# Axon Ivy Express
 
-[![CI Build](https://github.com/axonivy-market/REPO-NAME/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/REPO-NAME/actions/workflows/ci.yml)
+[![CI Build](https://github.com/axonivy-market/axonivy-express/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/axonivy-express/actions/workflows/ci.yml)
 
-"YOUR SHORT DESCRIPTION GOES HERE"
+Axon Ivy Express is an ad-on module for Axon Ivy Portal
 
-Read our [documentation](MY-PRODUCT-NAME-product/README.md).
+Read our [documentation](axonivy-express-product/README.md).

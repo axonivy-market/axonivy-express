@@ -1,0 +1,3 @@
+SendEmailData #class
+gawfs #namespace
+attachmentFiles java.util.List<File> #field
