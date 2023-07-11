@@ -1,10 +1,10 @@
 # Axon Ivy Express
 
 Axon Ivy Express is an ad-on module for Axon Ivy Portal. It enables you – as a business user – to create your own process applications and share them with your colleagues. These capabilities are also known as No-Code Application Platforms or Citizen Developer Platforms. Therefore, it is the perfect tool for you to digitize your processes and create standardization, reliability and traceability. Some of the key features of Axon Ivy Express are:
-*      It is a No Coding Toolset, allowing business users without an IT background to create processes.
-*      The Axon Ivy Portal Integration, allows business users to implement processes without IT department involvement.
-*      The Seamless Integration into Axon Ivy allows you to make use of standard features like email notifications, task delegation, etc.
-*      The Powerful Toolset allows you to create processes, define different task types, set responsibilities and due dates and define user dialogs for each task.
+   * It is a No Coding Toolset, allowing business users without an IT background to create processes.
+   * The Axon Ivy Portal Integration, allows business users to implement processes without IT department involvement.
+   * The Seamless Integration into Axon Ivy allows you to make use of standard features like email notifications, task delegation, etc.
+   * The Powerful Toolset allows you to create processes, define different task types, set responsibilities and due dates and define user dialogs for each task.
 
 ![express-workflow-properties](images/express-workflow-properties.png)
 
@@ -110,8 +110,8 @@ Select the workflows you want to export in Express workflows table. The selected
 
 ![export-express](images/export-express.png)
 
-   8. You can select multiple workflows by clicking the checkbox ALL.
-   9. After you selected some workflows, click the **Export Express** button.
+   1. You can select multiple workflows by clicking the checkbox ALL.
+   2. After you selected some workflows, click the **Export Express** button.
 
 The Export dialog will display and show the workflows selected for export.
 
