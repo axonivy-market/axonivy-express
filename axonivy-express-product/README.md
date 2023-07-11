@@ -76,11 +76,11 @@ The results of all previous tasks are included in follow-on tasks in a read-only
 
 |**Input element**|**Description and options**|
 | --------------- |:-------------:|
-|**Input field**|Input field for text, numbers or dates__..*Text field__..* Number field_..*Date picker|
+|**Input field**|Input field for text, numbers or dates\   * Text field\   * Number field\   * Date picker|
 |**Input area**|Text input field between 1 and 10 rows|
 |**Checkbox**|List of elements which allows the user a multiple selection|
 |**Radio button**|List of elements which allows the user a single selection|
-|**File Upload**|Provides a file upload dialog to the user. You may define:__..*Allowed file types __..*Number of allowed attachments|
+|**File Upload**|Provides a file upload dialog to the user. You may define:\   * Allowed file types\   * Number of allowed attachments|
 
 27. For process steps with the task type user task with email / information email, the email editor is opened.
 28. Specify the addresses of the email recipients. Separate them by commas.
