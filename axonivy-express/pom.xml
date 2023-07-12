@@ -14,7 +14,7 @@
     <dependency>
       <groupId>com.axonivy.portal</groupId>
       <artifactId>portal</artifactId>
-      <version>11.1.0</version>
+      <version>11.2.0-m243</version>
       <type>iar</type>
     </dependency>
   </dependencies>
