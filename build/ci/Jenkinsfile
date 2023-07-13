@@ -29,7 +29,6 @@ pipeline {
               }
             }
           }
-          archiveArtifacts artifacts: '*/*/target/*.iar', allowEmptyArchive: true
         }
       }
     }
@@ -46,6 +45,11 @@ pipeline {
           }
         }
       }
+    }
+  }
+  post {
+    always {
+      archiveArtifacts artifacts: 'axonivy-express/target/*.iar', allowEmptyArchive: true
     }
   }
 }
