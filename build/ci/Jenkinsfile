@@ -49,7 +49,7 @@ pipeline {
   }
   post {
     always {
-      archiveArtifacts artifacts: 'axonivy-express/target/*.iar', allowEmptyArchive: true
+      archiveArtifacts artifacts: '*/target/*.iar', allowEmptyArchive: true
     }
   }
 }
