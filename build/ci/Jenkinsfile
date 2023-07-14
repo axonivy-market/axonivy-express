@@ -18,6 +18,7 @@ pipeline {
           builtModules = []
           docker.build('build-axonivy-express-module', '-f build/Dockerfile .').inside('-v /var/tools/maven-cache:/home/build/') {
             def modules = ['axonivy-express']
+            updateVersion()
             for (module in modules) {
               maven cmd: "clean install -f ${module}/pom.xml"
               builtModules.add(module)
@@ -41,5 +42,12 @@ pipeline {
         }
       }
     }
+  }
+}
+
+def updateVersion() {
+  def pomFiles = ['axonivy-express/pom.xml']
+  for (pomFile in pomFiles) {
+    maven cmd: "-f ${pomFile} versions:set-property versions:commit -Dproperty=portal.version -DnewVersion=9.1.0.0-SNAPSHOT"
   }
 }
