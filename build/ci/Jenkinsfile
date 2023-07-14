@@ -24,7 +24,7 @@ pipeline {
             }
           }
         }
-        archiveArtifacts artifacts: '*/*/target/*.iar', allowEmptyArchive: true
+        archiveArtifacts artifacts: '*/target/*.iar', allowEmptyArchive: true
       }
     }
 
