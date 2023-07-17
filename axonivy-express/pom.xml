@@ -9,7 +9,7 @@
   <properties>
     <ivy.engine.version>11.2.0</ivy.engine.version>
     <build.plugin.version>11.1.0</build.plugin.version>
-	  <portal.version>11.2.0-m243.1</portal.version>
+	  <portal.version>9.1.0.0-SNAPSHOT</portal.version>
   </properties>
   <dependencies>
     <dependency>
