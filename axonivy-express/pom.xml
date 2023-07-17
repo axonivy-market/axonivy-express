@@ -20,9 +20,9 @@
   </dependencies>
   <repositories>
     <repository>
-      <id>nexus.axonivy.com</id>
+      <id>maven.axonivy.com</id>
       <name>Axonivy Repo</name>
-      <url>https://nexus.axonivy.com/repository/maven-snapshots/</url>
+      <url>https://maven.axonivy.com/</url>
     </repository>
   </repositories>
   <build>
