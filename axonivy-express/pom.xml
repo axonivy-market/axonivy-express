@@ -9,7 +9,7 @@
   <properties>
     <ivy.engine.version>11.2.0</ivy.engine.version>
     <build.plugin.version>11.1.0</build.plugin.version>
-	<portal.version>11.2.0-m243.1</portal.version>
+	  <portal.version>11.2.0-m243.1</portal.version>
   </properties>
   <dependencies>
     <dependency>
@@ -21,9 +21,9 @@
   </dependencies>
   <repositories>
     <repository>
-      <id>maven.axonivy.com</id>
+      <id>nexus.axonivy.com</id>
       <name>Axonivy Repo</name>
-      <url>https://maven.axonivy.com/</url>
+      <url>https://nexus.axonivy.com/repository/maven-snapshots/</url>
     </repository>
   </repositories>
   <build>
