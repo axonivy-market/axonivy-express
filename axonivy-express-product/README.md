@@ -1,6 +1,6 @@
 # Axon Ivy Express
 
-Axon Ivy Express is an ad-on module for Axon Ivy Portal. It enables you – as a business user – to create your own process applications and share them with your colleagues. These capabilities are also known as No-Code Application Platforms or Citizen Developer Platforms. Therefore, it is the perfect tool for you to digitize your processes and create standardization, reliability and traceability. Some of the key features of Axon Ivy Express are:
+Axon Ivy Express is an add-on module for Axon Ivy Portal. It enables you – as a business user – to create your own process applications and share them with your colleagues. These capabilities are also known as No-Code Application Platforms or Citizen Developer Platforms. Therefore, it is the perfect tool for you to digitize your processes and create standardization, reliability and traceability. Some of the key features of Axon Ivy Express are:
 
    * It is a No Coding Toolset, allowing business users without an IT background to create processes.
    * The Axon Ivy Portal Integration, allows business users to implement processes without IT department involvement.
@@ -58,7 +58,7 @@ Axon Ivy Express is an ad-on module for Axon Ivy Portal. It enables you – as a
 **Express Workflow task types**
 
 |**Task type**|**Description**|
-|-------------|:-------------:|
+| ----------- | ------------- |
 |**User Task**|For this task the user can define a UI|
 |**User Task with Email**|In addition to the normal User Task, the user can send an Email directly from the Axon Ivy Portal, without the need to change to another system|
 |**Information Email**|This email can be defined by the creator of the Express Workflow and will be sent automatically without user action|
@@ -84,7 +84,7 @@ The results of all previous tasks are included in follow-on tasks in a read-only
 **Express Workflow input elements**
 
 |**Input element**|**Description and options**|
-| --------------- |:-------------:|
+| --------------- | ------------------------- |
 |**Input field**|Input field for text, numbers or dates  <br>   - Text field  <br>   - Number field  <br>   - Date picker|
 |**Input area**|Text input field between 1 and 10 rows|
 |**Checkbox**|List of elements which allows the user a multiple selection|
