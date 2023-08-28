@@ -18,10 +18,7 @@ import ch.ivyteam.ivy.mail.MailClientConfig;
 import ch.ivyteam.ivy.mail.MailClientConfigProvider;
 import ch.ivyteam.ivy.mail.MailMessage;
 import ch.ivyteam.ivy.mail.MailMessage.Builder;
-import ch.ivyteam.ivy.project.IIvyProject;
-import ch.ivyteam.ivy.project.IvyProjectUtil;
 import ch.ivyteam.ivy.scripting.objects.File;
-import ch.ivyteam.ivy.workflow.IWorkflowProcessModelVersion;
 
 public class ExpressMailClient {
 
@@ -83,12 +80,7 @@ public class ExpressMailClient {
   }
 
   private static MailClientConfig getMailClientConfig() {
-    IIvyProject ivyProject = IvyProjectUtil.getIvyProjectByName(getProjectName());
-    return MailClientConfigProvider.get(ivyProject);
-  }
-
-  private static String getProjectName() {
-    return IWorkflowProcessModelVersion.of(Ivy.request().getProcessModelVersion()).getProjectName();
+    return MailClientConfigProvider.get();
   }
 
 }
