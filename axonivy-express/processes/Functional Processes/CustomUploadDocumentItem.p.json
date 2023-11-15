@@ -1,19 +1,37 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/11.2.1/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/11.2.2/process.json",
   "id" : "16B267B1A01CFA7E",
   "kind" : "CALLABLE_SUB",
   "config" : {
-    "data" : "gawfs.UploadDocumentItemOverrideData"
+    "data" : "gawfs.CustomUploadDocumentItemData"
   },
   "elements" : [ {
+      "id" : "f4",
+      "type" : "Script",
+      "name" : "Update status",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import com.axonivy.portal.components.enums.CustomProcessStatus;",
+            "in.status = CustomProcessStatus.SKIP.name();"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 432, "y" : 32 }
+      },
+      "connect" : [
+        { "id" : "f15", "to" : "f6", "via" : [ { "x" : 1392, "y" : 32 } ] }
+      ]
+    }, {
       "id" : "f0",
       "type" : "CallSubStart",
       "name" : [
-        "call(ICase,UploadedFile,",
+        "portalUploadDocumentItem(ICase,UploadedFile,",
         "Boolean,Boolean,String)"
       ],
       "config" : {
-        "signature" : "call",
+        "signature" : "portalUploadDocumentItem",
         "input" : {
           "params" : [
             { "name" : "businessCase", "type" : "ch.ivyteam.ivy.workflow.ICase", "desc" : "" },
@@ -27,6 +45,7 @@
             "out.businessCase" : "param.businessCase",
             "out.enableScriptCheckingForUploadedDocument" : "param.enableScriptCheckingForUploadedDocument",
             "out.enableVirusScannerForUploadedDocument" : "param.enableVirusScannerForUploadedDocument",
+            "out.skip" : "!ch.ivy.addon.portalkit.util.ExecutingExpressProcessUtils.isExpressCase(param.businessCase)",
             "out.uploadedFile" : "param.uploadedFile"
           }
         },
@@ -34,7 +53,7 @@
           "params" : [
             { "name" : "uploadedDocument", "type" : "ch.ivyteam.ivy.workflow.document.IDocument", "desc" : "" },
             { "name" : "message", "type" : "String", "desc" : "" },
-            { "name" : "status", "type" : "com.axonivy.portal.components.enums.UploadDocumentCheckStatus", "desc" : "" }
+            { "name" : "status", "type" : "String", "desc" : "" }
           ],
           "map" : {
             "result.uploadedDocument" : "in.uploadedDocument",
@@ -44,20 +63,20 @@
         }
       },
       "visual" : {
-        "at" : { "x" : 96, "y" : 128 },
+        "at" : { "x" : 208, "y" : 160 },
         "labelOffset" : { "x" : -52, "y" : -26 }
       },
       "connect" : [
-        { "id" : "f1", "to" : "f17" }
+        { "id" : "f1", "to" : "f2" }
       ]
     }, {
       "id" : "f8",
       "type" : "Alternative",
       "visual" : {
-        "at" : { "x" : 944, "y" : 224 }
+        "at" : { "x" : 1096, "y" : 256 }
       },
       "connect" : [
-        { "id" : "f24", "to" : "f16", "via" : [ { "x" : 1296, "y" : 224 } ] }
+        { "id" : "f24", "to" : "f16", "via" : [ { "x" : 1488, "y" : 256 } ] }
       ]
     }, {
       "id" : "f9",
@@ -69,7 +88,7 @@
         }
       },
       "visual" : {
-        "at" : { "x" : 400, "y" : 128 },
+        "at" : { "x" : 552, "y" : 160 },
         "labelOffset" : { "x" : 3, "y" : -14 }
       },
       "connect" : [
@@ -78,7 +97,7 @@
             "segment" : 0.26,
             "offset" : { "x" : 0, "y" : -11 }
           } },
-        { "id" : "f29", "to" : "f12", "via" : [ { "x" : 400, "y" : 224 } ], "label" : {
+        { "id" : "f29", "to" : "f12", "via" : [ { "x" : 552, "y" : 256 } ], "label" : {
             "name" : "NO",
             "segment" : 1.12,
             "offset" : { "x" : -1, "y" : -9 }
@@ -99,21 +118,21 @@
             "boolean isUploaded = DocumentFileUtils.uploadExpressDocument(ivy.case, in.uploadedFile.getInputStream(), fileName);",
             "",
             "if (isUploaded) {",
-            "  out.status = UploadDocumentCheckStatus.OK;",
+            "  out.status = UploadDocumentCheckStatus.OK.name();",
             "  out.message = ivy.cms.co(\"/ch.ivy.addon.portalkit.ui.jsf/documentFiles/uploadSucceed\");",
             "} else {",
             "  out.message = ivy.cms.co(\"/ch.ivy.addon.portalkit.ui.jsf/documentFiles/uploadFailed\");",
-            "  out.status = UploadDocumentCheckStatus.FAIL;",
+            "  out.status = UploadDocumentCheckStatus.FAIL.name();",
             "}"
           ]
         },
         "sudo" : true
       },
       "visual" : {
-        "at" : { "x" : 1088, "y" : 128 }
+        "at" : { "x" : 1240, "y" : 160 }
       },
       "connect" : [
-        { "id" : "f22", "to" : "f16" }
+        { "id" : "f22", "to" : "f6" }
       ]
     }, {
       "id" : "f11",
@@ -121,11 +140,11 @@
       "name" : "Not exist?",
       "config" : {
         "conditions" : {
-          "f93" : "in.status == com.axonivy.portal.components.enums.UploadDocumentCheckStatus.OK"
+          "f93" : "in.status == com.axonivy.portal.components.enums.UploadDocumentCheckStatus.OK.name()"
         }
       },
       "visual" : {
-        "at" : { "x" : 944, "y" : 128 },
+        "at" : { "x" : 1096, "y" : 160 },
         "labelOffset" : { "x" : 8, "y" : -14 }
       },
       "connect" : [
@@ -140,7 +159,7 @@
       "id" : "f12",
       "type" : "Alternative",
       "visual" : {
-        "at" : { "x" : 688, "y" : 224 }
+        "at" : { "x" : 840, "y" : 256 }
       },
       "connect" : [
         { "id" : "f19", "to" : "f8" }
@@ -162,14 +181,14 @@
             "",
             "if (doesDocumentExist) {",
             "  in.message = ivy.cms.co(\"/ch.ivy.addon.portalkit.ui.jsf/documentFiles/uploadFileExists\", [fileName]);",
-            "  in.status = UploadDocumentCheckStatus.FAIL;",
+            "  in.status = UploadDocumentCheckStatus.FAIL.name();",
             "}"
           ]
         },
         "sudo" : true
       },
       "visual" : {
-        "at" : { "x" : 816, "y" : 128 }
+        "at" : { "x" : 968, "y" : 160 }
       },
       "connect" : [
         { "id" : "f20", "to" : "f11" }
@@ -180,11 +199,11 @@
       "name" : "Document check",
       "config" : {
         "conditions" : {
-          "f27" : "in.status == com.axonivy.portal.components.enums.UploadDocumentCheckStatus.OK"
+          "f27" : "in.status == com.axonivy.portal.components.enums.UploadDocumentCheckStatus.OK.name()"
         }
       },
       "visual" : {
-        "at" : { "x" : 688, "y" : 128 },
+        "at" : { "x" : 840, "y" : 160 },
         "labelOffset" : { "x" : 0, "y" : -17 }
       },
       "connect" : [
@@ -199,7 +218,7 @@
       "id" : "f16",
       "type" : "CallSubEnd",
       "visual" : {
-        "at" : { "x" : 1296, "y" : 128 }
+        "at" : { "x" : 1488, "y" : 160 }
       }
     }, {
       "id" : "f17",
@@ -214,26 +233,26 @@
             "import ch.ivy.addon.portalkit.masterdata.MasterData;",
             "",
             "in.message = \"\";",
-            "in.status = UploadDocumentCheckStatus.OK;",
+            "in.status = UploadDocumentCheckStatus.OK.name();",
             "",
             "if (in.uploadedFile == null) {",
             "  in.message = ivy.cms.co(\"/Dialogs/components/CaseDocument/invalidFileMessage\");",
-            "  in.status = UploadDocumentCheckStatus.FAIL;",
+            "  in.status = UploadDocumentCheckStatus.FAIL.name();",
             "} else if (in.uploadedFile.getSize() == 0) {",
             "  in.message = ivy.cms.co(\"/Dialogs/components/CaseDocument/emptyFileMessage\");",
-            "  in.status = UploadDocumentCheckStatus.FAIL;",
+            "  in.status = UploadDocumentCheckStatus.FAIL.name();",
             "} else {",
             "  Long maxFileUploadSize = MasterData.getFileUploadSizeLimit();",
             "  if (in.uploadedFile.getSize() > maxFileUploadSize) {",
             "    in.message = ivy.cms.co(\"/ch.ivy.addon.portalkit.ui.jsf/common/errorFileUploadSize\", Arrays.asList(FileUtils.byteCountToDisplaySize(maxFileUploadSize)));",
             "  }",
-            "  in.status = UploadDocumentCheckStatus.FAIL;",
+            "  in.status = UploadDocumentCheckStatus.FAIL.name();",
             "}"
           ]
         }
       },
       "visual" : {
-        "at" : { "x" : 280, "y" : 128 }
+        "at" : { "x" : 432, "y" : 160 }
       },
       "connect" : [
         { "id" : "f28", "to" : "f9" }
@@ -253,16 +272,48 @@
           "map" : {
             "out" : "in",
             "out.message" : "result.message",
-            "out.status" : "result.uploadDocumentCheckStatus"
+            "out.status" : "result.uploadDocumentCheckStatus.toString()"
           }
         }
       },
       "visual" : {
-        "at" : { "x" : 544, "y" : 128 },
+        "at" : { "x" : 696, "y" : 160 },
         "size" : { "width" : 160, "height" : 60 }
       },
       "connect" : [
         { "id" : "f23", "to" : "f14" }
+      ]
+    }, {
+      "id" : "f2",
+      "type" : "Alternative",
+      "name" : "Skip upload?",
+      "config" : {
+        "conditions" : {
+          "f5" : "in.skip",
+          "f3" : ""
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 304, "y" : 160 }
+      },
+      "connect" : [
+        { "id" : "f3", "to" : "f17", "label" : {
+            "name" : "NO"
+          } },
+        { "id" : "f5", "to" : "f4", "via" : [ { "x" : 304, "y" : 32 } ], "label" : {
+            "name" : "YES",
+            "segment" : 1.04,
+            "offset" : { "x" : -4, "y" : 61 }
+          } }
+      ]
+    }, {
+      "id" : "f6",
+      "type" : "Alternative",
+      "visual" : {
+        "at" : { "x" : 1392, "y" : 160 }
+      },
+      "connect" : [
+        { "id" : "f7", "to" : "f16" }
       ]
     } ]
 }

@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/11.2.1/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/11.2.2/process.json",
   "id" : "163729F2CBAE7BE4",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -934,8 +934,8 @@
                 "import java.util.Arrays;",
                 "import com.axonivy.portal.components.service.IvyAdapterService;",
                 "",
-                "Map x = IvyAdapterService.startSubProcessInApplication(\"handleEndPage()\", null);",
-                "String callbackUrl = x.get(\"callbackUrl\") as String;",
+                "Map result = IvyAdapterService.startSubProcessInApplication(\"handleEndPage()\", null);",
+                "String callbackUrl = result.get(\"callbackUrl\") as String;",
                 "ivy.task.customFields().stringField(CustomFields.EXPRESS_END_PAGE_URL.toString()).set(callbackUrl);"
               ]
             },
