@@ -1,11 +1,45 @@
 {
   "$schema" : "https://json-schema.axonivy.com/process/11.2.2/process.json",
-  "id" : "18BD12E37B7541E4",
+  "id" : "16B25F2844868AE2",
   "kind" : "CALLABLE_SUB",
   "config" : {
     "data" : "gawfs.CustomGetDocumentItemsData"
   },
   "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "portalGetDocumentItems(ICase)",
+      "config" : {
+        "signature" : "portalGetDocumentItems",
+        "input" : {
+          "params" : [
+            { "name" : "businessCase", "type" : "ch.ivyteam.ivy.workflow.ICase", "desc" : "" }
+          ],
+          "map" : {
+            "out.businessCase" : "param.businessCase"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "documents", "type" : "java.util.List<com.axonivy.portal.components.ivydata.bo.IvyDocument>", "desc" : "" },
+            { "name" : "message", "type" : "String", "desc" : "" },
+            { "name" : "status", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "result.documents" : "in.documents",
+            "result.message" : "in.message",
+            "result.status" : "in.status.name()"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 6, "y" : 44 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
       "id" : "f1",
       "type" : "CallSubEnd",
       "visual" : {
@@ -37,41 +71,7 @@
         "size" : { "width" : 128, "height" : 60 }
       },
       "connect" : [
-        { "id" : "f4", "to" : "f1" }
-      ]
-    }, {
-      "id" : "f0",
-      "type" : "CallSubStart",
-      "name" : "portalGetDocumentItems(ICase)",
-      "config" : {
-        "signature" : "portalGetDocumentItems",
-        "input" : {
-          "params" : [
-            { "name" : "businessCase", "type" : "ch.ivyteam.ivy.workflow.ICase", "desc" : "" }
-          ],
-          "map" : {
-            "out.businessCase" : "param.businessCase"
-          }
-        },
-        "result" : {
-          "params" : [
-            { "name" : "documents", "type" : "java.util.List<com.axonivy.portal.components.ivydata.bo.IvyDocument>", "desc" : "" },
-            { "name" : "message", "type" : "String", "desc" : "" },
-            { "name" : "status", "type" : "String", "desc" : "" }
-          ],
-          "map" : {
-            "result.documents" : "in.documents",
-            "result.message" : "in.message",
-            "result.status" : "in.status.name()"
-          }
-        }
-      },
-      "visual" : {
-        "at" : { "x" : 72, "y" : 64 },
-        "labelOffset" : { "x" : 9, "y" : -23 }
-      },
-      "connect" : [
-        { "id" : "f2", "to" : "f3" }
+        { "id" : "f2", "to" : "f1" }
       ]
     }, {
       "id" : "f5",
@@ -84,7 +84,7 @@
         "- contentType"
       ],
       "visual" : {
-        "at" : { "x" : 408, "y" : 216 },
+        "at" : { "x" : 344, "y" : 240 },
         "size" : { "width" : 624, "height" : 108 }
       },
       "connect" : [
