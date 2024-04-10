@@ -12,6 +12,6 @@ ch.ivyteam.ivy.designer.preferences.ProcessEnginePreferencePage\:NUMBER_OF_REQUE
 ch.ivyteam.ivy.designer.preferences.ProcessEnginePreferencePage\:START_ENGINES_ON_DESIGNER_START=true
 ch.ivyteam.ivy.designer.preferences.ProcessEnginePreferencePage\:useProjectSettings=true
 ch.ivyteam.ivy.project.preferences\:PORTAL_VERSION=10
-ch.ivyteam.ivy.project.preferences\:PRIMEFACES_VERSION=11
-ch.ivyteam.ivy.project.preferences\:PROJECT_VERSION=112000
+ch.ivyteam.ivy.project.preferences\:PRIMEFACES_VERSION=13
+ch.ivyteam.ivy.project.preferences\:PROJECT_VERSION=112100
 eclipse.preferences.version=1

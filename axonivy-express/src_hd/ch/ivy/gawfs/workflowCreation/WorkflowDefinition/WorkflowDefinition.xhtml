@@ -311,7 +311,7 @@
                 </h:panelGroup>
 
                 <p:panelGrid id="dynamic-task-action-container-#{gtask.position}" styleClass="dynamic-task-action-container"
-                  rendered="#{data.data.definedTasks.size() == gtask.position}">
+                  rendered="#{data.data.definedTasks.size() == gtask.position}" layout="tabular" columns="0">
                   <p:row>
                     <p:column styleClass="dynamic-task-left-action">
                       <p:commandButton id="add-step-button" icon="#{visibilityBean.generateButtonIcon('si si-add-small')}" immediate="true"
