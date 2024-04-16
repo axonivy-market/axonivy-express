@@ -5,7 +5,7 @@
 <h:body>
   <h:form id="assignee-selection-form">
     <p:messages id="error-message" showSummary="false" showDetail="true" />
-    <p:panelGrid id="assignee-selection-panel" columns="1" styleClass="assignee-selection-panel">
+    <p:panelGrid id="assignee-selection-panel" columns="1" styleClass="assignee-selection-panel" layout="tabular">
       <p:selectOneRadio id="assignee-type" value="#{data.isAssignToUser}">
         <f:selectItem itemLabel="#{ivy.cms.co('/ch.ivy.addon.portalkit.ui.jsf/taskDelegate/toUser')}" itemValue="true" />
         <f:selectItem itemLabel="#{ivy.cms.co('/ch.ivy.addon.portalkit.ui.jsf/taskDelegate/toGroup')}" itemValue="false" />
@@ -45,7 +45,7 @@
       <p:fieldset id="selected-assignee-fieldset" styleClass="selected-assignee-panel"
         legend="#{ivy.cms.co('/Dialogs/workflowCreation/WorkflowDefinition/ChooseAssignee/SelectedAssigneesFieldSet')}">
         <ui:repeat var="assignee" value="#{data.selectedAssigneeList}">
-          <p:panelGrid id="selected-assignee-panel" styleClass="assignee-selection" columns="2" columnClasses="assignee-name-col">
+          <p:panelGrid id="selected-assignee-panel" styleClass="assignee-selection" columns="2" columnClasses="assignee-name-col" layout="tabular">
             <p:column>
               <pc:securityMemberNameAndAvatar securityMember="#{assignee}" isStandAlone="false"
               displayName="#{securityMemberDisplayNameFormatBean.generateBriefDisplayNameForSecurityMember(assignee, assignee.getName())}" />

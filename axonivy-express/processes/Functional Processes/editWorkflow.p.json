@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/11.2.2/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
   "id" : "15791C23B125821B",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -52,7 +52,7 @@
           },
           "visual" : {
             "at" : { "x" : 208, "y" : 256 },
-            "size" : { "width" : 144, "height" : 60 }
+            "size" : { "width" : 144 }
           },
           "connect" : [
             { "id" : "S10-f1", "to" : "S10-g1" }
@@ -136,7 +136,7 @@
       },
       "visual" : {
         "at" : { "x" : 640, "y" : 264 },
-        "size" : { "width" : 144, "height" : 60 }
+        "size" : { "width" : 144 }
       },
       "connect" : [
         { "id" : "f26", "to" : "f41" }
@@ -158,7 +158,7 @@
       },
       "visual" : {
         "at" : { "x" : 1720, "y" : 264 },
-        "size" : { "width" : 160, "height" : 60 }
+        "size" : { "width" : 160 }
       },
       "connect" : [
         { "id" : "f36", "to" : "f35" }
@@ -182,7 +182,7 @@
       },
       "visual" : {
         "at" : { "x" : 1048, "y" : 264 },
-        "size" : { "width" : 176, "height" : 60 }
+        "size" : { "width" : 176 }
       },
       "connect" : [
         { "id" : "f48", "to" : "f45" }
@@ -250,7 +250,7 @@
         { "id" : "f55", "to" : "f54", "via" : [ { "x" : 1568, "y" : 360 } ], "label" : {
             "name" : "yes",
             "segment" : 0.31,
-            "offset" : { "x" : 13, "y" : 0 }
+            "offset" : { "x" : 13 }
           } },
         { "id" : "f24", "to" : "f9" }
       ]
@@ -274,7 +274,7 @@
       },
       "visual" : {
         "at" : { "x" : 2056, "y" : 360 },
-        "size" : { "width" : 176, "height" : 60 }
+        "size" : { "width" : 176 }
       },
       "connect" : [
         { "id" : "f19", "to" : "f32", "via" : [ { "x" : 2208, "y" : 360 } ] }
@@ -371,7 +371,7 @@
       },
       "visual" : {
         "at" : { "x" : 1408, "y" : 264 },
-        "size" : { "width" : 160, "height" : 60 }
+        "size" : { "width" : 160 }
       },
       "connect" : [
         { "id" : "f23", "to" : "f18" }
@@ -393,12 +393,12 @@
         { "id" : "f30", "to" : "f18", "via" : [ { "x" : 888, "y" : 360 }, { "x" : 1496, "y" : 360 } ], "label" : {
             "name" : "yes",
             "segment" : 0.35,
-            "offset" : { "x" : 13, "y" : 0 }
+            "offset" : { "x" : 13 }
           } },
         { "id" : "f4", "to" : "f3", "label" : {
             "name" : "no",
             "segment" : 0.48,
-            "offset" : { "x" : 0, "y" : -8 }
+            "offset" : { "y" : -8 }
           } }
       ]
     }, {
@@ -436,12 +436,12 @@
         { "id" : "f38", "to" : "f37", "label" : {
             "name" : "no",
             "segment" : 0.45,
-            "offset" : { "x" : -10, "y" : 0 }
+            "offset" : { "x" : -10 }
           }, "var" : "in1" },
         { "id" : "f40", "to" : "f32", "label" : {
             "name" : "yes",
             "segment" : 0.41,
-            "offset" : { "x" : 0, "y" : -10 }
+            "offset" : { "y" : -10 }
           } }
       ]
     }, {
@@ -581,7 +581,7 @@
       },
       "visual" : {
         "at" : { "x" : 1768, "y" : 360 },
-        "size" : { "width" : 160, "height" : 60 }
+        "size" : { "width" : 160 }
       },
       "connect" : [
         { "id" : "f58", "to" : "f20" }
