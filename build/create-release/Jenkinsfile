@@ -1,0 +1,69 @@
+pipeline {
+  agent {label 'portal-slave'}
+  
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '60', artifactNumToKeepStr: '5'))
+  }
+  
+  tools { 
+      maven '3.8' 
+      jdk '17'
+  }
+
+  parameters {
+      string(name: 'releaseVersion', defaultValue: '1.0.0-m1', description: 'The release version.')
+      string(name: 'engineDownloadURL', defaultValue: '-Divy.engine.download.url=https://developer.axonivy.com/permalink/nightly/axonivy-engine-windows.zip', description: '''Where to download engine? e.g.
+        -Divy.engine.download.url=https://developer.axonivy.com/permalink/nightly/axonivy-engine-windows.zip for nightly master
+        -Divy.engine.download.url=https://developer.axonivy.com/permalink/dev/axonivy-engine-windows.zip for dev master
+        -Divy.engine.download.url=file:///C:/wawa/engine/AxonIvyEngineX.X.X.X_Windows_x64.zip for downloaded engine
+        -Divy.engine.list.url=https://jenkins.ivyteam.io/job/core_product/job/release%252F9.4/lastSuccessfulBuild/artifact/workspace/ch.ivyteam.ivy.server.product/target/products/ -Divy.engine.os.arch=Windows_x64 for last successful build 9.4
+      ''')
+  }
+
+  environment {
+    engineDir = "$env.WORKSPACE/engine"
+  }
+
+  stages {
+    stage('build') {
+      steps {
+        script {
+          currentBuild.description = "On ${env.NODE_NAME}"
+          echo "====================Update pom version to ${params.releaseVersion}===================="
+          powershell '''
+            #find all pom file of portal project and change their versions and their portal dependencies to releaseVersion
+            $utf8WithoutBom = New-Object System.Text.UTF8Encoding($false)
+            $files = get-childitem axonivy-express/pom.xml
+            foreach($file in $files) {
+              $xml = new-object xml
+              $xml.load($file)
+              $xml.project.version = $env:releaseVersion
+              $dependencies = $xml.project.dependencies.ChildNodes
+              foreach($dependency in $dependencies) {
+                if($dependency.groupId -eq 'com.axonivy.portal') {
+                  $dependency.version = $env:releaseVersion
+                }
+              }
+              $sw = New-Object System.IO.StreamWriter($file, $false, $utf8WithoutBom)
+              $xml.Save($sw)
+            }
+          '''
+
+          echo "====================Build all modules===================="
+          // module structure [module path, isPossibleToDeploy]
+          def modules = [['axonivy-express', true]]
+          for (module in modules) {
+            bat "mvn clean install -Divy.engine.directory=%engineDir% -Divy.engine.version=(7.0.0,] -Divy.compiler.engine.start.timeout=120 %engineDownloadURL% -f ${module[0]}/pom.xml"
+          }
+
+        }
+      }
+    }
+  }
+
+  post {
+    always {
+      archiveArtifacts artifacts: "**/target/*.iar,*/pom.xml"
+    }
+  }
+}
