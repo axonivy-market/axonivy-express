@@ -13,7 +13,7 @@
     <dependency>
       <groupId>com.axonivy.portal</groupId>
       <artifactId>portal</artifactId>
-      <version>11.2.0</version>
+      <version>11.3.0</version>
       <type>iar</type>
     </dependency>
   </dependencies>
