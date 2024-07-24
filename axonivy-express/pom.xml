@@ -6,14 +6,14 @@
   <version>11.1.2-SNAPSHOT</version>
   <packaging>iar</packaging>
   <properties>
-    <ivy.engine.version>11.3.0</ivy.engine.version>
-    <build.plugin.version>11.2.0</build.plugin.version>
+    <project.build.plugin.version>11.3.0</project.build.plugin.version>
+    <portal.version>11.3.1</portal.version>
   </properties>
   <dependencies>
     <dependency>
       <groupId>com.axonivy.portal</groupId>
       <artifactId>portal</artifactId>
-      <version>11.2.0</version>
+      <version>${portal.version}</version>
       <type>iar</type>
     </dependency>
   </dependencies>
@@ -29,7 +29,7 @@
       <plugin>
         <groupId>com.axonivy.ivy.ci</groupId>
         <artifactId>project-build-plugin</artifactId>
-        <version>${build.plugin.version}</version>
+        <version>${project.build.plugin.version}</version>
         <extensions>true</extensions>
         <configuration>
           <compilerWarnings>false</compilerWarnings>
