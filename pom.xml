@@ -3,7 +3,7 @@
   <groupId>com.axonivy.portal</groupId>
   <name>axonivy-express</name>
   <artifactId>axonivy-express-modules</artifactId>
-  <version>11.3.0</version>
+  <version>11.3.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>
@@ -13,7 +13,7 @@
 
   <scm>
     <developerConnection>scm:git:https://github.com/axonivy-market/${project.name}.git</developerConnection>
-    <tag>v11.3.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <build>
