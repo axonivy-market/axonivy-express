@@ -3,7 +3,7 @@
   <groupId>com.axonivy.portal</groupId>
   <name>axonivy-express</name>
   <artifactId>axonivy-express-modules</artifactId>
-  <version>11.1.2-SNAPSHOT</version>
+  <version>11.3.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>
