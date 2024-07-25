@@ -9,5 +9,3 @@ on:
 jobs:
   build:
     uses: axonivy-market/github-workflows/.github/workflows/dev.yml@v3
-    with:
-      mvnArgs: '-Dportal.version=11.4.0-m261'
