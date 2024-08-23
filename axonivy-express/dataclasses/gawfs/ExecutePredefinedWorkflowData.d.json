@@ -1,0 +1,85 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "simpleName" : "ExecutePredefinedWorkflowData",
+  "namespace" : "gawfs",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "actualStepIndex",
+    "type" : "Integer",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "approvalTaskResult",
+    "type" : "gawfs.ApprovalTaskResult",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "approvalTaskResults",
+    "type" : "List<gawfs.ApprovalTaskResult>",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "taskSplittingCounter",
+    "type" : "Number"
+  }, {
+    "name" : "currentTask",
+    "type" : "gawfs.TaskDef",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "definedTasks",
+    "type" : "List<gawfs.TaskDef>",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "finishedTasks",
+    "type" : "java.util.List<gawfs.TaskDef>",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "hasRejectedApprovalTask",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "responsible",
+    "type" : "com.axonivy.portal.components.dto.SecurityMemberDTO",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "shouldEndProcess",
+    "type" : "Boolean"
+  }, {
+    "name" : "steps",
+    "type" : "List<String>",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "useExpressEndPage",
+    "type" : "Boolean"
+  }, {
+    "name" : "userTaskForApproval",
+    "type" : "gawfs.TaskDef",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "workflowDescription",
+    "type" : "String"
+  }, {
+    "name" : "workflowID",
+    "type" : "String"
+  }, {
+    "name" : "workflowName",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "workflowType",
+    "type" : "ch.ivy.gawfs.enums.ProcessType",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "isAdhocProcess",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "originalTaskId",
+    "type" : "Long",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "doesCreatorHaveTask",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "hasActiveTasks",
+    "type" : "Boolean"
+  } ]
+}

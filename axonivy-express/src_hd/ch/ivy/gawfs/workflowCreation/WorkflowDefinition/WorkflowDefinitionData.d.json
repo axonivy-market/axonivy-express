@@ -1,0 +1,83 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "simpleName" : "WorkflowDefinitionData",
+  "namespace" : "ch.ivy.gawfs.workflowCreation.WorkflowDefinition",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "data",
+    "type" : "gawfs.Data",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "taskDefinition",
+    "type" : "gawfs.TaskDef",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "autoCompleteQuery",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "selectedAssigneeList",
+    "type" : "java.util.List<ch.ivyteam.ivy.security.ISecurityMember>",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "isAssignToUser",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "selectedUser",
+    "type" : "com.axonivy.portal.components.dto.UserDTO",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "selectedRole",
+    "type" : "com.axonivy.portal.components.dto.RoleDTO",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "isValidAssignee",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "selectedResponsibleFieldId",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "defaultDragAndDropController",
+    "type" : "ch.ivy.gawfs.DragAndDropController",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "resetData",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "isValidated",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "originalProcessName",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "isRepeatable",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "isDisplayProcessOwner",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "isSelectProcessOwnerResponsibles",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "importExpressFile",
+    "type" : "org.primefaces.model.file.UploadedFile",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "exportExpressFile",
+    "type" : "org.primefaces.model.StreamedContent",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "isTaskFinished",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

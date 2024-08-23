@@ -1,0 +1,10 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "simpleName" : "HandleEndPageData",
+  "namespace" : "ch.ivy.addon.express.generic",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "callbackUrl",
+    "type" : "String"
+  } ]
+}

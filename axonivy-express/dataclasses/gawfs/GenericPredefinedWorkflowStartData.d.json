@@ -1,0 +1,13 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "simpleName" : "GenericPredefinedWorkflowStartData",
+  "namespace" : "gawfs",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "workflowID",
+    "type" : "String"
+  }, {
+    "name" : "actualStepIndex",
+    "type" : "Integer"
+  } ]
+}

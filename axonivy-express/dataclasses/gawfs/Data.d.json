@@ -1,0 +1,98 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "simpleName" : "Data",
+  "namespace" : "gawfs",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "steps",
+    "type" : "List<String>",
+    "comment" : "Process Steps for ProcessChain",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "definedTasks",
+    "type" : "List<gawfs.TaskDef>",
+    "comment" : "List of Tasks for execution",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "processName",
+    "type" : "String",
+    "comment" : "Name of the Process also later CaseName",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "processDescription",
+    "type" : "String",
+    "comment" : "Description of the Process later CaseDescription",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "processType",
+    "type" : "ch.ivy.gawfs.enums.ProcessType",
+    "comment" : "Process type",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "wfusers",
+    "type" : "List<ch.ivyteam.ivy.security.IUser>"
+  }, {
+    "name" : "taskRepository",
+    "type" : "ch.ivy.addon.portalkit.bo.ExpressTaskDefinition"
+  }, {
+    "name" : "formelementRepository",
+    "type" : "ch.ivy.addon.portalkit.bo.ExpressFormElement"
+  }, {
+    "name" : "backFlag",
+    "type" : "Boolean"
+  }, {
+    "name" : "processID",
+    "type" : "String"
+  }, {
+    "name" : "taskId",
+    "type" : "Number",
+    "comment" : "Task ID for Endpage"
+  }, {
+    "name" : "discard",
+    "type" : "Boolean"
+  }, {
+    "name" : "isUseDefaultUI",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "processFolder",
+    "type" : "String",
+    "comment" : "Folder to store file of this process",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "readyToExecute",
+    "type" : "Boolean",
+    "comment" : "Flag to marked whether process is ready to execute or not",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "editFlag",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "savedFlag",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "isAdhocProcess",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "originalTaskId",
+    "type" : "Long",
+    "comment" : "This field store original task id which is trigger express adhoc WF",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "processCoOwners",
+    "type" : "List<String>",
+    "comment" : "This field store which user/role is co owener of express process, beside process creator",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "processCoOwnersDisplayName",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "processIcon",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

@@ -1,0 +1,27 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "simpleName" : "ApprovalTaskResult",
+  "namespace" : "gawfs",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "approverName",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "isApproved",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "comment",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "taskName",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "index",
+    "type" : "Integer",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "simpleName" : "ExternalDataProvider",
+  "namespace" : "gawfs",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "libraryId",
+    "type" : "String"
+  }, {
+    "name" : "signature",
+    "type" : "String"
+  }, {
+    "name" : "name",
+    "type" : "String"
+  } ]
+}

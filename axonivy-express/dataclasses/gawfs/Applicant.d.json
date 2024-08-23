@@ -1,0 +1,20 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "simpleName" : "Applicant",
+  "namespace" : "gawfs",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "email",
+    "type" : "String"
+  }, {
+    "name" : "fullname",
+    "type" : "String"
+  }, {
+    "name" : "user",
+    "type" : "ch.ivyteam.ivy.security.IUser"
+  }, {
+    "name" : "username",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

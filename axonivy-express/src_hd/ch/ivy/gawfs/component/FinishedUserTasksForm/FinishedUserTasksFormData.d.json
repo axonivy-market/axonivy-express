@@ -1,0 +1,11 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "simpleName" : "FinishedUserTasksFormData",
+  "namespace" : "ch.ivy.gawfs.component.FinishedUserTasksForm",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "finishedTasks",
+    "type" : "java.util.List<gawfs.TaskDef>",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

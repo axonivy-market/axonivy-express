@@ -1,0 +1,13 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "simpleName" : "UserTaskResult",
+  "namespace" : "gawfs",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "applicant",
+    "type" : "gawfs.Applicant"
+  }, {
+    "name" : "approvalResultList",
+    "type" : "java.util.List<gawfs.ApprovalTaskResult>"
+  } ]
+}
