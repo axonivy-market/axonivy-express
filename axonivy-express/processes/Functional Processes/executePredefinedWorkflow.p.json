@@ -930,7 +930,6 @@
               "code" : [
                 "import ch.ivy.addon.portalkit.constant.CustomFields;",
                 "import java.util.Map;",
-                "import ch.ivy.addon.portalkit.enums.PortalLibrary;",
                 "import java.util.Arrays;",
                 "import com.axonivy.portal.components.service.IvyAdapterService;",
                 "",
