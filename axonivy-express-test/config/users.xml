@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<userConfig>
+    <user>
+        <username>express</username>
+        <password>express</password>
+        <fullName>Express User</fullName>
+    </user>
+    <user>
+        <username>testUser</username>
+        <password>testUser</password>
+        <fullName>Test User</fullName>
+    </user>
+</userConfig>
