@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "15797DC22608DA55",
   "config" : {
     "data" : "gawfs.GenericPredefinedWorkflowStartData"
@@ -122,13 +122,13 @@
         "at" : { "x" : 624, "y" : 160 }
       },
       "connect" : [
-        { "id" : "f1", "to" : "f17" }
+        { "id" : "f1", "to" : "f13" }
       ]
     }, {
       "id" : "f17",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 720, "y" : 160 }
+        "at" : { "x" : 904, "y" : 160 }
       }
     }, {
       "id" : "f5",
@@ -137,10 +137,12 @@
       "config" : {
         "output" : {
           "code" : [
-            "import ch.ivy.addon.portalkit.constant.CustomFields;",
-            "ivy.case.customFields().stringField(CustomFields.IS_EXPRESS_PROCESS).set(\"true\");"
+            "import com.axonivy.portal.components.publicapi.CaseAPI;",
+            "",
+            "CaseAPI.setHidePropertyToHideInPortal(ivy.case);"
           ]
-        }
+        },
+        "sudo" : true
       },
       "visual" : {
         "at" : { "x" : 280, "y" : 64 }
@@ -155,8 +157,8 @@
       "config" : {
         "output" : {
           "code" : [
-            "import ch.ivy.addon.portalkit.constant.CustomFields;",
-            "ivy.case.customFields().stringField(CustomFields.IS_EXPRESS_PROCESS).set(\"true\");"
+            "import com.axonivy.portal.components.publicapi.CaseAPI;",
+            "CaseAPI.setHidePropertyToHideInPortal(ivy.case);"
           ]
         }
       },
@@ -165,6 +167,20 @@
       },
       "connect" : [
         { "id" : "f8", "to" : "f12" }
+      ]
+    }, {
+      "id" : "f13",
+      "type" : "DialogCall",
+      "name" : "Express Management",
+      "config" : {
+        "dialog" : "com.axonivy.utils.axonivyexpress.ExpressManagement:start()"
+      },
+      "visual" : {
+        "at" : { "x" : 760, "y" : 161 },
+        "size" : { "width" : 128, "height" : 62 }
+      },
+      "connect" : [
+        { "id" : "f14", "to" : "f17", "color" : "default" }
       ]
     } ]
 }

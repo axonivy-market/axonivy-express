@@ -1,0 +1,44 @@
+.awesome-icon-selection-panel span {
+  font-size: 4.8rem;
+}
+
+.icon-selection-dialog-selecting-icon:hover {
+  border: solid 1px; 
+}
+
+.select-icon-dialog {
+    min-width: 96vw;
+}
+
+.search-icon-name-container {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+
+.ui-inputfield.search-icon-input {
+  display: block;
+  width: 300px;
+}
+
+.search-icon-input::-ms-clear {
+  display: none;
+}
+
+.icon-selection-dialog-selecting-icon {
+  display: inline-flex;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.icon-selection-dialog-selecting-icon .fa, .icon-selection-dialog-selecting-icon .si {
+  margin: auto;
+}
+
+_:-ms-input-placeholder, :root .icon-selection-dialog-selecting-icon .fa {
+  top: 50%;
+  transform: translateY(25%);
+}

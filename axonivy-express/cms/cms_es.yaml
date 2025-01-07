@@ -1,0 +1,205 @@
+ch.ivy.addon.portal.generic:
+  CaseDetailsTemplate:
+    noCaseId: No hay ID de caso especificado
+Dialogs:
+  Tasks:
+    FinalReview:
+      TaskDescription: ¡El flujo de trabajo {0} ha sido {1}!
+      TaskName: Control final
+    ProcessLoaded:
+      TaskName: Tarea para configurar el proceso Adhoc
+    WorkflowProperties:
+      TaskDescription: ¡Por favor configure las propiedades del flujo de trabajo!
+      TaskName: Propiedades del flujo de trabajo
+  com:
+    axonivy:
+      utils:
+        axonivyexpress:
+          ExpressManagement:
+            Create: Crear
+            DeleteExpressProcessMessage: ¿Está seguro de que desea eliminar este flujo de trabajo?
+            DeployButton: Desplegar
+            DeployMessage: Desplegando procesos
+            ExpressExportName: AXONIVY_Dataset_ExpressWorkflow_{0}.json
+            ExpressManagement: Gestión Express
+            Import: Importar
+            ImportDialogHeaderTitle: Seleccione un archivo de procesos Express. El formato tiene que ser JSON.
+            ProcessNotReadyToExecute: Este proceso no está listo para su ejecución. Por favor, complete la definición del proceso.
+          FormDefinition:
+            AllowedFiletypes: Tipos de Archivo permitidos
+            BroadFooterArea: Pie de pagina amplio
+            BroadHeaderArea: Encabezado amplio
+            CancelCreateForm: 'Seguro que quiere cancelar? Perderá todos los datos. '
+            CheckboxFields: Campos de casillas de verificación
+            CreateField: Crear
+            DataProvider: Proveedor de datos
+            ElementLabel: Etiqueta
+            FieldSetAvailableFormelements: Elementos del formulario
+            FieldSetFormelementsPlacing: Ubicación de elementos de formulario
+            FieldSetPreviewArea: Vista previa del formulario definido
+            FinishWorkflow: Fin del flujo de trabajo
+            InputArea: Área de entrada
+            InputCheckbox: Casilla de verificación
+            InputField: Campo de entrada
+            InputFileUpload: Carga de archivo
+            InputOptions: Botón Radial
+            InputType: Tipo de Entrada
+            LeftColumn: Columna izquierda
+            MaxLabelLength: '35'
+            MaxOptionsLength: '20'
+            NoCheckboxFieldYet: No hay campos de verificación definidos todavía
+            NoDataProvider: Proveedor de datos
+            NoFormelementsAvailable: ¡No hay elementos de formulario disponibles!
+            NoOptionboxFieldsYet: No hay tipos de casillas de verificación definidos todavía
+            NumberOfFiles: Numero de archivos
+            NumberOfRows: Numero de filas
+            OptionboxFields: Botones Radiales
+            Preview: Vista previa
+            RightColumn: Columna derecha
+          WorkflowDefinition:
+            AbleToStart: Permiso de ejecución
+            AddProcessStep: Agregar paso de proceso
+            AddUserOrRole: 'Selecione un grupo o usuario porfavor:'
+            ChangeSettingWarning: Todas las tareas definidas serán borradas, desea proceder?
+            CreateOwn: Crear propia
+            DefaultTemplate: Plantilla predeterminada
+            DeleteProcessStep: Retirar paso del proceso
+            DueTimeInDays: Expiración en días
+            EndStep: Terminar
+            ExecuteWorkflow: Ejecutar flujo de trabajo directamente
+            FormDefinitionStep: Definición de formulario
+            OneTime: Una vez
+            ProcessDescription: Descripción de proceso
+            ProcessDetails: Propiedades del proceso
+            ProcessName: Nombre del proceso
+            ProcessOwner: Responsable del proceso
+            ProcessStep: Paso del proceso
+            ProcessType: Tipo de proceso
+            Repeatable: Recurrente
+            SaveWorkflow: Guardar Flujo de trabajo
+            SelectedAssigneesFieldSet: Usuarios seleccionados
+            TaskDescription: Descripción de tarea
+            TaskName: Nombre de la Tarea
+            TaskType: Tipo de tarea
+            ToGroup: Grupo
+            ToUser: Usuario
+            UntilDaysTooltip: Después de la fecha de caducidad, esta tarea será asignada al grupo "todos" y su prioridad será alta
+            UseDefault: Usar patrón estandard
+            UserInterface: Interfaz de usuario
+            WorkflowPropertiesStep: Propiedades del flujo de trabajo
+          components:
+            ApprovalResult:
+              ApprovalResult: Estado del aprobado
+              ApprovalStatus: Estado del aprobado
+            Email:
+              Attachment: Anexo
+              EmailAddress: Dirección de E-Mail
+              EmailText: Texto de E-Mail
+              FileFunctions: Funciones
+              Filename: Nombre de archivo
+              InvalidEmailFormat: Formato de Email inválido
+              NoFiles: ¡No se encuentran archivos!
+              ResponseTo: Respuesta a
+              Subject: Asunto
+            FinishedUserTasksForm:
+              Applicant: Solicitante
+              FinishedTasks: Tareas terminadas
+              FormDetails: Detalles del formulario
+            IconSelection:
+              IconLinkTooltip: Haga clic para cambiar el icono
+              IconSelectionDialogHeader: Seleccionar ícono
+              SeachIconByNamePlaceHolder: Buscar símbolo por nombre
+          generic:
+            EndPage:
+              Subtitle: La última tarea se completó con éxito.
+              Title: ¡Tarea completada con éxito!
+            ExpressBusinessView:
+              ExpressNoItem: Aún no se ha completado ninguna Tarea Express
+              ExpressNoItemDescription: Aquí se mostrarán los resultados de las tareas completadas
+              ExpressWorkflowName: 'Detalles de negocio del caso #{0}'
+          workflowExecution:
+            ApprovalForm:
+              Approve: Aprobar
+              CommentLabel: Comentario del aprobador
+              Reject: Rechazar
+            FinalReviewForm:
+              Noticed: Verificado
+            UserTaskForm:
+              Formular: Formulario
+            UserTaskWithMailForm:
+              RequestTabTitle: Solicitud
+  workflowCreation:
+    ProcessName: Crear Flujo de Trabajo Express
+Labels:
+  Add: Añadir
+  Back: Regresar
+  Change: Cambiar
+  Close: Cerrar
+  Comment: Comentario
+  ConfirmationHeaderText: ¿Está seguro?
+  Delete: Borrar
+  Edit: Editar
+  Email: Email
+  Enums:
+    ExpressMessageType:
+      ERROR: Error
+      FAILED: Error
+      IMPORT_EXPRESS_PROCESSES: Importar procesos exprés
+      IMPORT_RESULT: Resultado de la importación
+      IMPORT_STATUS: Estado de importación
+      INFO: Info
+      SUCCESSFUL: Éxito
+      WARNING: Atención
+    FormElementType:
+      CHECKBOX: Casilla de verificación
+      FILE_UPLOAD: Carga de archivo
+      INPUT_DATE: Seleccionador de Fecha
+      INPUT_NUMBER: Campo de numero
+      INPUT_TEXT: Campo de texto
+      INPUT_TEXT_AREA: Área de entrada
+      RADIO_BUTTON: Casilla de verificación
+    ProcessType:
+      AD_HOC: Una vez
+      REPEAT: Recurrente
+    TaskType:
+      APPROVAL: Aprobado
+      EMAIL: E-Mail de información
+      FINAL_REVIEW: Comprobación
+      USER_TASK: Tarea
+      USER_TASK_WITH_EMAIL: Tarea con E-Mail
+    UploadFileFormat:
+      EXCEL: Excel (xls/xlsx)
+      OTHERS: Otros formatos de archivo
+      PDF: PDF (pdf)
+      WORD: Word (doc/docx)
+  Export: Exportar
+  Fullname: Nombre completo
+  Icon: Icono
+  Messages:
+    DeleteSucceed: El archivo ha sido borrado con éxito
+    DeployErrorLog: Error durante el despliegue {0}
+    DeploymentFinishedLog: Proceso(s) del archivo {0} han sido desplegados con éxito en {1}ms
+    DuplicateProcessNameLog: Nombre de proceso duplicado {0}
+    EndDeployLog: Despliegue Express finalizado
+    ExecuteWorkflowWarning: Tiene que procesar todas las tareas antes de poder ejecutar este processo
+    FileEmptyMessage: Archivo está vacío
+    FileUploadElementPosition: Solo pueden subirse archivos en el encabezado on el pie de página
+    InstallProcessFailedLog: Error al desplegar proceso {0}
+    InstalledProcessLog: Procesos instalados {0}
+    InvalidVersionLog: Versión de Express {0} no apoyada
+    MaximumFileUploadElement: Ya existe un elemento de subir documentos
+    ProcessNameExists: Este nombre para el flujo de trabajo ya ha sido seleccionado
+    StartDeployLog: Empezando el despliegue de los procesos del documento {0}
+    StartDeployProcessLog: Comienzo de la instalación del proceso {0}
+    ValidateProcessCoOwnerLog: '- Validación del copropietario del proceso {0}. Usuario {1} no existe en el sistema'
+    ValidateProcessOwnerLog: '- Validación del propietario del proceso {0}. Usuario {1} no existe en el sistema. Cambie el propietario a {2}'
+    ValidateProcessPermissionLog: '- Validación del permiso para el proceso {0}. Usuario {1} no existe en el sistema'
+    ValidateTaskDefUserLog: '- Validación del responsable de tarea {0}. Usuario {1} no existe en el sistema'
+    VersionLog: 'Versión de Express: {0}'
+  Next: Siguiente
+  NoSelection: Sin selección
+  Ok: Ok
+  Save: Guardar
+  Select: Seleccionar
+  Start: Abrir
+  Task: Tarea

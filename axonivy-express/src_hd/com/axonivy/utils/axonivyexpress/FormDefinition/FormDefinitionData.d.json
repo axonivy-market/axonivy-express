@@ -1,0 +1,71 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "FormDefinitionData",
+  "namespace" : "com.axonivy.utils.axonivyexpress.FormDefinition",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "data",
+    "type" : "gawfs.Data",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "dragAndDropController",
+    "type" : "com.axonivy.utils.axonivyexpress.bean.DragAndDropController",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "formelement",
+    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "createInputFieldTab",
+    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "createInputAreaTab",
+    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "createManyCheckboxTab",
+    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "createOneRadioTab",
+    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "createFileUploadTab",
+    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "activeTab",
+    "type" : "Integer",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "dynaFormController",
+    "type" : "com.axonivy.utils.axonivyexpress.controller.DynaFormController",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "activeTaskIndex",
+    "type" : "Integer",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "isAbleToExecute",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "displayNextBtn",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "selectedDataProvider",
+    "type" : "gawfs.ExternalDataProvider",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "dataProviders",
+    "type" : "List<gawfs.ExternalDataProvider>",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "isTaskFinished",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "163729F2CBAE7BE4",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -37,7 +37,7 @@
           "id" : "U21-g0",
           "type" : "EmbeddedStart",
           "visual" : {
-            "at" : { "x" : 288, "y" : 64 }
+            "at" : { "x" : 288, "y" : 32 }
           },
           "parentConnector" : "f3",
           "connect" : [
@@ -69,12 +69,11 @@
                 }
               },
               "code" : [
-                "import ch.ivy.addon.portalkit.util.PredefinedWorkflowUtils;",
-                "import ch.ivy.addon.portalkit.enums.AdditionalProperty;",
-                "if (in1.originalTaskId != null && in1.originalTaskId > 0) {",
-                "  task.customFields().stringField(AdditionalProperty.ADHOC_EXPRESS_TASK.toString()).set(AdditionalProperty.ADHOC_EXPRESS_TASK.toString());",
-                "}",
-                "task.setCategoryPath(PredefinedWorkflowUtils.generateExpressTaskCategoryPath(in1.workflowType, in1.workflowName, in1.currentTask.subject));"
+                "import com.axonivy.utils.axonivyexpress.utils.ExecutingExpressProcessUtils;",
+                "import com.axonivy.utils.axonivyexpress.utils.PredefinedWorkflowUtils;",
+                "",
+                "task.setCategoryPath(PredefinedWorkflowUtils.generateExpressTaskCategoryPath(in1.workflowType, in1.workflowName, in1.currentTask.subject));",
+                "ExecutingExpressProcessUtils.setIsExpressTask(task);"
               ]
             }
           },
@@ -92,7 +91,7 @@
           "name" : "task with mail?",
           "config" : {
             "conditions" : {
-              "U21-f56" : "in.currentTask.taskType == ch.ivy.gawfs.enums.TaskType.USER_TASK_WITH_EMAIL"
+              "U21-f56" : "in.currentTask.taskType == com.axonivy.utils.axonivyexpress.enums.TaskType.USER_TASK_WITH_EMAIL"
             }
           },
           "visual" : {
@@ -116,7 +115,7 @@
           "type" : "DialogCall",
           "name" : "Input form",
           "config" : {
-            "dialog" : "ch.ivy.gawfs.workflowExecution.UserTaskForm:start(gawfs.ExecutePredefinedWorkflowData)",
+            "dialog" : "com.axonivy.utils.axonivyexpress.workflowExecution.UserTaskForm:start(gawfs.ExecutePredefinedWorkflowData)",
             "call" : {
               "map" : {
                 "param.executePredefinedWorkflowData" : "in"
@@ -153,12 +152,11 @@
                 }
               },
               "code" : [
-                "import ch.ivy.addon.portalkit.util.PredefinedWorkflowUtils;",
-                "import ch.ivy.addon.portalkit.enums.AdditionalProperty;",
-                "if (in1.originalTaskId != null && in1.originalTaskId > 0) {",
-                "  task.customFields().stringField(AdditionalProperty.ADHOC_EXPRESS_TASK.toString()).set(AdditionalProperty.ADHOC_EXPRESS_TASK.toString());",
-                "}",
-                "task.setCategoryPath(PredefinedWorkflowUtils.generateExpressTaskCategoryPath(in1.workflowType, in1.workflowName, in1.currentTask.subject));"
+                "import com.axonivy.utils.axonivyexpress.utils.ExecutingExpressProcessUtils;",
+                "import com.axonivy.utils.axonivyexpress.utils.PredefinedWorkflowUtils;",
+                "",
+                "task.setCategoryPath(PredefinedWorkflowUtils.generateExpressTaskCategoryPath(in1.workflowType, in1.workflowName, in1.currentTask.subject));",
+                "ExecutingExpressProcessUtils.setIsExpressTask(task);"
               ]
             }
           },
@@ -202,10 +200,11 @@
           "config" : {
             "output" : {
               "code" : [
-                "import ch.ivy.addon.portalkit.ivydata.utils.ServiceUtilities;",
+                "import com.axonivy.utils.axonivyexpress.service.SecurityService;",
+                "",
                 "",
                 "String responsibleName = in.currentTask.getResponsibles().get(in.taskSplittingCounter);",
-                "in.responsible = ServiceUtilities.findSecurityMemberByName(responsibleName);"
+                "in.responsible = SecurityService.newInstance().findSecurityMemberByName(responsibleName);"
               ]
             }
           },
@@ -271,7 +270,7 @@
           "type" : "DialogCall",
           "name" : "Task with mail",
           "config" : {
-            "dialog" : "ch.ivy.gawfs.workflowExecution.UserTaskWithMailForm:start(gawfs.ExecutePredefinedWorkflowData)",
+            "dialog" : "com.axonivy.utils.axonivyexpress.workflowExecution.UserTaskWithMailForm:start(gawfs.ExecutePredefinedWorkflowData)",
             "call" : {
               "map" : {
                 "param.executePredefinedWorkflowData" : "in"
@@ -296,8 +295,9 @@
           "config" : {
             "output" : {
               "code" : [
-                "import ch.ivy.addon.portalkit.util.ExecutingExpressProcessUtils;",
-                "ivy.task.customFields().textField(ExecutingExpressProcessUtils.TASK_GROUP_ID_KEY).set(String.valueOf(in.actualStepIndex));"
+                "import com.axonivy.utils.axonivyexpress.ExpressConstants;",
+                "",
+                "ivy.task.customFields().textField(ExpressConstants.TASK_GROUP_ID_KEY).set(String.valueOf(in.actualStepIndex));"
               ]
             },
             "sudo" : true
@@ -315,8 +315,8 @@
           "config" : {
             "output" : {
               "code" : [
+                "import com.axonivy.utils.axonivyexpress.utils.ExecutingExpressProcessUtils;",
                 "import gawfs.TaskDef;",
-                "import ch.ivy.addon.portalkit.util.ExecutingExpressProcessUtils;",
                 "",
                 "List<TaskDef> result = ExecutingExpressProcessUtils.getAttributesOfTasks(String.valueOf(in.actualStepIndex), \"currentTask\");",
                 "in.finishedTasks.addAll(result);"
@@ -359,7 +359,7 @@
             }
           },
           "visual" : {
-            "at" : { "x" : 288, "y" : 128 },
+            "at" : { "x" : 288, "y" : 96 },
             "labelOffset" : { "x" : -24, "y" : -2 }
           },
           "connect" : [
@@ -368,189 +368,10 @@
                 "segment" : 0.35,
                 "offset" : { "x" : -15 }
               } },
-            { "id" : "U21-f42", "to" : "U21-f41", "label" : {
+            { "id" : "U21-f25", "to" : "U21-f43", "via" : [ { "x" : 576, "y" : 96 } ], "label" : {
                 "name" : "YES",
-                "segment" : 0.56,
-                "offset" : { "y" : -8 }
-              } }
-          ]
-        }, {
-          "id" : "U21-f25",
-          "type" : "Script",
-          "name" : "Check if creator has task",
-          "config" : {
-            "output" : {
-              "code" : [
-                "int currentUserIndex = in.currentTask.getResponsibles().indexOf(ivy.session.getSessionUser().getMemberName());",
-                "in.doesCreatorHaveTask = currentUserIndex >= 0;",
-                "if (in.doesCreatorHaveTask) {",
-                "  in.currentTask.setResponsibles(in.currentTask.getResponsibles().removeAt(currentUserIndex));",
-                "}"
-              ]
-            }
-          },
-          "visual" : {
-            "at" : { "x" : 680, "y" : 208 },
-            "size" : { "width" : 144 }
-          },
-          "connect" : [
-            { "id" : "U21-f32", "to" : "U21-f27", "var" : "in1" }
-          ]
-        }, {
-          "id" : "U21-f29",
-          "type" : "TaskSwitchEvent",
-          "name" : "create task for user",
-          "config" : {
-            "task" : {
-              "name" : "<%=in1.currentTask.subject%>",
-              "description" : "<%=in1.currentTask.description%>",
-              "category" : "AdhocExpressTasks",
-              "responsible" : {
-                "activator" : "SELF"
-              },
-              "skipTasklist" : true,
-              "expiry" : {
-                "timeout" : "new Duration(0,0,in1.currentTask.untilDays,0,0,0)",
-                "priority" : {
-                  "level" : "HIGH"
-                }
-              },
-              "code" : [
-                "if (in1.originalTaskId != null && in1.originalTaskId > 0) {",
-                "  task.customFields().stringField(ch.ivy.addon.portalkit.enums.AdditionalProperty.ADHOC_EXPRESS_TASK.toString()).set(ch.ivy.addon.portalkit.enums.AdditionalProperty.ADHOC_EXPRESS_TASK.toString());",
-                "}"
-              ]
-            }
-          },
-          "visual" : {
-            "at" : { "x" : 680, "y" : 528 },
-            "size" : { "width" : 28, "height" : 28 },
-            "labelOffset" : { "x" : 81, "y" : 3 }
-          },
-          "connect" : [
-            { "id" : "U21-f31", "to" : "U21-f5", "via" : [ { "x" : 680, "y" : 656 } ], "condition" : "ivp==\"TaskA.ivp\"" }
-          ]
-        }, {
-          "id" : "U21-f27",
-          "type" : "TaskSwitchGateway",
-          "config" : {
-            "tasks" : [ {
-                "id" : "TaskA",
-                "name" : "System: create task for current user",
-                "responsible" : {
-                  "activator" : "SELF"
-                },
-                "skipTasklist" : true
-              }, {
-                "id" : "TaskB",
-                "name" : "System: create tasks for responsibles except current user",
-                "responsible" : {
-                  "activator" : "SYSTEM"
-                }
-              } ]
-          },
-          "visual" : {
-            "at" : { "x" : 680, "y" : 288 }
-          },
-          "connect" : [
-            { "id" : "U21-f38", "to" : "U21-f37", "condition" : "ivp==\"TaskA.ivp\"" },
-            { "id" : "U21-f40", "to" : "U21-f39", "condition" : "ivp==\"TaskB.ivp\"" }
-          ]
-        }, {
-          "id" : "U21-f33",
-          "type" : "Alternative",
-          "name" : [
-            "Does current user",
-            "have task?"
-          ],
-          "config" : {
-            "conditions" : {
-              "U21-f28" : "in.doesCreatorHaveTask"
-            }
-          },
-          "visual" : {
-            "at" : { "x" : 680, "y" : 448 },
-            "labelOffset" : { "x" : -93, "y" : -24 }
-          },
-          "connect" : [
-            { "id" : "U21-f28", "to" : "U21-f29", "label" : {
-                "name" : "YES",
-                "segment" : 0.43,
-                "offset" : { "x" : -16 }
-              } },
-            { "id" : "U21-f36", "to" : "U21-f35", "label" : {
-                "name" : "NO",
-                "segment" : 0.48,
-                "offset" : { "y" : -8 }
-              } }
-          ]
-        }, {
-          "id" : "U21-f35",
-          "type" : "TaskEnd",
-          "visual" : {
-            "at" : { "x" : 808, "y" : 448 }
-          }
-        }, {
-          "id" : "U21-f37",
-          "type" : "Script",
-          "name" : "Hide system task",
-          "config" : {
-            "output" : {
-              "code" : [
-                "import com.axonivy.portal.components.publicapi.TaskAPI;",
-                "TaskAPI.setHidePropertyToHideInPortal(ivy.task);"
-              ]
-            },
-            "sudo" : true
-          },
-          "visual" : {
-            "at" : { "x" : 680, "y" : 352 }
-          },
-          "connect" : [
-            { "id" : "U21-f34", "to" : "U21-f33" }
-          ]
-        }, {
-          "id" : "U21-f39",
-          "type" : "Script",
-          "name" : "Hide system task",
-          "config" : {
-            "output" : {
-              "code" : [
-                "import com.axonivy.portal.components.publicapi.TaskAPI;",
-                "TaskAPI.setHidePropertyToHideInPortal(ivy.task);"
-              ]
-            },
-            "sudo" : true
-          },
-          "visual" : {
-            "at" : { "x" : 488, "y" : 288 }
-          },
-          "connect" : [
-            { "id" : "U21-f30", "to" : "U21-f64" }
-          ]
-        }, {
-          "id" : "U21-f41",
-          "type" : "Alternative",
-          "name" : "Is Adhoc process?",
-          "config" : {
-            "conditions" : {
-              "U21-f26" : "in.workflowType == ch.ivy.gawfs.enums.ProcessType.AD_HOC"
-            }
-          },
-          "visual" : {
-            "at" : { "x" : 680, "y" : 128 },
-            "labelOffset" : { "x" : 39, "y" : -21 }
-          },
-          "connect" : [
-            { "id" : "U21-f26", "to" : "U21-f25", "label" : {
-                "name" : "YES",
-                "segment" : 0.45,
-                "offset" : { "x" : 25 }
-              } },
-            { "id" : "U21-f44", "to" : "U21-f43", "via" : [ { "x" : 936, "y" : 128 } ], "label" : {
-                "name" : "NO",
-                "segment" : 0.51,
-                "offset" : { "x" : 1, "y" : -14 }
+                "segment" : 0.81,
+                "offset" : { "x" : -79, "y" : -17 }
               } }
           ]
         }, {
@@ -575,23 +396,28 @@
                 }
               },
               "code" : [
-                "import ch.ivy.gawfs.enums.ProcessType;",
-                "import ch.ivy.addon.portalkit.util.PredefinedWorkflowUtils;",
-                "task.setCategoryPath(PredefinedWorkflowUtils.generateExpressTaskCategoryPath(ProcessType.REPEAT, in1.workflowName, in1.currentTask.subject));"
+                "import com.axonivy.utils.axonivyexpress.utils.ExecutingExpressProcessUtils;",
+                "import com.axonivy.utils.axonivyexpress.ExpressConstants;",
+                "import com.axonivy.utils.axonivyexpress.utils.PredefinedWorkflowUtils;",
+                "import com.axonivy.utils.axonivyexpress.enums.ProcessType;",
+                "",
+                "task.setCategoryPath(PredefinedWorkflowUtils.generateExpressTaskCategoryPath(ProcessType.REPEAT, in1.workflowName, in1.currentTask.subject));",
+                "",
+                "ExecutingExpressProcessUtils.setIsExpressTask(task);"
               ]
             }
           },
           "visual" : {
-            "at" : { "x" : 936, "y" : 520 },
+            "at" : { "x" : 576, "y" : 520 },
             "size" : { "width" : 28, "height" : 28 },
-            "labelOffset" : { "x" : 29, "y" : 3 }
+            "labelOffset" : { "x" : 74, "y" : 26 }
           },
           "connect" : [
-            { "id" : "U21-f45", "to" : "U21-f5", "via" : [ { "x" : 936, "y" : 656 } ] }
+            { "id" : "U21-f45", "to" : "U21-f5", "via" : [ { "x" : 576, "y" : 656 } ] }
           ]
         } ],
       "visual" : {
-        "at" : { "x" : 526, "y" : 162 }
+        "at" : { "x" : 528, "y" : 160 }
       },
       "connect" : [
         { "id" : "f6", "to" : "f5" }
@@ -625,9 +451,9 @@
       "name" : "which task type?",
       "config" : {
         "conditions" : {
-          "f3" : "(in.currentTask.taskType == ch.ivy.gawfs.enums.TaskType.USER_TASK || in.currentTask.taskType == ch.ivy.gawfs.enums.TaskType.USER_TASK_WITH_EMAIL) && !in.hasRejectedApprovalTask",
-          "f13" : "in.currentTask.taskType == ch.ivy.gawfs.enums.TaskType.EMAIL && !in.hasRejectedApprovalTask",
-          "f15" : "in.currentTask.taskType == ch.ivy.gawfs.enums.TaskType.APPROVAL && !in.hasRejectedApprovalTask"
+          "f3" : "(in.currentTask.taskType == com.axonivy.utils.axonivyexpress.enums.TaskType.USER_TASK || in.currentTask.taskType == com.axonivy.utils.axonivyexpress.enums.TaskType.USER_TASK_WITH_EMAIL) && !in.hasRejectedApprovalTask",
+          "f13" : "in.currentTask.taskType == com.axonivy.utils.axonivyexpress.enums.TaskType.EMAIL && !in.hasRejectedApprovalTask",
+          "f15" : "in.currentTask.taskType == com.axonivy.utils.axonivyexpress.enums.TaskType.APPROVAL && !in.hasRejectedApprovalTask"
         }
       },
       "visual" : {
@@ -659,21 +485,15 @@
           "config" : {
             "output" : {
               "code" : [
+                "import com.axonivy.utils.axonivyexpress.enums.TaskType;",
                 "import ch.ivyteam.ivy.workflow.ITask;",
-                "import ch.ivy.gawfs.enums.TaskType;",
                 "import gawfs.TaskDef;",
                 "",
                 "",
                 "// Add review task to defined tasks",
                 "TaskDef taskDef = new gawfs.TaskDef();",
                 "taskDef.taskType = TaskType.FINAL_REVIEW;",
-                "if(in.isAdhocProcess) {",
-                "  ITask originalTask = ivy.wf.findTask(in.originalTaskId);",
-                "  taskDef.subject = originalTask.names().current();",
-                "}",
-                "else {",
-                "  taskDef.subject = TaskType.FINAL_REVIEW.getLabel();",
-                "}",
+                "taskDef.subject = TaskType.FINAL_REVIEW.getLabel();",
                 "in.definedTasks.add(taskDef);",
                 "",
                 "// Initialize steps",
@@ -737,10 +557,10 @@
           "config" : {
             "output" : {
               "code" : [
-                "import ch.ivy.addon.portalkit.service.ExpressProcessService;",
-                "import ch.ivy.gawfs.enums.ProcessType;",
-                "import ch.ivy.addon.portalkit.bo.ExpressProcess;",
-                "import ch.ivy.gawfs.ExpressProcessUtils;",
+                "import com.axonivy.utils.axonivyexpress.utils.ExpressProcessUtils;",
+                "import com.axonivy.utils.axonivyexpress.entity.ExpressProcess;",
+                "import com.axonivy.utils.axonivyexpress.enums.ProcessType;",
+                "import com.axonivy.utils.axonivyexpress.service.ExpressProcessService;",
                 "",
                 "ExpressProcess workflow = ExpressProcessService.getInstance().findById(in.workflowID) as ExpressProcess;",
                 "",
@@ -771,18 +591,18 @@
           "config" : {
             "output" : {
               "code" : [
-                "import ch.ivy.addon.portalkit.util.PredefinedWorkflowUtils;",
-                "import ch.ivy.addon.portalkit.constant.CustomFields;",
+                "import com.axonivy.portal.components.publicapi.TaskAPI;",
+                "import com.axonivy.utils.axonivyexpress.ExpressConstants;",
+                "import com.axonivy.utils.axonivyexpress.utils.PredefinedWorkflowUtils;",
                 "",
-                "// Set task info",
-                "ivy.task.setName(ivy.cms.co(\"/Dialogs/Tasks/ProcessLoaded/TaskName\"));",
-                "ivy.task.setDescription(ivy.cms.co(\"/Dialogs/Tasks/ProcessLoaded/TaskName\"));",
+                "// Hide the setting task",
+                "TaskAPI.setHidePropertyToHideInPortal(ivy.task);",
                 "",
                 "// Set case info",
                 "ivy.case.setName(in.workflowName);",
                 "ivy.case.setDescription(in.workflowDescription);",
                 "ivy.case.setCategoryPath(PredefinedWorkflowUtils.generateExpressCaseCategoryPath(in.workflowType, in.workflowName));",
-                "ivy.case.customFields().stringField(CustomFields.IS_EXPRESS_PROCESS).set(\"true\");"
+                "ivy.case.customFields().stringField(ExpressConstants.IS_EXPRESS_PROCESS).set(\"true\");"
               ]
             },
             "sudo" : true
@@ -830,7 +650,8 @@
           "config" : {
             "output" : {
               "code" : [
-                "import ch.ivy.gawfs.mail.InformationMailSender;",
+                "import com.axonivy.utils.axonivyexpress.mail.InformationMailSender;",
+                "",
                 "InformationMailSender sender = new InformationMailSender();",
                 "sender.send(in.currentTask.email);"
               ]
@@ -858,7 +679,7 @@
           "type" : "DialogCall",
           "name" : "final workflow review",
           "config" : {
-            "dialog" : "ch.ivy.gawfs.workflowExecution.FinalReviewForm:start(java.util.List<gawfs.TaskDef>,java.util.List<String>,Integer)",
+            "dialog" : "com.axonivy.utils.axonivyexpress.workflowExecution.FinalReviewForm:start(java.util.List<gawfs.TaskDef>,java.util.List<String>,Integer)",
             "call" : {
               "map" : {
                 "param.finishedTasks" : "in.finishedTasks",
@@ -868,84 +689,11 @@
             }
           },
           "visual" : {
-            "at" : { "x" : 1072, "y" : 192 },
+            "at" : { "x" : 544, "y" : 192 },
             "size" : { "width" : 128 }
           },
           "connect" : [
             { "id" : "S31-f1", "to" : "S31-g1" }
-          ]
-        }, {
-          "id" : "S31-f33",
-          "type" : "Alternative",
-          "name" : "use express endpage?",
-          "config" : {
-            "conditions" : {
-              "S31-f32" : "in.useExpressEndPage"
-            }
-          },
-          "visual" : {
-            "at" : { "x" : 688, "y" : 192 },
-            "labelOffset" : { "x" : 6, "y" : -15 }
-          },
-          "connect" : [
-            { "id" : "S31-f32", "to" : "S31-f28", "label" : {
-                "name" : "yes",
-                "segment" : 0.4,
-                "offset" : { "y" : -10 }
-              } },
-            { "id" : "S31-f35", "to" : "S31-f21", "via" : [ { "x" : 688, "y" : 256 }, { "x" : 1072, "y" : 256 } ], "label" : {
-                "name" : "no",
-                "segment" : 1.39,
-                "offset" : { "x" : -2, "y" : -12 }
-              } }
-          ]
-        }, {
-          "id" : "S31-f29",
-          "type" : "Script",
-          "name" : "read express end page setting",
-          "config" : {
-            "output" : {
-              "code" : [
-                "import ch.ivy.addon.portalkit.enums.GlobalVariable;",
-                "import ch.ivy.addon.portalkit.service.GlobalSettingService;",
-                "String useExpressEndPage = new GlobalSettingService().findGlobalSettingValue(GlobalVariable.EXPRESS_END_PAGE);",
-                "",
-                "in.useExpressEndPage = useExpressEndPage.isEmpty()? true : Boolean.valueOf(useExpressEndPage);"
-              ]
-            }
-          },
-          "visual" : {
-            "at" : { "x" : 520, "y" : 192 },
-            "size" : { "width" : 176 }
-          },
-          "connect" : [
-            { "id" : "S31-f34", "to" : "S31-f33" }
-          ]
-        }, {
-          "id" : "S31-f28",
-          "type" : "Script",
-          "name" : "Set end page",
-          "config" : {
-            "output" : {
-              "code" : [
-                "import ch.ivy.addon.portalkit.constant.CustomFields;",
-                "import java.util.Map;",
-                "import ch.ivy.addon.portalkit.enums.PortalLibrary;",
-                "import java.util.Arrays;",
-                "import com.axonivy.portal.components.service.IvyAdapterService;",
-                "",
-                "Map result = IvyAdapterService.startSubProcessInApplication(\"handleEndPage()\", null);",
-                "String callbackUrl = result.get(\"callbackUrl\") as String;",
-                "ivy.task.customFields().stringField(CustomFields.EXPRESS_END_PAGE_URL.toString()).set(callbackUrl);"
-              ]
-            },
-            "sudo" : true
-          },
-          "visual" : {
-            "at" : { "x" : 864, "y" : 192 }
-          },
-          "connect" : [
-            { "id" : "S31-f22", "to" : "S31-f21" }
           ]
         }, {
           "id" : "S31-f7",
@@ -954,11 +702,17 @@
           "config" : {
             "task" : {
               "name" : "<%=in1.workflowName%>: <%=in1.currentTask.subject%>",
-              "description" : "<%=ivy.cms.co(\"/Dialogs/Tasks/FinalWorkflowTask/taskDescription\", java.util.Arrays.asList(in1.workflowName))%>",
+              "description" : "<%=ivy.cms.co(\"/Dialogs/Tasks/FinalReview/TaskDescription\", java.util.Arrays.asList(in1.workflowName))%>",
               "responsible" : {
                 "activator" : "CREATOR"
               },
-              "code" : "task.setCategoryPath(ch.ivy.addon.portalkit.util.PredefinedWorkflowUtils.generateExpressTaskCategoryPath(in1.workflowType, in1.workflowName, in1.currentTask.subject));"
+              "code" : [
+                "import com.axonivy.utils.axonivyexpress.utils.ExecutingExpressProcessUtils;",
+                "import com.axonivy.utils.axonivyexpress.utils.PredefinedWorkflowUtils;",
+                "",
+                "task.setCategoryPath(PredefinedWorkflowUtils.generateExpressTaskCategoryPath(in1.workflowType, in1.workflowName, in1.currentTask.subject));",
+                "ExecutingExpressProcessUtils.setIsExpressTask(task);"
+              ]
             }
           },
           "visual" : {
@@ -966,7 +720,7 @@
             "description" : "inform user about flow and if approved or denied"
           },
           "connect" : [
-            { "id" : "S31-f13", "to" : "S31-f29", "condition" : "ivp==\"TaskA.ivp\"" }
+            { "id" : "S31-f2", "to" : "S31-f21" }
           ]
         }, {
           "id" : "S31-f24",
@@ -1004,16 +758,16 @@
           "type" : "EmbeddedEnd",
           "name" : "out 1",
           "visual" : {
-            "at" : { "x" : 1200, "y" : 192 },
+            "at" : { "x" : 728, "y" : 192 },
             "labelOffset" : { "x" : 21, "y" : 25 }
           },
-          "parentConnector" : "f25"
+          "parentConnector" : "f12"
         } ],
       "visual" : {
-        "at" : { "x" : 930, "y" : 160 }
+        "at" : { "x" : 928, "y" : 160 }
       },
       "connect" : [
-        { "id" : "f25", "to" : "f23" }
+        { "id" : "f12", "to" : "f1" }
       ]
     }, {
       "id" : "f16",
@@ -1026,7 +780,7 @@
             { "name" : "definedTasks", "type" : "List<gawfs.TaskDef>", "desc" : "" },
             { "name" : "processName", "type" : "String", "desc" : "" },
             { "name" : "processDescription", "type" : "String", "desc" : "" },
-            { "name" : "processType", "type" : "ch.ivy.gawfs.enums.ProcessType", "desc" : "" },
+            { "name" : "processType", "type" : "com.axonivy.utils.axonivyexpress.enums.ProcessType", "desc" : "" },
             { "name" : "processID", "type" : "String", "desc" : "" },
             { "name" : "isAdhocProcess", "type" : "Boolean", "desc" : "" },
             { "name" : "originalTaskId", "type" : "Long", "desc" : "" }
@@ -1055,23 +809,20 @@
       "name" : "has next task?",
       "config" : {
         "conditions" : {
-          "f22" : "in.currentTask.taskType == ch.ivy.gawfs.enums.TaskType.FINAL_REVIEW"
+          "f8" : "in.currentTask.taskType == com.axonivy.utils.axonivyexpress.enums.TaskType.FINAL_REVIEW",
+          "f2" : ""
         }
       },
       "visual" : {
         "at" : { "x" : 682, "y" : 162 }
       },
       "connect" : [
-        { "id" : "f22", "to" : "f12", "label" : {
-            "name" : "no",
-            "segment" : 0.11,
-            "offset" : { "y" : -10 }
-          } },
         { "id" : "f2", "to" : "f9", "via" : [ { "x" : 682, "y" : 66 } ], "label" : {
             "name" : "yes",
             "segment" : 0.51,
             "offset" : { "x" : 14 }
-          } }
+          } },
+        { "id" : "f8", "to" : "S31" }
       ]
     }, {
       "id" : "U20",
@@ -1125,10 +876,11 @@
           "config" : {
             "output" : {
               "code" : [
-                "import ch.ivy.addon.portalkit.ivydata.utils.ServiceUtilities;",
+                "import com.axonivy.utils.axonivyexpress.service.SecurityService;",
+                "",
                 "",
                 "String responsibleName = in.currentTask.getResponsibles().get(in.taskSplittingCounter);",
-                "in.responsible = ServiceUtilities.findSecurityMemberByName(responsibleName);"
+                "in.responsible = SecurityService.newInstance().findSecurityMemberByName(responsibleName);"
               ]
             }
           },
@@ -1157,12 +909,11 @@
                 }
               },
               "code" : [
-                "import ch.ivy.addon.portalkit.util.PredefinedWorkflowUtils;",
-                "import ch.ivy.addon.portalkit.enums.AdditionalProperty;",
-                "if (in1.originalTaskId != null && in1.originalTaskId > 0) {",
-                "  task.customFields().stringField(AdditionalProperty.ADHOC_EXPRESS_TASK.toString()).set(AdditionalProperty.ADHOC_EXPRESS_TASK.toString());",
-                "}",
-                "task.setCategoryPath(PredefinedWorkflowUtils.generateExpressTaskCategoryPath(in1.workflowType, in1.workflowName, in1.currentTask.subject));"
+                "import com.axonivy.utils.axonivyexpress.utils.ExecutingExpressProcessUtils;",
+                "import com.axonivy.utils.axonivyexpress.utils.PredefinedWorkflowUtils;",
+                "",
+                "task.setCategoryPath(PredefinedWorkflowUtils.generateExpressTaskCategoryPath(in1.workflowType, in1.workflowName, in1.currentTask.subject));",
+                "ExecutingExpressProcessUtils.setIsExpressTask(task);"
               ]
             }
           },
@@ -1192,18 +943,17 @@
                 }
               },
               "code" : [
-                "import ch.ivy.addon.portalkit.util.PredefinedWorkflowUtils;",
-                "import ch.ivy.addon.portalkit.enums.AdditionalProperty;",
-                "if (in1.originalTaskId != null && in1.originalTaskId > 0) {",
-                "  task.customFields().stringField(AdditionalProperty.ADHOC_EXPRESS_TASK.toString()).set(AdditionalProperty.ADHOC_EXPRESS_TASK.toString());",
-                "}",
-                "task.setCategoryPath(PredefinedWorkflowUtils.generateExpressTaskCategoryPath(in1.workflowType, in1.workflowName, in1.currentTask.subject));"
+                "import com.axonivy.utils.axonivyexpress.utils.ExecutingExpressProcessUtils;",
+                "import com.axonivy.utils.axonivyexpress.utils.PredefinedWorkflowUtils;",
+                "",
+                "task.setCategoryPath(PredefinedWorkflowUtils.generateExpressTaskCategoryPath(in1.workflowType, in1.workflowName, in1.currentTask.subject));",
+                "ExecutingExpressProcessUtils.setIsExpressTask(task);"
               ]
             }
           },
           "visual" : {
             "at" : { "x" : 411, "y" : 413 },
-            "labelOffset" : { "x" : 80, "y" : 10 }
+            "labelOffset" : { "x" : 81, "y" : 9 }
           },
           "connect" : [
             { "id" : "U20-f9", "to" : "U20-f22", "via" : [ { "x" : 411, "y" : 480 }, { "x" : 320, "y" : 480 } ] }
@@ -1267,9 +1017,9 @@
           "config" : {
             "output" : {
               "code" : [
+                "import com.axonivy.utils.axonivyexpress.utils.ExecutingExpressProcessUtils;",
                 "import gawfs.TaskDef;",
                 "import gawfs.ApprovalTaskResult;",
-                "import ch.ivy.addon.portalkit.util.ExecutingExpressProcessUtils;",
                 "",
                 "in.approvalTaskResults.addAll(ExecutingExpressProcessUtils.getAttributesOfTasks(String.valueOf(in.actualStepIndex), \"approvalTaskResult\"));",
                 "",
@@ -1302,8 +1052,9 @@
           "config" : {
             "output" : {
               "code" : [
-                "import ch.ivy.addon.portalkit.util.ExecutingExpressProcessUtils;",
-                "ivy.task.customFields().textField(ExecutingExpressProcessUtils.TASK_GROUP_ID_KEY).set(String.valueOf(in.actualStepIndex));"
+                "import com.axonivy.utils.axonivyexpress.ExpressConstants;",
+                "",
+                "ivy.task.customFields().textField(ExpressConstants.TASK_GROUP_ID_KEY).set(String.valueOf(in.actualStepIndex));"
               ]
             },
             "sudo" : true
@@ -1319,7 +1070,7 @@
           "type" : "DialogCall",
           "name" : "Approval Form",
           "config" : {
-            "dialog" : "ch.ivy.gawfs.workflowExecution.ApprovalForm:start(java.util.List<gawfs.TaskDef>,List<String>,Integer,Boolean,Long)",
+            "dialog" : "com.axonivy.utils.axonivyexpress.workflowExecution.ApprovalForm:start(java.util.List<gawfs.TaskDef>,List<String>,Integer,Boolean,Long)",
             "call" : {
               "map" : {
                 "param.finishedTasks" : "in.finishedTasks",
@@ -1423,68 +1174,6 @@
       },
       "connect" : [
         { "id" : "f21", "to" : "f32", "condition" : "ivp==\"TaskA.ivp\"" }
-      ]
-    }, {
-      "id" : "f12",
-      "type" : "Alternative",
-      "name" : "Is Adhoc Task?",
-      "config" : {
-        "conditions" : {
-          "f29" : "in.isAdhocProcess"
-        }
-      },
-      "visual" : {
-        "at" : { "x" : 776, "y" : 160 },
-        "labelOffset" : { "x" : 14, "y" : 42 }
-      },
-      "connect" : [
-        { "id" : "f29", "to" : "f28", "via" : [ { "x" : 776, "y" : 64 } ], "label" : {
-            "name" : "Yes",
-            "segment" : 1.41,
-            "offset" : { "y" : -13 }
-          } },
-        { "id" : "f8", "to" : "S31", "label" : {
-            "name" : "No",
-            "segment" : 0.44,
-            "offset" : { "y" : -13 }
-          } }
-      ]
-    }, {
-      "id" : "f23",
-      "type" : "Alternative",
-      "visual" : {
-        "at" : { "x" : 1056, "y" : 160 }
-      },
-      "connect" : [
-        { "id" : "f24", "to" : "f1" }
-      ]
-    }, {
-      "id" : "f28",
-      "type" : "Script",
-      "name" : "Display original adhoc task",
-      "config" : {
-        "output" : {
-          "code" : [
-            "import com.axonivy.portal.components.publicapi.TaskAPI;",
-            "import ch.ivy.addon.portalkit.util.TaskUtils;",
-            "import ch.ivyteam.ivy.workflow.ITask;",
-            "",
-            "if(in.isAdhocProcess){",
-            "  ITask originalTask = ivy.wf.findTask(in.originalTaskId);",
-            "  if(originalTask != null){",
-            "    TaskAPI.removeHidePropertyToDisplayInPortal(originalTask);",
-            "    TaskUtils.resetTask(originalTask);",
-            "  }",
-            "}"
-          ]
-        }
-      },
-      "visual" : {
-        "at" : { "x" : 920, "y" : 64 },
-        "size" : { "width" : 160 }
-      },
-      "connect" : [
-        { "id" : "f27", "to" : "f23", "via" : [ { "x" : 1056, "y" : 64 } ] }
       ]
     }, {
       "id" : "f31",

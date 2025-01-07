@@ -1,0 +1,206 @@
+ch.ivy.addon.portal.generic:
+  CaseDetailsTemplate:
+    noCaseId: Aucun numéro de dossier n'a été indiqué
+Dialogs:
+  Tasks:
+    FinalReview:
+      TaskDescription: Le workflow {0} a été terminé!
+      TaskName: Finales chèques
+    ProcessLoaded:
+      TaskName: Tâche pour la configuration Adhoc
+    WorkflowProperties:
+      TaskDescription: Veuillez configurer les propriétés du workflow !
+      TaskName: Propriétés de workflow
+  com:
+    axonivy:
+      utils:
+        axonivyexpress:
+          ExpressManagement:
+            Create: Créer
+            DeleteExpressProcessMessage: Êtes-vous sûr de vouloir supprimer ce flux de travail ?
+            DeployButton: Déployer
+            DeployMessage: 'Déploiement des processus en cours ... '
+            ExpressExportName: AXONIVY_Dataset_ExpressWorkflow_{0}.json
+            ExpressManagement: |
+              Gestion Express
+            Import: Importer
+            ImportDialogHeaderTitle: Choisissez un Dataset de workflow Express, il doit s'agir d'un fichier JSON.
+            ProcessNotReadyToExecute: Ce processus n'est pas prêt à être exécuté. Veuillez terminer la définition du processus.
+          FormDefinition:
+            AllowedFiletypes: Types de fichier autorisés
+            BroadFooterArea: Zone de bas de page large
+            BroadHeaderArea: En-tête large
+            CancelCreateForm: Voulez-vous vraiment annuler? Toutes vos données seront perdues!
+            CheckboxFields: Champs de cases à cocher
+            CreateField: Créer
+            DataProvider: Fournisseur de données
+            ElementLabel: Label
+            FieldSetAvailableFormelements: Éléments de formulaire
+            FieldSetFormelementsPlacing: Placer les éléments de formulaire
+            FieldSetPreviewArea: Pré-visualiser le formulaire
+            FinishWorkflow: Fin de workflow
+            InputArea: Zone de texte
+            InputCheckbox: Case d’option à cocher
+            InputField: Champ de texte
+            InputFileUpload: Téléchargement de fichier
+            InputOptions: Bouton radio
+            InputType: Type d’entrée
+            LeftColumn: Colonne de gauche
+            MaxLabelLength: '35'
+            MaxOptionsLength: '20'
+            NoCheckboxFieldYet: Aucun type de champ de case d’option à cocher n’est pour l’instant défini
+            NoDataProvider: Fournisseur de données statiques spéciales
+            NoFormelementsAvailable: Aucun élément de formulaire n’est disponible !
+            NoOptionboxFieldsYet: Aucun type de case d’’option à cocher n’est pour l’instant défini
+            NumberOfFiles: Nombre de fichiers
+            NumberOfRows: Nombre de lignes
+            OptionboxFields: Boutons radio
+            Preview: Aperçu
+            RightColumn: Colonne de droite
+          WorkflowDefinition:
+            AbleToStart: Capable de commencer
+            AddProcessStep: Ajouter une étape de processus
+            AddUserOrRole: 'Veuillez sélectionner un groupe ou un utilisateur :'
+            ChangeSettingWarning: Toutes les tâches définies seront supprimées. Êtes-vous sûr?
+            CreateOwn: Créer propre
+            DefaultTemplate: Modèle par défaut
+            DeleteProcessStep: Supprimer l’étape de processus
+            DueTimeInDays: Expiration en jours
+            EndStep: Fin
+            ExecuteWorkflow: Lancer le workflow directement
+            FormDefinitionStep: Définition du formulaire
+            OneTime: Une fois
+            ProcessDescription: Description du processus
+            ProcessDetails: Propriétés du processus
+            ProcessName: Nom du processus
+            ProcessOwner: Propriétaire du processus
+            ProcessStep: Étape du processus
+            ProcessType: Type de processus
+            Repeatable: Rrépétitif
+            SaveWorkflow: Sauvegarder le workflow
+            SelectedAssigneesFieldSet: Cessionnaires sélectionnés
+            TaskDescription: Description de la tâche
+            TaskName: Nom de tâche
+            TaskType: Type de tâche
+            ToGroup: Groupe
+            ToUser: Utilisateur
+            UntilDaysTooltip: Après expiration, la tâche sera assignée au role “Everybody” et sa priorité sera passée en “haute”.
+            UseDefault: Coutume
+            UserInterface: Iinterface utilisateur
+            WorkflowPropertiesStep: Propriétés du workflow !
+          components:
+            ApprovalResult:
+              ApprovalResult: Résultat d'approbation
+              ApprovalStatus: Statut d'approbation
+            Email:
+              Attachment: Pièce jointe
+              EmailAddress: Adresse e-mail
+              EmailText: Texte d'email
+              FileFunctions: Fonctions
+              Filename: Nom du fichier
+              InvalidEmailFormat: Format d'e-mail non valide
+              NoFiles: Aucun fichier trouvé !
+              ResponseTo: Réponse à
+              Subject: Sujet
+            FinishedUserTasksForm:
+              Applicant: Demandeur
+              FinishedTasks: Tãches finies
+              FormDetails: Détails du formulaire
+            IconSelection:
+              IconLinkTooltip: Cliquez pour changer d'icône
+              IconSelectionDialogHeader: Choisir une icône
+              SeachIconByNamePlaceHolder: Recherche Icon par nom
+          generic:
+            EndPage:
+              Subtitle: La dernière tâche a été accomplie avec succès
+              Title: Tâche terminée avec succès!
+            ExpressBusinessView:
+              ExpressNoItem: Pas de tâche Express terminée
+              ExpressNoItemDescription: Les résultats des tâches terminées sont affichés ici
+              ExpressWorkflowName: 'Détails de cas #{0}'
+          workflowExecution:
+            ApprovalForm:
+              Approve: Approuver !
+              CommentLabel: Commentaire de l'approbateur
+              Reject: Refuser !
+            FinalReviewForm:
+              Noticed: Prendre acte!
+            UserTaskForm:
+              Formular: Formulaire
+            UserTaskWithMailForm:
+              RequestTabTitle: Demande
+  workflowCreation:
+    ProcessName: Créer un flux de travail Express
+Labels:
+  Add: Ajouter
+  Back: Retour
+  Change: Modifier
+  Close: Fermer
+  Comment: Commentaire
+  ConfirmationHeaderText: Êtes-vous sûr ?
+  Delete: Supprimer
+  Edit: Editer
+  Email: Courriel
+  Enums:
+    ExpressMessageType:
+      ERROR: Erreur
+      FAILED: Echoué
+      IMPORT_EXPRESS_PROCESSES: Importer les processus express
+      IMPORT_RESULT: Résultat de l'importation
+      IMPORT_STATUS: Statut d'importation
+      INFO: Info
+      SUCCESSFUL: Succès
+      WARNING: Attention
+    FormElementType:
+      CHECKBOX: Case d’option à cocher
+      FILE_UPLOAD: Téléchargement de fichier
+      INPUT_DATE: Calendrier
+      INPUT_NUMBER: Champ numérique
+      INPUT_TEXT: Champ de texte
+      INPUT_TEXT_AREA: Zone de texte
+      RADIO_BUTTON: Case d’option à cocher
+    ProcessType:
+      AD_HOC: Une fois
+      REPEAT: Rrépétitif
+    TaskType:
+      APPROVAL: Approbation
+      EMAIL: email d'information
+      FINAL_REVIEW: Revue
+      USER_TASK: Tâche
+      USER_TASK_WITH_EMAIL: Tâche avec email
+    UploadFileFormat:
+      EXCEL: Excel (xls/xlsx)
+      OTHERS: Autres formats de fichier
+      PDF: PDF (pdf)
+      WORD: Word (doc/docx)
+  Export: Exporter
+  Fullname: Nom complet
+  Icon: Icône
+  Messages:
+    DeleteSucceed: Le fichier a été supprimé avec succès
+    DeployErrorLog: Erreur lors du déploiement {0}
+    DeploymentFinishedLog: Processus du fichier {0} déployé avec succès dans Portal en {1}ms
+    DuplicateProcessNameLog: '- Nom du processus dupliqué {0}'
+    EndDeployLog: Déploiement Express terminé
+    ExecuteWorkflowWarning: Vous devez effectuer toutes les tâches avant de pouvoir exécuter ce workflow
+    FileEmptyMessage: Le fichier est vide
+    FileUploadElementPosition: Le fichier à télécharger ne peut être placé qu’en en-tête ou en pied de page
+    InstallProcessFailedLog: '- Le déploiement du processus {0} a échoué'
+    InstalledProcessLog: Processus installé {0}
+    InvalidVersionLog: Version non supportée {0} d'Express
+    MaximumFileUploadElement: Il existe déjà un élément de téléchargement de fichiers
+    ProcessNameExists: Ce nom de processus a été utilisé avant
+    StartDeployLog: Commencez à déployer le(s) processus Express du fichier {0} vers Portal
+    StartDeployProcessLog: Commencer à déployer le processus {0}
+    ValidateProcessCoOwnerLog: '- Valider le processus Copropriétaire de {0}, l''utilisateur {1} n''est pas disponible dans le système'
+    ValidateProcessOwnerLog: '- Valider le propriétaire du processus de {0}, l''utilisateur {1} n''est pas disponible dans le système, changer le propriétaire du processus pour {2}.'
+    ValidateProcessPermissionLog: '- Valider la permission de processus de {0}, l''utilisateur {1} n''est pas disponible dans le système'
+    ValidateTaskDefUserLog: '- Valider les responsabilités de la définition de tâche de {0}, l''utilisateur {1} n''est pas disponible dans le système'
+    VersionLog: 'Version de l''Express : {0}'
+  Next: Suivant
+  NoSelection: Aucune sélection
+  Ok: Ok
+  Save: Enregistrer
+  Select: Sélectionner
+  Start: Démarrage
+  Task: Tâche

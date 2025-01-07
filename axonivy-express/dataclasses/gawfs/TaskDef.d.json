@@ -1,0 +1,74 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "TaskDef",
+  "namespace" : "gawfs",
+  "isBusinessCaseData" : true,
+  "fields" : [ {
+    "name" : "id",
+    "type" : "Integer",
+    "comment" : "Identifier",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "responsibles",
+    "type" : "java.util.List<String>",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "subject",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "prio",
+    "type" : "Number",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "description",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "position",
+    "type" : "Integer",
+    "comment" : "Position of defined task in the express process",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "untilDays",
+    "type" : "Number",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "taskType",
+    "type" : "com.axonivy.utils.axonivyexpress.enums.TaskType",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "responsibleDisplayName",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "dynaFormController",
+    "type" : "com.axonivy.utils.axonivyexpress.controller.DynaFormController",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "dragAndDropController",
+    "type" : "com.axonivy.utils.axonivyexpress.bean.DragAndDropController",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "counter",
+    "type" : "Integer",
+    "comment" : "counter for split tasks purpose",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "email",
+    "type" : "com.axonivy.utils.axonivyexpress.entity.ExpressUserEmail",
+    "comment" : "Email information for taskType=EMAIL",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "approvalResultList",
+    "type" : "java.util.List<gawfs.ApprovalTaskResult>",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "actualApplicantName",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "actualApplicant",
+    "type" : "ch.ivyteam.ivy.security.IUser"
+  } ]
+}
