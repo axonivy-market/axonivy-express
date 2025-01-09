@@ -723,3 +723,26 @@ _:-ms-fullscreen, :root .pe-dynaform-cell.input-text-field {
   display: inline-block;
   width: 85%;
 }
+
+/* Business details page */
+.no-item-panel .si {
+  font-size: 8rem;
+  color: hsl(180, 1%, 85%);
+  display: block;
+  text-align: center;
+}
+
+.no-item-panel .no-item-header {
+  font-size: 2rem;
+  margin-top: 20px;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.no-item-panel .no-item-detail {
+  margin-top: 10px;
+  text-align: center;
+  display: block;
+  width: 100%;
+}

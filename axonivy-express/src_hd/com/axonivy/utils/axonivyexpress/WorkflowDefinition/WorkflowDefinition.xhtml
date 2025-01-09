@@ -20,7 +20,13 @@
       <h:outputStylesheet library="css" name="express.css" />
       <h:outputStylesheet library="css" name="utility.css" />
 
+
+      <div class="w-full mb-2">
+        <h3 class="text-3xl font-light">#{workflowDefinitionBean.getTitle(data.data.processName)}</h3>
+      </div>
+
       <h:form id="form" styleClass="express-work-flow definition-page">
+
         <div id="error-container" class="express-error-container">
           <p:messages id="error-messages" showDetail="false" closable="true" globalOnly="true">
             <p:autoUpdate />

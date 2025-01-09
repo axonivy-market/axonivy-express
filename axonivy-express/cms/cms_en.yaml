@@ -131,6 +131,7 @@ Dialogs:
   workflowCreation:
     ProcessName: Create Express Workflow
 Labels:
+  Actions: Actions
   Add: Add
   Back: Back
   Change: Change
@@ -199,6 +200,7 @@ Labels:
   Next: Next
   NoSelection: No Selection
   Ok: Ok
+  Permissions: Permissions
   Save: Save
   Select: Select
   Start: Start

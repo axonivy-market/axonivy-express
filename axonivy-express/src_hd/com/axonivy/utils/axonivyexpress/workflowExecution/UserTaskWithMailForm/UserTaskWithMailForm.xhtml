@@ -8,7 +8,8 @@
     <ui:define name="content">
       <script type="text/javascript">
         window.taskName = "#{userTaskFormBean.titleWithEmail}";
-        window.processSteps = #{data.executePredefinedWorkflowData.steps};
+        var steps = '#{data.executePredefinedWorkflowData.steps}';
+        window.processSteps = steps.substring(1, steps.length - 1);
         window.currentProcessStep = #{data.executePredefinedWorkflowData.actualStepIndex};
       </script>
 

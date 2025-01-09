@@ -132,6 +132,7 @@ Dialogs:
   workflowCreation:
     ProcessName: Créer un flux de travail Express
 Labels:
+  Actions: Actions
   Add: Ajouter
   Back: Retour
   Change: Modifier
@@ -200,6 +201,7 @@ Labels:
   Next: Suivant
   NoSelection: Aucune sélection
   Ok: Ok
+  Permissions: Permissions
   Save: Enregistrer
   Select: Sélectionner
   Start: Démarrage

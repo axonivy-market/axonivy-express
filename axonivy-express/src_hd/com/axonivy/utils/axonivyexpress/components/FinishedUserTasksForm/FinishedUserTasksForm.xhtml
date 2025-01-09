@@ -14,7 +14,7 @@
 </cc:interface>
 
 <cc:implementation>
-  <h:outputLabel id="finished-task-label" styleClass="finished-task-label ui-g-12" for="approval-result"
+  <h:outputLabel id="finished-task-label" styleClass="finished-task-label ui-g-12 font-bold" for="approval-result"
     value="#{ivy.cms.co('/Dialogs/com/axonivy/utils/axonivyexpress/components/FinishedUserTasksForm/FinishedTasks')}" />
   <ui:repeat id="approval-result" var="wfTask" value="#{cc.attrs.finishedTasks}" varStatus="status">
     <p:fieldset id="finished-task-fieldset" styleClass="finished-task-fieldset express-fieldset ui-g MarTop10" toggleable="true"

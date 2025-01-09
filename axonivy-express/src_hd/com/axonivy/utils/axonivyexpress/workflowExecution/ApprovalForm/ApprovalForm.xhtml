@@ -8,7 +8,8 @@
     <ui:define name="content">
       <script type="text/javascript">
         window.taskName = "#{approvalFormBean.title}";
-        window.processSteps = #{data.steps};
+        var steps = '#{data.steps}';
+        window.processSteps = steps.substring(1, steps.length - 1);
         window.currentProcessStep = #{data.actualStepIndex};
       </script>
 

@@ -1,5 +1,6 @@
 package com.axonivy.utils.axonivyexpress.bean;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,6 +21,7 @@ import org.primefaces.model.file.UploadedFile;
 
 import com.axonivy.portal.components.publicapi.PortalNavigatorInFrameAPI;
 import com.axonivy.portal.components.util.FacesMessageUtils;
+import com.axonivy.portal.components.util.ProcessStartUtils;
 import com.axonivy.portal.components.util.SecurityMemberDisplayNameUtils;
 import com.axonivy.utils.axonivyexpress.entity.ExpressProcess;
 import com.axonivy.utils.axonivyexpress.enums.ExpressMessageType;
@@ -89,9 +91,15 @@ public class ExpressManagementBean implements Serializable {
     ExpressNavigator.navigateToCreateWorkflow();
   }
 
-  public void startExpressProcess(ExpressProcess process) {
+  public void startExpressProcessWithinPortal(ExpressProcess process)
+      throws IOException {
     String startLink = ExpressNavigator.getExpressStartLink(process);
     PortalNavigatorInFrameAPI.navigateToUrl(startLink);
+  }
+
+  public void startExpressProcess(ExpressProcess process) throws IOException {
+    String startLink = ExpressNavigator.getExpressStartLink(process);
+    ProcessStartUtils.redirect(startLink);
   }
 
   public String renderPermissions(ExpressProcess process) {

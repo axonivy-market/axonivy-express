@@ -536,7 +536,7 @@
           "type" : "EmbeddedEnd",
           "name" : "out 1",
           "visual" : {
-            "at" : { "x" : 640, "y" : 416 },
+            "at" : { "x" : 848, "y" : 416 },
             "labelOffset" : { "x" : -6, "y" : 38 }
           },
           "parentConnector" : "f10"
@@ -612,7 +612,32 @@
             "size" : { "width" : 160 }
           },
           "connect" : [
-            { "id" : "S11-f1", "to" : "S11-g1" }
+            { "id" : "S11-f3", "to" : "S11-f1" }
+          ]
+        }, {
+          "id" : "S11-f1",
+          "type" : "Script",
+          "name" : "Set business details",
+          "config" : {
+            "output" : {
+              "code" : [
+                "import com.axonivy.portal.components.dto.BusinessDetailsDTO;",
+                "import com.axonivy.portal.components.publicapi.BusinessDetailsAPI;",
+                "",
+                "",
+                "BusinessDetailsAPI.create(BusinessDetailsDTO.builder()",
+                "  .path(\"Start Processes/ExpressStart/startExpressBusinessView.ivp\")",
+                "  .iCase(ivy.case)",
+                "  .isEmbedInFrame(true)",
+                "  .build());"
+              ]
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 688, "y" : 416 }
+          },
+          "connect" : [
+            { "id" : "S11-f5", "to" : "S11-g1" }
           ]
         } ],
       "visual" : {

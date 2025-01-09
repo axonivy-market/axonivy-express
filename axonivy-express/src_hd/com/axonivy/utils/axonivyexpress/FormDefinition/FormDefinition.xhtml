@@ -26,6 +26,10 @@
       <p:messages id="error-messages" showDetail="false" closable="true"/>
       <p:growl id="error-growl" globalOnly="true" showDetail="false" showSummary="true" />
 
+      <div class="w-full mb-2">
+        <h3 class="text-3xl font-light">#{formDefinitionBean.getTitle(data.data.processName)}</h3>
+      </div>
+
       <!-- DEFINED TASKS -->
       <h:panelGroup id="defined-task-container" layout="block" styleClass="defined-task-container card ui-g">
         <div class="ui-g-12">
