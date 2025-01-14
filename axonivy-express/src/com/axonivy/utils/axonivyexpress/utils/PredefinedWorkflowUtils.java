@@ -13,7 +13,7 @@ public class PredefinedWorkflowUtils {
   public static String generateExpressCaseCategoryPath(ProcessType workflowType,
       String workflowName) {
     String categoryPath = EXPRESS_CATEGORY_PRE_FIX
-        + Ivy.cms().co("/ch.ivy.addon.portalkit.ui.jsf/common/adhoc");
+        + Ivy.cms().co("/Labels/Adhoc");
     if (workflowType != ProcessType.AD_HOC) {
       categoryPath = EXPRESS_CATEGORY_PRE_FIX + "/" + workflowName;
     }
@@ -32,7 +32,8 @@ public class PredefinedWorkflowUtils {
   }
 
   public static String convertPathName(String categoryPath) {
-    return new CategoryPath(categoryPath).getValidRawPath();
+    String x = new CategoryPath(categoryPath).getValidRawPath();
+    return x;
   }
 
 }

@@ -120,7 +120,7 @@ Express Management enable you to manage Express processes efficiently. Furthermo
 
 ![Express management](images/express-management-process.png)
 
-To access this feature, you need to be granted the role **AXON_IVY_EXPRESS_ADMIN**.
+To use all features of the Express Management page, and start all Express processes, you need to be granted the role **AXONIVY_EXPRESS_ADMIN**.
 
 ##### HowTo: Export an Express workflow
 

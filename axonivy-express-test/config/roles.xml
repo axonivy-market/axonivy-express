@@ -6,6 +6,6 @@
         <displayName>TestRole</displayName>
     </role>
     <role>
-        <identifier>AXON_IVY_EXPRESS_ADMIN</identifier>
+        <identifier>AXONIVY_EXPRESS_ADMIN</identifier>
     </role>
 </role>

@@ -24,17 +24,20 @@ import com.axonivy.portal.components.util.FacesMessageUtils;
 import com.axonivy.portal.components.util.ProcessStartUtils;
 import com.axonivy.portal.components.util.SecurityMemberDisplayNameUtils;
 import com.axonivy.utils.axonivyexpress.entity.ExpressProcess;
+import com.axonivy.utils.axonivyexpress.entity.SecurityMemberDTO;
 import com.axonivy.utils.axonivyexpress.enums.ExpressMessageType;
 import com.axonivy.utils.axonivyexpress.navigator.ExpressNavigator;
 import com.axonivy.utils.axonivyexpress.service.ExpressProcessService;
-import com.axonivy.utils.axonivyexpress.service.TaskService;
+import com.axonivy.utils.axonivyexpress.service.SecurityService;
 import com.axonivy.utils.axonivyexpress.utils.ExpressManagementUtils;
+import com.axonivy.utils.axonivyexpress.utils.PermissionUtils;
 import com.axonivy.utils.axonivyexpress.utils.UploadDocumentUtils;
+import com.axonivy.utils.axonivyexpress.utils.UserUtils;
 
 import ch.ivyteam.ivy.environment.Ivy;
 import ch.ivyteam.ivy.security.ISecurityMember;
+import ch.ivyteam.ivy.security.IUser;
 import ch.ivyteam.ivy.security.exec.Sudo;
-import ch.ivyteam.ivy.workflow.ITask;
 
 @ManagedBean
 @ViewScoped
@@ -43,20 +46,21 @@ public class ExpressManagementBean implements Serializable {
   private static final long serialVersionUID = 8650690997206742678L;
 
   private List<ExpressProcess> processes;
-  private List<ITask> expressTasks;
   private ExpressProcess selectedProcess;
   private UploadedFile importExpressFile;
   private String importOutput;
   private String importStatus;
   private FacesMessage validateMessage;
 
+  private List<SecurityMemberDTO> activeMemberList;
+
   public void init() {
     processes = Sudo.get(() -> {
       return ExpressManagementUtils.findExpressProcesses();
     });
 
-    expressTasks = new ArrayList<>();
-    expressTasks.addAll(TaskService.newInstance().findAllExpressTask());
+    activeMemberList = SecurityService.newInstance().findSecurityMembers("", 0,
+        -1);
   }
 
   public List<ExpressProcess> getProcesses() {
@@ -73,14 +77,6 @@ public class ExpressManagementBean implements Serializable {
 
   public void setSelectedProcess(ExpressProcess selectedProcess) {
     this.selectedProcess = selectedProcess;
-  }
-
-  public List<ITask> getExpressTasks() {
-    return expressTasks;
-  }
-
-  public void setExpressTasks(List<ITask> expressTasks) {
-    this.expressTasks = expressTasks;
   }
 
   public void navigateToExpressProcessModificationPage(ExpressProcess process) {
@@ -172,6 +168,47 @@ public class ExpressManagementBean implements Serializable {
       importStatus = ExpressMessageType.FAILED.getLabel();
       importOutput = e.getMessage();
     }
+  }
+
+  /**
+   * Get a display name by activator name
+   *
+   * @param activatorName
+   * @return display name
+   */
+  public String getUserDisplayName(String activatorName) {
+    if (StringUtils.isBlank(activatorName)) {
+      return Ivy.cms().co("/Labels/NotAvailable");
+    }
+
+    String displayName = activatorName;
+    if (CollectionUtils.isNotEmpty(activeMemberList)) {
+      Optional<SecurityMemberDTO> activeUser = activeMemberList.stream()
+          .filter(user -> user.getMemberName().equalsIgnoreCase(activatorName))
+          .findFirst();
+      if (activeUser.isPresent()) {
+        displayName = StringUtils.isBlank(activeUser.get().getDisplayName())
+            ? activeUser.get().getName()
+            : activeUser.get().getDisplayName();
+      } else {
+        displayName = Ivy.cms()
+            .co("/Labels/NotAvailable");
+      }
+    } else {
+      IUser user = UserUtils.findUser(activatorName);
+      displayName = StringUtils.isBlank(user.getDisplayName()) ? user.getName()
+          : user.getDisplayName();
+    }
+    return displayName;
+  }
+
+  public boolean canStartProcess(ExpressProcess process) {
+    return canEditProcess(process) && process.isReadyToExecute();
+  }
+
+  public boolean canEditProcess(ExpressProcess process) {
+    return PermissionUtils
+        .checkAbleToStartAndAbleToEditExpressWorkflow(process);
   }
 
   public UploadedFile getImportExpressFile() {

@@ -66,10 +66,6 @@
           "customFields" : [
             { "name" : "cssIcon", "value" : "si si-startup-launch" }
           ]
-        },
-        "permission" : {
-          "anonymous" : false,
-          "role" : "AXON_IVY_EXPRESS_ADMIN"
         }
       },
       "visual" : {

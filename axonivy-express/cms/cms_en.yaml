@@ -1,3 +1,8 @@
+Categories:
+  AdhocExpressTasks:
+    name: Adhoc Express Tasks
+  ExpressWorkflow:
+    name: Express Workflow
 ch.ivy.addon.portal.generic:
   CaseDetailsTemplate:
     noCaseId: No case-Id specified
@@ -133,6 +138,7 @@ Dialogs:
 Labels:
   Actions: Actions
   Add: Add
+  Adhoc: Adhoc
   Back: Back
   Change: Change
   Close: Close
@@ -205,3 +211,5 @@ Labels:
   Select: Select
   Start: Start
   Task: Task
+Pattern:
+  dateTimePattern: dd.MM.yyyy HH:mm

@@ -124,7 +124,7 @@ Die **Express-Management** ermöglicht es dir, Express-Prozesse effizient zu ver
 
 ![Express management](images/express-management-process.png)
 
-Um auf diese Funktion zugreifen zu können, musst du die Rolle **AXON_IVY_EXPRESS_ADMIN** zugewiesen bekommen.
+Um alle Funktionen der Express-Management-Seite zu nutzen und alle Express-Prozesse zu starten, musst du die Rolle **AXONIVY_EXPRESS_ADMIN** zugewiesen bekommen.
 
 ##### HowTo: Exportiere einen Express-Workflow
 

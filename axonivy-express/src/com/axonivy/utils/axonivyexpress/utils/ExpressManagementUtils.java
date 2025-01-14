@@ -56,7 +56,7 @@ public class ExpressManagementUtils {
   private static final String VERSION = "version";
   private static final String EXPRESS_WORKFLOW = "expressWorkflow";
   private static final String PATTERN = Ivy.cms()
-      .coLocale("/patterns/dateTimePattern", Locale.ENGLISH);
+      .coLocale("/Pattern/dateTimePattern", Locale.ENGLISH);
   private static final String REPEAT_EXPRESS = "AHWF";
   private static final String JSON_EXTENSION = "json";
   private static final String EXTERNAL_ID_PREFIX = " externalId:";

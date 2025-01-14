@@ -4,7 +4,7 @@
         <username>express</username>
         <password>express</password>
         <fullName>Express User</fullName>
-        <role>AXON_IVY_EXPRESS_ADMIN</role>
+        <role>AXONIVY_EXPRESS_ADMIN</role>
     </user>
     <user>
         <username>testUser</username>

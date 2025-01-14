@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import com.axonivy.utils.axonivyexpress.ExpressConstants;
 import com.axonivy.utils.axonivyexpress.entity.ExpressProcess;
 
 import ch.ivyteam.ivy.environment.Ivy;
@@ -15,7 +16,6 @@ import ch.ivyteam.ivy.security.IUser;
 
 public class PermissionUtils {
 
-  private static final String ADMIN_ROLE = "AXONIVY_PORTAL_ADMIN";
   private static final String EXTERNAL_ID_PREFIX = " externalId:";
 
   /**
@@ -64,7 +64,8 @@ public class PermissionUtils {
 
   public static boolean isSessionUserHasAdminRole() {
     return Ivy.session()
-        .hasRole(ISecurityContext.current().roles().find(ADMIN_ROLE), false);
+        .hasRole(ISecurityContext.current().roles()
+            .find(ExpressConstants.ADMIN_ROLE), false);
   }
 
   private static boolean isSessionUserBelongsToPermissionGroup(

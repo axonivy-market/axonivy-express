@@ -6,4 +6,5 @@ public class ExpressConstants {
   public static final String TASK_GROUP_ID_KEY = "expressGroupId";
   public static final String EXPRESS_END_PAGE = "Portal.ExpressEndPage";
   public static final String DEFAULT_ICON = "si si-startup-launch";
+  public static final String ADMIN_ROLE = "AXONIVY_EXPRESS_ADMIN";
 }
