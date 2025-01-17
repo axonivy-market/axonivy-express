@@ -56,7 +56,7 @@
         "size" : { "width" : 160 }
       },
       "connect" : [
-        { "id" : "f16", "to" : "f10", "via" : [ { "x" : 624, "y" : 64 } ] }
+        { "id" : "f16", "to" : "f17", "via" : [ { "x" : 624, "y" : 64 }, { "x" : 904, "y" : 64 } ] }
       ]
     }, {
       "id" : "f6",
@@ -111,15 +111,6 @@
       "visual" : {
         "at" : { "x" : 496, "y" : 160 },
         "size" : { "width" : 160, "height" : 48 }
-      },
-      "connect" : [
-        { "id" : "f2", "to" : "f10" }
-      ]
-    }, {
-      "id" : "f10",
-      "type" : "Alternative",
-      "visual" : {
-        "at" : { "x" : 624, "y" : 160 }
       },
       "connect" : [
         { "id" : "f1", "to" : "f13" }

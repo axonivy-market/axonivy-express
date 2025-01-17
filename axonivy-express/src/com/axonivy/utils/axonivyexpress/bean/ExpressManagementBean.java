@@ -2,7 +2,6 @@ package com.axonivy.utils.axonivyexpress.bean;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -22,7 +21,6 @@ import org.primefaces.model.file.UploadedFile;
 import com.axonivy.portal.components.publicapi.PortalNavigatorInFrameAPI;
 import com.axonivy.portal.components.util.FacesMessageUtils;
 import com.axonivy.portal.components.util.ProcessStartUtils;
-import com.axonivy.portal.components.util.SecurityMemberDisplayNameUtils;
 import com.axonivy.utils.axonivyexpress.entity.ExpressProcess;
 import com.axonivy.utils.axonivyexpress.entity.SecurityMemberDTO;
 import com.axonivy.utils.axonivyexpress.enums.ExpressMessageType;
@@ -35,7 +33,6 @@ import com.axonivy.utils.axonivyexpress.utils.UploadDocumentUtils;
 import com.axonivy.utils.axonivyexpress.utils.UserUtils;
 
 import ch.ivyteam.ivy.environment.Ivy;
-import ch.ivyteam.ivy.security.ISecurityMember;
 import ch.ivyteam.ivy.security.IUser;
 import ch.ivyteam.ivy.security.exec.Sudo;
 
@@ -96,26 +93,6 @@ public class ExpressManagementBean implements Serializable {
   public void startExpressProcess(ExpressProcess process) throws IOException {
     String startLink = ExpressNavigator.getExpressStartLink(process);
     ProcessStartUtils.redirect(startLink);
-  }
-
-  public String renderPermissions(ExpressProcess process) {
-    if (CollectionUtils.isNotEmpty(Optional.ofNullable(process)
-        .map(ExpressProcess::getProcessPermissions).orElseGet(() -> null))) {
-      List<String> results = new ArrayList<>();
-      for (var permission : process.getProcessPermissions()) {
-        ISecurityMember member = Ivy.security().members().find(permission);
-        if (member == null) {
-          results.add(permission);
-          continue;
-        }
-        results.add(SecurityMemberDisplayNameUtils
-            .generateBriefDisplayNameForSecurityMember(member,
-                member.getMemberName()));
-      }
-      return String.join(", ", results);
-    }
-
-    return Ivy.cms().co("/Labels/NoSelection");
   }
 
   public void deleteExpressProcess() {
