@@ -1,9 +1,14 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
   "simpleName" : "ExternalDataProvider",
   "namespace" : "gawfs",
-  "isBusinessCaseData" : false,
+  "isBusinessCaseData" : true,
   "fields" : [ {
+    "name" : "id",
+    "type" : "Integer",
+    "comment" : "Identifier",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
     "name" : "libraryId",
     "type" : "String"
   }, {

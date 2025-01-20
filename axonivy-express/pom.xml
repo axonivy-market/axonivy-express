@@ -2,19 +2,15 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.axonivy.portal</groupId>
+  <groupId>com.axonivy.utils.axonivyexpress</groupId>
   <artifactId>axonivy-express</artifactId>
-  <version>11.2.0-SNAPSHOT</version>
+  <version>12.0.0-SNAPSHOT</version>
   <packaging>iar</packaging>
-  <properties>
-    <ivy.engine.version>11.4.0</ivy.engine.version>
-    <build.plugin.version>11.4.0-SNAPSHOT</build.plugin.version>
-  </properties>
   <dependencies>
     <dependency>
       <groupId>com.axonivy.portal</groupId>
-      <artifactId>portal</artifactId>
-      <version>9.1.0.0-SNAPSHOT</version>
+      <artifactId>portal-components</artifactId>
+      <version>12.0.0</version>
       <type>iar</type>
     </dependency>
   </dependencies>
@@ -26,13 +22,12 @@
     </repository>
   </repositories>
   <pluginRepositories>
-    <!-- Snapshot releases are available via sonatype.org -->
     <pluginRepository>
-      <id>sonatype</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
       <snapshots>
         <updatePolicy>always</updatePolicy>
       </snapshots>
+      <id>sonatype</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </pluginRepository>
   </pluginRepositories>
   <build>
@@ -40,9 +35,10 @@
       <plugin>
         <groupId>com.axonivy.ivy.ci</groupId>
         <artifactId>project-build-plugin</artifactId>
-        <version>${build.plugin.version}</version>
+        <version>12.0.0</version>
         <extensions>true</extensions>
         <configuration>
+          <encoding>UTF-8</encoding>
           <compilerWarnings>false</compilerWarnings>
         </configuration>
       </plugin>

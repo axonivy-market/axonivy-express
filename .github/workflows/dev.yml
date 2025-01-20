@@ -8,6 +8,4 @@ on:
 
 jobs:
   build:
-    uses: axonivy-market/github-workflows/.github/workflows/dev.yml@v3
-    with:
-      mvnArgs: '-Divy.script.validation.skip=true'
+    uses: axonivy-market/github-workflows/.github/workflows/dev.yml@v5

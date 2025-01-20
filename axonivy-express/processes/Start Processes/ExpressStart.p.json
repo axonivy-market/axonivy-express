@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "17326FC2F133FBEA",
   "config" : {
     "data" : "gawfs.ExpressStartData"
@@ -40,7 +40,7 @@
       "type" : "DialogCall",
       "name" : "Open ExpressBusinessView",
       "config" : {
-        "dialog" : "ch.ivy.addon.express.generic.ExpressBusinessView:start(String)",
+        "dialog" : "com.axonivy.utils.axonivyexpress.generic.ExpressBusinessView:start(String)",
         "call" : {
           "map" : {
             "param.uuid" : "in.uuid"
@@ -54,5 +54,46 @@
       "connect" : [
         { "id" : "f2", "to" : "f1" }
       ]
+    }, {
+      "id" : "f4",
+      "type" : "RequestStart",
+      "name" : "expressManagement",
+      "config" : {
+        "signature" : "expressManagement",
+        "request" : {
+          "name" : "Express Management",
+          "description" : "Express Management",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "si si-startup-launch" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 88, "y" : 232 }
+      },
+      "connect" : [
+        { "id" : "f8", "to" : "f6" }
+      ]
+    }, {
+      "id" : "f6",
+      "type" : "DialogCall",
+      "name" : "Express Management",
+      "config" : {
+        "dialog" : "com.axonivy.utils.axonivyexpress.ExpressManagement:start()"
+      },
+      "visual" : {
+        "at" : { "x" : 324, "y" : 233 },
+        "size" : { "width" : 120, "height" : 62 }
+      },
+      "connect" : [
+        { "id" : "f9", "to" : "f7" }
+      ]
+    }, {
+      "id" : "f7",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 640, "y" : 232 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
     } ]
 }

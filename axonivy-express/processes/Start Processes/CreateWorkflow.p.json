@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "15798655494F25E1",
   "config" : {
     "data" : "gawfs.createWorkflowData"
@@ -31,12 +31,6 @@
         { "id" : "f11", "to" : "f10" }
       ]
     }, {
-      "id" : "f1",
-      "type" : "TaskEnd",
-      "visual" : {
-        "at" : { "x" : 584, "y" : 64 }
-      }
-    }, {
       "id" : "f3",
       "type" : "SubProcessCall",
       "name" : "editWorkflow",
@@ -47,57 +41,8 @@
         "at" : { "x" : 440, "y" : 64 }
       },
       "connect" : [
-        { "id" : "f2", "to" : "f1" }
+        { "id" : "f2", "to" : "f5" }
       ]
-    }, {
-      "id" : "f5",
-      "type" : "RequestStart",
-      "name" : "AxonIvyExpressAdhocWF.ivp",
-      "config" : {
-        "signature" : "AxonIvyExpressAdhocWF",
-        "input" : {
-          "params" : [
-            { "name" : "originalTaskId", "type" : "Long", "desc" : "" }
-          ],
-          "map" : {
-            "out.originalTaskId" : "param.originalTaskId"
-          }
-        },
-        "request" : {
-          "isVisibleOnStartList" : false
-        }
-      },
-      "visual" : {
-        "at" : { "x" : 96, "y" : 192 },
-        "labelOffset" : { "x" : 12, "y" : 44 }
-      },
-      "connect" : [
-        { "id" : "f13", "to" : "f12" }
-      ]
-    }, {
-      "id" : "f6",
-      "type" : "SubProcessCall",
-      "name" : "create Adhoc WF",
-      "config" : {
-        "processCall" : "Functional Processes/editWorkflow:newAdhocWorkflow(Long)",
-        "call" : {
-          "map" : {
-            "param.originalTaskId" : "in.originalTaskId"
-          }
-        }
-      },
-      "visual" : {
-        "at" : { "x" : 448, "y" : 192 }
-      },
-      "connect" : [
-        { "id" : "f9", "to" : "f8" }
-      ]
-    }, {
-      "id" : "f8",
-      "type" : "TaskEnd",
-      "visual" : {
-        "at" : { "x" : 592, "y" : 192 }
-      }
     }, {
       "id" : "f10",
       "type" : "Script",
@@ -105,8 +50,9 @@
       "config" : {
         "output" : {
           "code" : [
-            "import ch.ivy.addon.portalkit.constant.CustomFields;",
-            "ivy.case.customFields().stringField(CustomFields.IS_EXPRESS_PROCESS).set(\"true\");"
+            "import com.axonivy.portal.components.publicapi.CaseAPI;",
+            "",
+            "CaseAPI.setHidePropertyToHideInPortal(ivy.case);"
           ]
         }
       },
@@ -117,22 +63,25 @@
         { "id" : "f4", "to" : "f3" }
       ]
     }, {
-      "id" : "f12",
-      "type" : "Script",
-      "name" : "Set Task/Case field",
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 768, "y" : 64 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f5",
+      "type" : "DialogCall",
+      "name" : "Express Management",
       "config" : {
-        "output" : {
-          "code" : [
-            "import ch.ivy.addon.portalkit.constant.CustomFields;",
-            "ivy.case.customFields().stringField(CustomFields.IS_EXPRESS_PROCESS).set(\"true\");"
-          ]
-        }
+        "dialog" : "com.axonivy.utils.axonivyexpress.ExpressManagement:start()"
       },
       "visual" : {
-        "at" : { "x" : 280, "y" : 192 }
+        "at" : { "x" : 612, "y" : 65 },
+        "size" : { "width" : 136, "height" : 62 }
       },
       "connect" : [
-        { "id" : "f7", "to" : "f6" }
+        { "id" : "f6", "to" : "f1", "color" : "default" }
       ]
     } ]
 }

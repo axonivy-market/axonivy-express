@@ -1,8 +1,8 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
   "simpleName" : "ApprovalTaskResult",
   "namespace" : "gawfs",
-  "isBusinessCaseData" : false,
+  "isBusinessCaseData" : true,
   "fields" : [ {
     "name" : "approverName",
     "type" : "String",

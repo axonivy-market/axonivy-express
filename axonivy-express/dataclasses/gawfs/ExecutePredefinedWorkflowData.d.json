@@ -1,9 +1,14 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
   "simpleName" : "ExecutePredefinedWorkflowData",
   "namespace" : "gawfs",
-  "isBusinessCaseData" : false,
+  "isBusinessCaseData" : true,
   "fields" : [ {
+    "name" : "id",
+    "type" : "Integer",
+    "comment" : "Identifier",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
     "name" : "actualStepIndex",
     "type" : "Integer",
     "modifiers" : [ "PERSISTENT" ]
@@ -36,7 +41,7 @@
     "modifiers" : [ "PERSISTENT" ]
   }, {
     "name" : "responsible",
-    "type" : "com.axonivy.portal.components.dto.SecurityMemberDTO",
+    "type" : "com.axonivy.utils.axonivyexpress.entity.SecurityMemberDTO",
     "modifiers" : [ "PERSISTENT" ]
   }, {
     "name" : "shouldEndProcess",
@@ -45,9 +50,6 @@
     "name" : "steps",
     "type" : "List<String>",
     "modifiers" : [ "PERSISTENT" ]
-  }, {
-    "name" : "useExpressEndPage",
-    "type" : "Boolean"
   }, {
     "name" : "userTaskForApproval",
     "type" : "gawfs.TaskDef",
@@ -64,7 +66,7 @@
     "modifiers" : [ "PERSISTENT" ]
   }, {
     "name" : "workflowType",
-    "type" : "ch.ivy.gawfs.enums.ProcessType",
+    "type" : "com.axonivy.utils.axonivyexpress.enums.ProcessType",
     "modifiers" : [ "PERSISTENT" ]
   }, {
     "name" : "isAdhocProcess",
@@ -81,5 +83,13 @@
   }, {
     "name" : "hasActiveTasks",
     "type" : "Boolean"
+  }, {
+    "name" : "endPage",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "useExpressEndPage",
+    "type" : "Boolean",
+    "modifiers" : [ "PERSISTENT" ]
   } ]
 }

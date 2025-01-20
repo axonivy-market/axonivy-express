@@ -1,9 +1,14 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
   "simpleName" : "TaskDef",
   "namespace" : "gawfs",
-  "isBusinessCaseData" : false,
+  "isBusinessCaseData" : true,
   "fields" : [ {
+    "name" : "id",
+    "type" : "Integer",
+    "comment" : "Identifier",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
     "name" : "responsibles",
     "type" : "java.util.List<String>",
     "modifiers" : [ "PERSISTENT" ]
@@ -30,7 +35,7 @@
     "modifiers" : [ "PERSISTENT" ]
   }, {
     "name" : "taskType",
-    "type" : "ch.ivy.gawfs.enums.TaskType",
+    "type" : "com.axonivy.utils.axonivyexpress.enums.TaskType",
     "modifiers" : [ "PERSISTENT" ]
   }, {
     "name" : "responsibleDisplayName",
@@ -38,11 +43,11 @@
     "modifiers" : [ "PERSISTENT" ]
   }, {
     "name" : "dynaFormController",
-    "type" : "ch.ivy.gawfs.DynaFormController",
+    "type" : "com.axonivy.utils.axonivyexpress.controller.DynaFormController",
     "modifiers" : [ "PERSISTENT" ]
   }, {
     "name" : "dragAndDropController",
-    "type" : "ch.ivy.gawfs.DragAndDropController",
+    "type" : "com.axonivy.utils.axonivyexpress.bean.DragAndDropController",
     "modifiers" : [ "PERSISTENT" ]
   }, {
     "name" : "counter",
@@ -51,7 +56,7 @@
     "modifiers" : [ "PERSISTENT" ]
   }, {
     "name" : "email",
-    "type" : "ch.ivy.addon.portalkit.bo.ExpressUserEmail",
+    "type" : "com.axonivy.utils.axonivyexpress.entity.ExpressUserEmail",
     "comment" : "Email information for taskType=EMAIL",
     "modifiers" : [ "PERSISTENT" ]
   }, {

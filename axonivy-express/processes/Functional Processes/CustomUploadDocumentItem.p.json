@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "16B267B1A01CFA7E",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -27,7 +27,7 @@
             "out.businessCase" : "param.businessCase",
             "out.enableScriptCheckingForUploadedDocument" : "param.enableScriptCheckingForUploadedDocument",
             "out.enableVirusScannerForUploadedDocument" : "param.enableVirusScannerForUploadedDocument",
-            "out.skip" : "!ch.ivy.addon.portalkit.util.ExecutingExpressProcessUtils.isExpressCase(param.businessCase)",
+            "out.skip" : "!com.axonivy.utils.axonivyexpress.utils.ExecutingExpressProcessUtils.isExpressCase(param.businessCase)",
             "out.uploadedFile" : "param.uploadedFile"
           }
         },
@@ -92,18 +92,18 @@
       "config" : {
         "output" : {
           "code" : [
+            "import com.axonivy.utils.axonivyexpress.service.CaseDocumentService;",
+            "import com.axonivy.utils.axonivyexpress.utils.DocumentFileUtils;",
             "import com.axonivy.portal.components.enums.UploadDocumentCheckStatus;",
-            "import ch.ivy.addon.portalkit.util.DocumentFileUtils;",
-            "import ch.ivy.addon.portalkit.service.CaseDocumentService;",
             "",
             "String fileName = in.uploadedFile.getFileName();",
             "boolean isUploaded = DocumentFileUtils.uploadExpressDocument(ivy.case, in.uploadedFile.getInputStream(), fileName);",
             "",
             "if (isUploaded) {",
             "  out.status = UploadDocumentCheckStatus.OK.name();",
-            "  out.message = ivy.cms.co(\"/ch.ivy.addon.portalkit.ui.jsf/documentFiles/uploadSucceed\");",
+            "  out.message = ivy.cms.co(\"/Dialogs/com/axonivy/portal/components/DocumentTable/UploadSucceed\");",
             "} else {",
-            "  out.message = ivy.cms.co(\"/ch.ivy.addon.portalkit.ui.jsf/documentFiles/uploadFailed\");",
+            "  out.message = ivy.cms.co(\"/Dialogs/com/axonivy/portal/components/DocumentTable/UploadFailed\");",
             "  out.status = UploadDocumentCheckStatus.FAIL.name();",
             "}"
           ]
@@ -153,16 +153,16 @@
       "config" : {
         "output" : {
           "code" : [
+            "import com.axonivy.utils.axonivyexpress.service.CaseDocumentService;",
+            "import com.axonivy.utils.axonivyexpress.utils.DocumentFileUtils;",
             "import com.axonivy.portal.components.enums.UploadDocumentCheckStatus;",
-            "import ch.ivy.addon.portalkit.util.DocumentFileUtils;",
             "import org.primefaces.model.file.UploadedFile;",
-            "import ch.ivy.addon.portalkit.service.CaseDocumentService;",
             "",
             "String fileName = in.uploadedFile.getFileName();",
             "boolean doesDocumentExist = DocumentFileUtils.doesDocumentExist(ivy.case, fileName);",
             "",
             "if (doesDocumentExist) {",
-            "  in.message = ivy.cms.co(\"/ch.ivy.addon.portalkit.ui.jsf/documentFiles/uploadFileExists\", [fileName]);",
+            "  in.message = ivy.cms.co(\"/Dialogs/com/axonivy/portal/components/DocumentTable/UploadFileExists\", [fileName]);",
             "  in.status = UploadDocumentCheckStatus.FAIL.name();",
             "}"
           ]
@@ -209,24 +209,25 @@
       "config" : {
         "output" : {
           "code" : [
+            "import com.axonivy.utils.axonivyexpress.entity.MasterData;",
             "import com.axonivy.portal.components.enums.UploadDocumentCheckStatus;",
             "import org.apache.commons.io.FileUtils;",
             "import java.util.Arrays;",
-            "import ch.ivy.addon.portalkit.masterdata.MasterData;",
+            "",
             "",
             "in.message = \"\";",
             "in.status = UploadDocumentCheckStatus.OK.name();",
             "",
             "if (in.uploadedFile == null) {",
-            "  in.message = ivy.cms.co(\"/Dialogs/components/CaseDocument/invalidFileMessage\");",
+            "  in.message = ivy.cms.co(\"/Dialogs/com/axonivy/portal/components/DocumentTable/InvalidFileMessage\");",
             "  in.status = UploadDocumentCheckStatus.FAIL.name();",
             "} else if (in.uploadedFile.getSize() == 0) {",
-            "  in.message = ivy.cms.co(\"/Dialogs/components/CaseDocument/emptyFileMessage\");",
+            "  in.message = ivy.cms.co(\"/Dialogs/com/axonivy/portal/components/DocumentTable/EmptyFileMessage\");",
             "  in.status = UploadDocumentCheckStatus.FAIL.name();",
             "} else {",
             "  Long maxFileUploadSize = MasterData.getFileUploadSizeLimit();",
             "  if (in.uploadedFile.getSize() > maxFileUploadSize) {",
-            "    in.message = ivy.cms.co(\"/ch.ivy.addon.portalkit.ui.jsf/common/errorFileUploadSize\", Arrays.asList(FileUtils.byteCountToDisplaySize(maxFileUploadSize)));",
+            "    in.message = ivy.cms.co(\"/Dialogs/com/axonivy/portal/components/DocumentTable/ErrorFileUploadSize\", Arrays.asList(FileUtils.byteCountToDisplaySize(maxFileUploadSize)));",
             "  }",
             "  in.status = UploadDocumentCheckStatus.FAIL.name();",
             "}"
@@ -244,7 +245,7 @@
       "type" : "SubProcessCall",
       "name" : "UploadDocumentChecker",
       "config" : {
-        "processCall" : "Functional Processes/UploadDocumentChecker:call(org.primefaces.model.file.UploadedFile)",
+        "processCall" : "Functional Processes/UploadDocumentItemChecker:call(org.primefaces.model.file.UploadedFile,Boolean,Boolean,String)",
         "call" : {
           "map" : {
             "param.uploadFile" : "in.uploadedFile"
@@ -295,7 +296,7 @@
       "config" : {
         "output" : {
           "code" : [
-            "import com.axonivy.portal.components.enums.CustomProcessStatus;",
+            "import com.axonivy.utils.axonivyexpress.enums.CustomProcessStatus;",
             "in.status = CustomProcessStatus.SKIP.name();"
           ]
         }

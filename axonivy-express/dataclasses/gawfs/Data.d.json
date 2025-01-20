@@ -1,9 +1,14 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
   "simpleName" : "Data",
   "namespace" : "gawfs",
-  "isBusinessCaseData" : false,
+  "isBusinessCaseData" : true,
   "fields" : [ {
+    "name" : "id",
+    "type" : "Integer",
+    "comment" : "Identifier",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
     "name" : "steps",
     "type" : "List<String>",
     "comment" : "Process Steps for ProcessChain",
@@ -25,7 +30,7 @@
     "modifiers" : [ "PERSISTENT" ]
   }, {
     "name" : "processType",
-    "type" : "ch.ivy.gawfs.enums.ProcessType",
+    "type" : "com.axonivy.utils.axonivyexpress.enums.ProcessType",
     "comment" : "Process type",
     "modifiers" : [ "PERSISTENT" ]
   }, {
@@ -33,10 +38,10 @@
     "type" : "List<ch.ivyteam.ivy.security.IUser>"
   }, {
     "name" : "taskRepository",
-    "type" : "ch.ivy.addon.portalkit.bo.ExpressTaskDefinition"
+    "type" : "com.axonivy.utils.axonivyexpress.entity.ExpressTaskDefinition"
   }, {
     "name" : "formelementRepository",
-    "type" : "ch.ivy.addon.portalkit.bo.ExpressFormElement"
+    "type" : "com.axonivy.utils.axonivyexpress.entity.ExpressFormElement"
   }, {
     "name" : "backFlag",
     "type" : "Boolean"
@@ -70,10 +75,6 @@
     "modifiers" : [ "PERSISTENT" ]
   }, {
     "name" : "savedFlag",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
-  }, {
-    "name" : "isAdhocProcess",
     "type" : "Boolean",
     "modifiers" : [ "PERSISTENT" ]
   }, {

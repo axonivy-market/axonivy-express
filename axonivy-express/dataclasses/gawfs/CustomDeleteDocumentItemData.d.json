@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
   "simpleName" : "CustomDeleteDocumentItemData",
   "namespace" : "gawfs",
   "isBusinessCaseData" : false,
@@ -14,6 +14,6 @@
     "type" : "String"
   }, {
     "name" : "status",
-    "type" : "com.axonivy.portal.components.enums.CustomProcessStatus"
+    "type" : "com.axonivy.utils.axonivyexpress.enums.CustomProcessStatus"
   } ]
 }
