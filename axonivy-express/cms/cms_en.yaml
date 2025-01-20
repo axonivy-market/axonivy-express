@@ -1,0 +1,215 @@
+Categories:
+  AdhocExpressTasks:
+    name: Adhoc Express Tasks
+  ExpressWorkflow:
+    name: Express Workflow
+ch.ivy.addon.portal.generic:
+  CaseDetailsTemplate:
+    noCaseId: No case-Id specified
+Dialogs:
+  Tasks:
+    FinalReview:
+      TaskDescription: The workflow {0} has been finished!
+      TaskName: Final Review
+    ProcessLoaded:
+      TaskName: AdHoc Configuration Task
+    WorkflowProperties:
+      TaskDescription: Please configure the workflow properties!
+      TaskName: Workflow properties
+  com:
+    axonivy:
+      utils:
+        axonivyexpress:
+          ExpressManagement:
+            Create: Create
+            DeleteExpressProcessMessage: Are you sure you want to delete this workflow?
+            DeployButton: Deploy
+            DeployMessage: 'Deploying processes  ... '
+            ExpressExportName: AXONIVY_Dataset_ExpressWorkflow_{0}.json
+            ExpressManagement: Express Management
+            Import: Import
+            ImportDialogHeaderTitle: Choose a Dataset of Express workflow, it should be a JSON file.
+            ProcessNotReadyToExecute: This process is not ready for execution. Please complete the process definition.
+          FormDefinition:
+            AllowedFiletypes: Allowed file types
+            BroadFooterArea: Wide footer
+            BroadHeaderArea: Wide Header
+            CancelCreateForm: Do you really want to cancel? All your data will be lost!
+            CheckboxFields: Checkbox fields
+            CreateField: Create
+            DataProvider: Data provider
+            ElementLabel: Label
+            FieldSetAvailableFormelements: Form elements
+            FieldSetFormelementsPlacing: Placement of form elements
+            FieldSetPreviewArea: Preview of the defined form
+            FinishWorkflow: Finish Workflow
+            InputArea: Input area
+            InputCheckbox: Checkbox
+            InputField: Input field
+            InputFileUpload: File upload
+            InputOptions: Radio button
+            InputType: Input type
+            LeftColumn: left column
+            MaxLabelLength: '35'
+            MaxOptionsLength: '20'
+            NoCheckboxFieldYet: No checkbox field types are defined yet
+            NoDataProvider: Special static data provider
+            NoFormelementsAvailable: No form elements are available!
+            NoOptionboxFieldsYet: No checkbox types are defined yet
+            NumberOfFiles: Number of files
+            NumberOfRows: Number of rows
+            OptionboxFields: Radio buttons
+            Preview: Preview
+            RightColumn: right column
+          WorkflowDefinition:
+            AbleToStart: Able to Start
+            AddProcessStep: Add process step
+            AddUserOrRole: 'Select a group or a user, please:'
+            ChangeSettingWarning: All defined tasks will be deleted. Are you sure?
+            CreateOwn: Create own
+            DefaultTemplate: Default Template
+            DeleteProcessStep: Remove process step
+            DueTimeInDays: Expiry in days
+            EndStep: End
+            ExecuteWorkflow: Execute workflow directly
+            FormDefinitionStep: Form definition
+            OneTime: One time
+            ProcessDescription: Process description
+            ProcessDetails: Process properties
+            ProcessName: Process name
+            ProcessOwner: Process Owner
+            ProcessStep: Process Step
+            ProcessType: Type of process
+            Repeatable: Repeatable
+            SaveWorkflow: Save Workflow
+            SelectedAssigneesFieldSet: Selected assignees
+            TaskDescription: Task description
+            TaskName: Task Name
+            TaskType: Task Type
+            ToGroup: Group
+            ToUser: User
+            UntilDaysTooltip: After expiry, the task will be assigned to Everybody and its priority becomes High.
+            UseDefault: Use default
+            UserInterface: User Interface
+            WorkflowPropertiesStep: Workflow properties
+          components:
+            ApprovalResult:
+              ApprovalResult: Approval result
+              ApprovalStatus: Approval status
+            Email:
+              Attachment: Attachment
+              EmailAddress: E-Mail address
+              EmailText: Email text
+              FileFunctions: Functions
+              Filename: Filename
+              InvalidEmailFormat: Invalid email format
+              NoFiles: No files are found!
+              ResponseTo: Response to
+              Subject: Subject
+            FinishedUserTasksForm:
+              Applicant: Applicant
+              FinishedTasks: Finished Tasks
+              FormDetails: Form Details
+            IconSelection:
+              IconLinkTooltip: Click to change icon
+              IconSelectionDialogHeader: Selecting icon
+              SeachIconByNamePlaceHolder: Search icon by name
+          generic:
+            EndPage:
+              Subtitle: The last task was completed successfully
+              Title: Task completed successfully!
+            ExpressBusinessView:
+              ExpressNoItem: There is no completed Express Task yet
+              ExpressNoItemDescription: The results of completed tasks are displayed here
+              ExpressWorkflowName: 'Business Details of Case #{0}'
+          workflowExecution:
+            ApprovalForm:
+              Approve: Approve!
+              CommentLabel: Comment of approver
+              Reject: Reject!
+            FinalReviewForm:
+              Noticed: Acknowledged!
+            UserTaskForm:
+              Formular: Form
+            UserTaskWithMailForm:
+              RequestTabTitle: Request
+  workflowCreation:
+    ProcessName: Create Express Workflow
+Labels:
+  Actions: Actions
+  Add: Add
+  Adhoc: Adhoc
+  Back: Back
+  Change: Change
+  Close: Close
+  Comment: Comment
+  ConfirmationHeaderText: Are you sure?
+  Delete: Delete
+  Edit: Edit
+  Email: E-mail
+  Enums:
+    ExpressMessageType:
+      ERROR: Error
+      FAILED: Failed
+      IMPORT_EXPRESS_PROCESSES: Import express processes
+      IMPORT_RESULT: Import result
+      IMPORT_STATUS: Import Status
+      INFO: Info
+      SUCCESSFUL: Success
+      WARNING: Warning
+    FormElementType:
+      CHECKBOX: Checkbox
+      FILE_UPLOAD: File upload
+      INPUT_DATE: Date picker
+      INPUT_NUMBER: Number field
+      INPUT_TEXT: Text field
+      INPUT_TEXT_AREA: Input area
+      RADIO_BUTTON: Checkbox
+    ProcessType:
+      AD_HOC: One time
+      REPEAT: Repeatable
+    TaskType:
+      APPROVAL: Approval
+      EMAIL: Information E-mail
+      FINAL_REVIEW: Review
+      USER_TASK: User task
+      USER_TASK_WITH_EMAIL: User task with E-mail
+    UploadFileFormat:
+      EXCEL: Excel (xls/xlsx)
+      OTHERS: Other file formats
+      PDF: PDF (pdf)
+      WORD: Word (doc/docx)
+  Export: Export
+  Fullname: Full name
+  Icon: Icon
+  Messages:
+    DeleteSucceed: The file was deleted successfully
+    DeployErrorLog: Error while deploying {0}
+    DeploymentFinishedLog: Process(es) of file {0} successful deployed into Portal in {1}ms
+    DuplicateProcessNameLog: '- Duplicate process name {0}'
+    EndDeployLog: Deployment Express finished
+    ExecuteWorkflowWarning: You have to fulfil all tasks before execute this workflow
+    FileEmptyMessage: File is empty
+    FileUploadElementPosition: The File Upload can only be placed either in the Header or in the Footer
+    InstallProcessFailedLog: '- Deploy process {0} failed'
+    InstalledProcessLog: Process installed {0}
+    InvalidVersionLog: Non supported version  {0} of Express
+    MaximumFileUploadElement: There is already a file upload element
+    ProcessNameExists: This process name was used before
+    StartDeployLog: Start deploying the Express process(es) of file {0} to Portal
+    StartDeployProcessLog: Start deploying process {0}
+    ValidateProcessCoOwnerLog: '- Validate Process Co-Owner of {0}, user {1} is not available in system'
+    ValidateProcessOwnerLog: '- Validate Process Owner of {0}, user {1} is not available in system, change process owner to {2}'
+    ValidateProcessPermissionLog: '- Validate Process Permission of {0}, user {1} is not available in system'
+    ValidateTaskDefUserLog: '- Validate Task Definition Responsibles of {0}, user {1} is not available in system'
+    VersionLog: 'Version of Express: {0}'
+  Next: Next
+  NoSelection: No Selection
+  Ok: Ok
+  Permissions: Permissions
+  Save: Save
+  Select: Select
+  Start: Start
+  Task: Task
+Pattern:
+  dateTimePattern: dd.MM.yyyy HH:mm

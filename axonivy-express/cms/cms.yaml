@@ -1,0 +1,3 @@
+ch.ivy.addon.portal.generic:
+  CaseDetailsTemplate:
+    noCaseId: No case-Id specified

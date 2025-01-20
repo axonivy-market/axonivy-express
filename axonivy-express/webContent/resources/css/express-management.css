@@ -1,0 +1,46 @@
+body .ui-button.ui-widget.ui-no-rounded-button-process-page {
+  border: transparent ;
+  background: transparent;
+  box-shadow: none;
+  color: var(--surface-900);
+}
+
+.action-menu {
+  min-width: 120px;
+}
+
+.color-destroy span {
+  color: var(--red-600) !important;
+}
+
+/* Import Express */
+.express-helper-loading-container,
+.express-process-upload.ui-fileupload .ui-fileupload-progress {
+  display: none;
+}
+
+.express-helper-loading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.express-process-upload .ui-fileupload-row>div {
+  word-break: break-all;
+}
+
+import-express-dialog .import-status {
+  font-weight: bold;
+}
+
+.import-express-dialog .import-status.Success {
+  color: hsl(137, 51%, 53%);
+}
+
+.import-express-dialog .import-status.Warning {
+  color: hsl(49, 99%, 65%);
+}
+
+.import-express-dialog .import-status.Failed {
+  color: hsl(357, 83%, 61%);
+}

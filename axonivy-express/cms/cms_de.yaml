@@ -1,0 +1,215 @@
+Categories:
+  AdhocExpressTasks:
+    name: Adhoc Express Aufgaben
+  ExpressWorkflow:
+    name: Express-Workflow
+ch.ivy.addon.portal.generic:
+  CaseDetailsTemplate:
+    noCaseId: Keine Vorgangs-ID spezifiziert
+Dialogs:
+  Tasks:
+    FinalReview:
+      TaskDescription: Der Prozess {0} wurde beendet!
+      TaskName: Schlusskontrolle
+    ProcessLoaded:
+      TaskName: Aufgabe für die Adhoc Konfiguration
+    WorkflowProperties:
+      TaskDescription: Bitte definieren Sie die Workfloweigenschaften!
+      TaskName: Workflow Einstellungen
+  com:
+    axonivy:
+      utils:
+        axonivyexpress:
+          ExpressManagement:
+            Create: Erstellen
+            DeleteExpressProcessMessage: Bist du sicher, dass du diesen Workflow löschen möchtest?
+            DeployButton: Hochladen
+            DeployMessage: Prozesse werden deployt
+            ExpressExportName: AXONIVY_Dataset_ExpressWorkflow_{0}.json
+            ExpressManagement: Express-Management
+            Import: Importieren
+            ImportDialogHeaderTitle: Wählen Sie ein Dataset für den Express-Workflow, es sollte eine JSON-Datei sein.
+            ProcessNotReadyToExecute: Dieser Prozess ist nicht bereit zur Ausführung. Bitte vervollständige die Prozessdefinition.
+          FormDefinition:
+            AllowedFiletypes: Erlaubte Dateiformate
+            BroadFooterArea: Breiter Footer Bereich
+            BroadHeaderArea: Breiter Header Bereich
+            CancelCreateForm: Wollen Sie wirklich abbrechen? Alle  Daten gehen verloren!
+            CheckboxFields: Auswahlfelder
+            CreateField: Erstellen
+            DataProvider: Datenanbieter
+            ElementLabel: Label
+            FieldSetAvailableFormelements: Formularelemente
+            FieldSetFormelementsPlacing: Platzierung der Formularelemente
+            FieldSetPreviewArea: Formularvorschau
+            FinishWorkflow: Workflowende
+            InputArea: Eingabebereich
+            InputCheckbox: Auswahlfeld
+            InputField: Eingabefeld
+            InputFileUpload: Dateiupload
+            InputOptions: Optionsfeld
+            InputType: Eingabe-Typ
+            LeftColumn: Linke Spalte
+            MaxLabelLength: '35'
+            MaxOptionsLength: '20'
+            NoCheckboxFieldYet: Bisher keine Auswahlfelder angelegt
+            NoDataProvider: Daten Provider
+            NoFormelementsAvailable: Keine Formularelemente verfügbar!
+            NoOptionboxFieldsYet: Bisher keine Auswahloptionen angelegt
+            NumberOfFiles: Dateianzahl
+            NumberOfRows: Zeilenanzahl
+            OptionboxFields: Optionsfelder
+            Preview: Vorschau
+            RightColumn: Rechte Spalte
+          WorkflowDefinition:
+            AbleToStart: Startberechtigung
+            AddProcessStep: Prozessschritt hinzufügen
+            AddUserOrRole: 'Wählen Sie eine Gruppe oder Benutzer aus, bitte:'
+            ChangeSettingWarning: Alle definierten Aufgaben werden gelöscht. Sind Sie sicher?
+            CreateOwn: Erstellen
+            DefaultTemplate: Standardvorlage
+            DeleteProcessStep: Prozessschritt löschen
+            DueTimeInDays: Fälligkeitsfrist in Tagen
+            EndStep: Ende
+            ExecuteWorkflow: Workflow direkt ausführen
+            FormDefinitionStep: Formular-definition
+            OneTime: Einmalig
+            ProcessDescription: Prozessbeschreibung
+            ProcessDetails: Prozesseigenschaften
+            ProcessName: Prozessname
+            ProcessOwner: Prozessverantwortliche
+            ProcessStep: Prozessschritt
+            ProcessType: Prozessart
+            Repeatable: Wiederkehrend
+            SaveWorkflow: Workflow speichern
+            SelectedAssigneesFieldSet: Ausgewählte Genehmiger
+            TaskDescription: Aufgabenbeschreibung
+            TaskName: Aufgabenname
+            TaskType: Aufgabentyp
+            ToGroup: Gruppe
+            ToUser: Benutzer
+            UntilDaysTooltip: Nach Ablauf wird die Aufgabe an die Rolle Everybody zugeteilt, und ihre Priorität auf Hoch gesetzt.
+            UseDefault: Standardoberfläche
+            UserInterface: Benutzeroberfläche
+            WorkflowPropertiesStep: Workfloweigenschaften
+          components:
+            ApprovalResult:
+              ApprovalResult: Freigabestatus
+              ApprovalStatus: Freigabestatus
+            Email:
+              Attachment: Anhang
+              EmailAddress: E-Mail Adresse
+              EmailText: Emailnachricht
+              FileFunctions: Funktionen
+              Filename: Dateiname
+              InvalidEmailFormat: Ungültiges E-Mail-Format
+              NoFiles: Keine Dateien vorhanden!
+              ResponseTo: Antwort an
+              Subject: Betreff
+            FinishedUserTasksForm:
+              Applicant: Antragssteller
+              FinishedTasks: Erledigte Aufgaben
+              FormDetails: Formulardetails
+            IconSelection:
+              IconLinkTooltip: Zum Ändern des Symbols anklicken
+              IconSelectionDialogHeader: Symbol auswählen
+              SeachIconByNamePlaceHolder: Icon anhand des Namens suchen
+          generic:
+            EndPage:
+              Subtitle: Die letzte Aufgabe wurde erfolgreich abgeschlossen
+              Title: Aufgabe erfolgreich abgeschlossen!
+            ExpressBusinessView:
+              ExpressNoItem: Es gibt noch keine abgeschlossene Express Aufgabe
+              ExpressNoItemDescription: Hier werden die Ergebnisse der abgeschlossenen Aufgaben angezeigt
+              ExpressWorkflowName: 'Business Details des Vorgangs: #{0}'
+          workflowExecution:
+            ApprovalForm:
+              Approve: Genehmigen!
+              CommentLabel: Kommentar des Genehmigers
+              Reject: Ablehnen!
+            FinalReviewForm:
+              Noticed: Zur Kenntnis genommen!
+            UserTaskForm:
+              Formular: Formular
+            UserTaskWithMailForm:
+              RequestTabTitle: Anfrage
+  workflowCreation:
+    ProcessName: Express Workflow erstellen
+Labels:
+  Actions: Aktionen
+  Add: Hinzufügen
+  Adhoc: Adhoc
+  Back: Zurück
+  Change: Ändern
+  Close: Schließen
+  Comment: Kommentar
+  ConfirmationHeaderText: Sind Sie sicher?
+  Delete: Löschen
+  Edit: Bearbeiten
+  Email: E-Mail
+  Enums:
+    ExpressMessageType:
+      ERROR: Fehler
+      FAILED: Fehlgeschlagen
+      IMPORT_EXPRESS_PROCESSES: Expressprozesse importieren
+      IMPORT_RESULT: Importergebnis
+      IMPORT_STATUS: Importstatus
+      INFO: Info
+      SUCCESSFUL: Erfolg
+      WARNING: Warnung
+    FormElementType:
+      CHECKBOX: Auswahlfeld
+      FILE_UPLOAD: Dateiupload
+      INPUT_DATE: Datumsauswahl
+      INPUT_NUMBER: Nummernfeld
+      INPUT_TEXT: Textfeld
+      INPUT_TEXT_AREA: Eingabebereich
+      RADIO_BUTTON: Auswahlfeld
+    ProcessType:
+      AD_HOC: Einmalig
+      REPEAT: Wiederkehrend
+    TaskType:
+      APPROVAL: Genehmigung
+      EMAIL: Information E-Mail
+      FINAL_REVIEW: Überprüfung
+      USER_TASK: Aufgabe
+      USER_TASK_WITH_EMAIL: Aufgabe mit E-Mail Schritt
+    UploadFileFormat:
+      EXCEL: Excel (xls/xlsx)
+      OTHERS: Andere Dateiformate
+      PDF: PDF (pdf)
+      WORD: Word (doc/docx)
+  Export: Exportieren
+  Fullname: vollständiger Name
+  Icon: Symbol
+  Messages:
+    DeleteSucceed: Die Datei wurde erfolgreich gelöscht
+    DeployErrorLog: Fehler beim Deployen {0}
+    DeploymentFinishedLog: Prozess(e) der Datei {0} erfolgreich im Portal deployt in {1}ms
+    DuplicateProcessNameLog: '- Duplizierter Prozessname {0}'
+    EndDeployLog: Express Deployment beendet
+    ExecuteWorkflowWarning: Sie müssen alle Aufgaben ausführen, bevor Sie diesen Workflow ausführen können
+    FileEmptyMessage: Datei ist leer
+    FileUploadElementPosition: Das File Upload-Element kann nur im Header oder Footer platziert werden!
+    InstallProcessFailedLog: '- Prozessdeployment {0} fehlgeschlagen'
+    InstalledProcessLog: Prozess installiert {0}
+    InvalidVersionLog: Nicht unterstützte Version {0} von Express
+    MaximumFileUploadElement: Es gibt bereits ein Datei-Upload-Element
+    ProcessNameExists: Dieser Prozessname wurde bereits benutzt
+    StartDeployLog: Start des Deployments des/der Express-Prozesses(e) der Datei {0} ins Portal
+    StartDeployProcessLog: Start des Deployments von Prozess {0}
+    ValidateProcessCoOwnerLog: '- Validierung des Prozesses Co-Owner von {0}, Benutzer {1} ist nicht im System verfügbar'
+    ValidateProcessOwnerLog: '- Validierung des Prozesses Owner von {0}, Benutzer {1} ist nicht im System verfügbar, ändern Sie den Prozesseigner auf {2}'
+    ValidateProcessPermissionLog: '- Validierung der Prozessberechtigung von {0}, Benutzer {1} ist im System nicht verfügbar'
+    ValidateTaskDefUserLog: '- Validierung der Task-Definition Verantwortliche von {0},Benutzer {1} ist im System nicht verfügbar'
+    VersionLog: 'Express Version: {0}'
+  Next: Weiter
+  NoSelection: Keine Auswahl
+  Ok: Ok
+  Permissions: Berechtigungen
+  Save: Speichern
+  Select: Auswählen
+  Start: Start
+  Task: Aufgabe
+Pattern:
+  dateTimePattern: dd.MM.yyyy HH:mm

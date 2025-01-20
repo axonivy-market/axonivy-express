@@ -1,0 +1,200 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://xmlns.jcp.org/jsf/core"
+  xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  xmlns:ic="http://ivyteam.ch/jsf/component" xmlns:p="http://primefaces.org/ui"
+  xmlns:pe="http://primefaces.org/ui/extensions" xmlns:pc="http://xmlns.jcp.org/jsf/composite/components">
+<h:body>
+  <ui:composition template="/layouts/frame-10-full-width.xhtml">
+    <ui:define name="title">#{ivy.cms.co('/Dialogs/com/axonivy/utils/axonivyexpress/ExpressManagement/ExpressManagement')}</ui:define>
+    <ui:define name="content">
+      <script type="text/javascript">
+        window.isWorkingOnATask = false;
+        window.isHideCaseInfo = true;
+        window.isHideTaskName = true;
+        window.isHideTaskAction = true;
+
+        $(document).ready(function(){
+          renderStartMenus();
+        });
+      </script>
+
+      <h:outputStylesheet library="css" name="express-management.css" />
+      <h:outputStylesheet library="css" name="utility.css" />
+      <h:outputStylesheet library="css" name="dialog-with-icon.css" />
+      <h:outputScript name="express-management.js" library="js" />
+
+      <h:form id="express-form">
+        <f:event listener="#{expressManagementBean.init()}" type="preRenderView" />
+        <div class="card">
+          <div class="w-full mb-4">
+            <h3 class="text-3xl font-light">#{ivy.cms.co('/Dialogs/com/axonivy/utils/axonivyexpress/ExpressManagement/ExpressManagement')}</h3>
+          </div>`
+          <div class="flex flex-row flex-wrap">
+            <div class="w-full flex flex-row justify-content-end mb-3">
+              <p:commandButton id="create-button" value="#{ivy.cms.co('/Dialogs/com/axonivy/utils/axonivyexpress/ExpressManagement/Create')}"
+                actionListener="#{expressManagementBean.navigateToCreateExpressWorkflow}" styleClass="mr-2"
+                icon="si si-add" />
+              <p:commandButton id="import-button" value="#{ivy.cms.co('/Dialogs/com/axonivy/utils/axonivyexpress/ExpressManagement/Import')}"
+                icon="si si-download-bottom"
+                onclick="PF('importExpressDialog').show(); return false;" />
+            </div>
+            <div class="w-full">
+              <p:dataTable id="express-process-table" value="#{expressManagementBean.processes}" var="process">
+                <p:column headerText="#{ivy.cms.co('/Dialogs/com/axonivy/portal/components/Common/Process/ProcessName')}"
+                  width="30%" sortBy="#{process.processName}" filterBy="#{process.processName}">
+                  <div class="flex flex-row align-items-center">
+                    <h:outputText value="#{process.processName}" styleClass="express-name" />
+                    <h:outputText id="process-warning" styleClass="si si-alert-circle text-yellow-500 ml-2 font-bold" rendered="#{!process.readyToExecute}" />
+                    <p:tooltip for="process-warning" value="#{ivy.cms.co('/Dialogs/com/axonivy/utils/axonivyexpress/ExpressManagement/ProcessNotReadyToExecute')}" />
+                  </div>
+                </p:column>
+                <p:column headerText="#{ivy.cms.co('/Dialogs/com/axonivy/utils/axonivyexpress/WorkflowDefinition/ProcessDescription')}" width="30%">
+                  <h:outputText value="#{process.processDescription}" />
+                </p:column>
+                <p:column headerText="#{ivy.cms.co('/Dialogs/com/axonivy/portal/components/ProcessHistory/CaseColumn/Creator')}">
+                  <pc:securityMemberNameAndAvatar displayName="#{expressManagementBean.getUserDisplayName(process.processOwner)}"
+                    securityMember="#{process.processOwnerUser}" isStandAlone="false" />
+                </p:column>
+                <p:column headerText="#{ivy.cms.co('/Labels/Actions')}" width="120" styleClass="text-center">
+                  <p:commandButton id="action-button" icon="fa fa-ellipsis-h"
+                    styleClass="ui-no-rounded-button-process-page" type="button" />
+                    <p:menu id="action-menu" styleClass="w-auto" overlay="true" trigger="action-button"
+                      my="right top" at="right bottom">
+                     <p:menuitem id="start-in-portal" process="@this" styleClass="action-menu hidden js-start-with-portal"
+                       rendered="#{expressManagementBean.canStartProcess(process)}"
+                       icon="si si-controls-play"
+                       value="#{ivy.cms.co('/Labels/Start')}" title="#{ivy.cms.co('/Labels/Start')}"
+                       actionListener="#{expressManagementBean.startExpressProcessWithinPortal(process)}" />
+                     <p:menuitem id="start" process="@this" styleClass="action-menu hidden js-start-without-portal"
+                       rendered="#{expressManagementBean.canStartProcess(process)}"
+                       icon="si si-controls-play"
+                       value="#{ivy.cms.co('/Labels/Start')}" title="#{ivy.cms.co('/Labels/Start')}"
+                       actionListener="#{expressManagementBean.startExpressProcess(process)}" />
+                     <p:menuitem id="edit" process="@this" styleClass="action-menu"
+                       rendered="#{expressManagementBean.canEditProcess(process)}"
+                       actionListener="#{expressManagementBean.navigateToExpressProcessModificationPage(process)}"
+                       icon="si si-graphic-tablet-drawing-pen"
+                       value="#{ivy.cms.co('/Labels/Edit')}" title="#{ivy.cms.co('/Labels/Edit')}" />
+                     <p:menuitem id="export" process="@this" styleClass="action-menu"
+                       icon="si si-download-bottom"
+                       value="#{ivy.cms.co('/Labels/Export')}" title="#{ivy.cms.co('/Labels/Export')}"
+                       onclick="PF('exportExpressBtn-#{process.id}').jq.click()" />
+                     <p:menuitem id="delete" process="@(this)" styleClass="action-menu color-destroy"
+                       rendered="#{expressManagementBean.canEditProcess(process)}"
+                       icon="si si-bin-1" value="#{ivy.cms.co('/Labels/Delete')}" title="#{ivy.cms.co('/Labels/Delete')}"
+                       actionListener="#{expressManagementBean.onChooseExpressProcess(process)}"
+                       update="@(form)"
+                       oncomplete="PF('remove-express-workflow-dialog').show()">
+                     </p:menuitem>
+                    </p:menu>
+                    <p:commandButton id="export-express"
+                      widgetVar="exportExpressBtn-#{process.id}"
+                      styleClass="hidden"
+                      update="@this" immediate="true" ajax="false">
+                      <p:fileDownload value="#{expressManagementBean.exportToJsonFile(process)}" />
+                    </p:commandButton>
+                </p:column>
+              </p:dataTable>
+            </div>
+          </div>
+          
+          <ui:decorate template="/layouts/decorator/dialog-with-icon.xhtml">
+            <ui:param name="id" value="remove-express-workflow-dialog" />
+            <ui:param name="widgetVar" value="remove-express-workflow-dialog" />
+            <ui:param name="closeable" value="true" />
+            <ui:param name="closeOnEscape" value="true" />
+            <ui:param name="headerText"
+              value="#{ivy.cms.co('/Dialogs/com/axonivy/utils/axonivyexpress/ExpressManagement/DeleteExpressProcessMessage')}" />
+            <ui:define name="dialogFooter">
+              <div class="flex flex-column">
+              <p:commandButton id="remove-button" styleClass="w-full"
+                value="#{ivy.cms.co('/Labels/Delete')}"
+                actionListener="#{expressManagementBean.deleteExpressProcess}"
+                update="express-form"
+                oncomplete="PF('remove-express-workflow-dialog').hide();" />
+              <p:link href="#" value="#{ivy.cms.co('/Dialogs/com/axonivy/portal/components/Common/Cancel')}"
+                onclick="PF('remove-express-workflow-dialog').hide();" styleClass="ui-button-flat pt-3 flex justify-content-center" />
+              </div>
+            </ui:define>
+          </ui:decorate>
+
+          <div class="w-full flex flex-row justify-content-end mt-4">
+            <p:commandButton value="Close" actionListener="#{logic.close}" />
+          </div>
+        </div>
+      </h:form>
+
+      <p:dialog id="import-express-dialog" widgetVar="importExpressDialog"
+        styleClass="import-express-dialog "
+        header="Import Express Processes" appendTo="@(body)" modal="true"
+        fitViewport="true" position="center center" responsive="true" positionType="absolute"
+        onShow="PF('importExpressDialog').initPosition(); cleanExportMessage();" closeOnEscape="false" width="70%">
+        <h:form id="import-express-form">
+          <div class="flex w-full flex-column">
+            <div class="w-full mb-3">
+            <span>#{ivy.cms.co('/Dialogs/com/axonivy/utils/axonivyexpress/ExpressManagement/ImportDialogHeaderTitle')}</span>
+            </div>
+            <div class="w-full">
+              <p:messages id="import-express-dialog-message" />
+            </div>
+            <div class="w-full">
+              <p:fileUpload id="express-process-upload" mode="advanced"
+                chooseIcon="#{visibilityBean.generateButtonIcon('si si-touchpad-finger')}"
+                dragDropSupport="true"
+                update="import-express-form @(form) import-express-dialog-message"
+                label="#{ivy.cms.co('/Labels/Select')}"
+                uploadLabel="#{ivy.cms.co('/Dialogs/com/axonivy/utils/axonivyexpress/ExpressManagement/DeployButton')}"
+                uploadIcon="#{visibilityBean.generateButtonIcon('si si-cog-play')}"
+                cancelLabel="#{ivy.cms.co('/Dialogs/com/axonivy/portal/components/Common/Cancel')}"
+                cancelButtonStyleClass="ui-button-secondary"
+                cancelIcon="#{visibilityBean.generateButtonIcon('si si-delete-1')}"
+                listener="#{expressManagementBean.importExpress}"
+                value="#{expressManagementBean.importExpressFile}" fileLimit="1"
+                onstart="showLoadingIndicator(); cleanExportMessage(); PF('close-import-express').disable();"
+                oncomplete="hideLoadingIndicator(); PF('importExpressDialog').initPosition(); PF('close-import-express').enable();"
+                styleClass="express-process-upload"
+                allowTypes="/(\.|\/)(json)$/i">
+              </p:fileUpload>
+            </div>
+          </div>
+
+          <div id="express-helper-loading-container" class="w-full express-helper-loading-container">
+            <div class="express-helper-loading">
+              <i class="si si-synchronize-arrows si-is-spinning si-lg u-mar-right-10" /> <span>#{ivy.cms.co('/Dialogs/com/axonivy/utils/axonivyexpress/ExpressManagement/DeployMessage')}</span>
+            </div>
+          </div>
+
+          <h:panelGroup id="impress-import-output" layout="block" styleClass="w-full mt-2">
+            <h:panelGroup id="import-status" layout="block" styleClass="import-status #{expressManagementBean.importStatus} font-bold">
+              #{expressManagementBean.importStatus}
+            </h:panelGroup>
+            <pre class="express-import-result">#{expressManagementBean.importOutput}</pre>
+          </h:panelGroup>
+
+        </h:form>
+        <f:facet name="footer">
+          <p:commandButton id="close-import-express" widgetVar="close-import-express"
+            value="#{ivy.cms.co('/Labels/Close')}"
+            icon="#{visibilityBean.generateButtonIcon('si si-remove')}"
+            onclick="PF('importExpressDialog').hide()"
+            update="express-form" process="@this" oncomplete="renderStartMenus()"/>
+        </f:facet>
+      </p:dialog>
+
+      <script type="text/javascript">
+         function showLoadingIndicator() {
+           $('.express-helper-loading-container').show();
+         }
+
+         function hideLoadingIndicator() {
+           $('.express-helper-loading-container').hide();
+         }
+
+         function cleanExportMessage() {
+           $('[id$=":impress-import-output"]').empty();
+         }
+       </script>
+    </ui:define>
+  </ui:composition>
+</h:body>
+
+</html>
