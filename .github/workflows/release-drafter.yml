@@ -9,18 +9,9 @@ on:
     types: [opened, reopened, synchronize]
 
 permissions:
-  actions: write
+  contents: read
   checks: write
-  contents: write
-  deployments: write
-  issues: write
-  packages: write
   pull-requests: write
-  repository-projects: write
-  security-events: write
-  statuses: write
-  discussions: write
-  pages: write
 
 jobs:
   release_drafter:
