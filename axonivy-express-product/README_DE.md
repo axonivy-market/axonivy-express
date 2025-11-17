@@ -1,167 +1,227 @@
-# Axon Ivy Express
+# #Axon Efeu Drückt aus
 
-Axon Ivy Express ist ein Zusatzmodul für das Axon Ivy Portal. Als Geschäftsanwender kannst du damit deine Prozessanwendungen erstellen und mit deinen Kolleg:innen teilen. Diese Funktionen sind auch als No-Code Application Platforms oder Citizen Developer Platforms bekannt. Daher ist es das perfekte Werkzeug, um deine Prozesse zu digitalisieren und Standardisierung, Zuverlässigkeit sowie Nachverfolgbarkeit zu schaffen.
+#Axon Efeu Drückt aus ist ein zufügen-auf Modul für den #Axon Efeu Portal. Da
+einem dienstlichen Nutzer, es aktiviert du zu schaffen und teilen eure
+Arbeitsgang Anträge mit euren Kollegen. Diese Fähigkeiten sind auch wie gekannt
+Nein-Code Antrag Bahnsteige oder Bürger Entwickler Bahnsteige. Deswegen, es zu
+digitalisieren das perfekte Tool eure Arbeitsgänge und schaffen
+#Einheitlichkeit, Beständigkeit, und #Rückverfolgbarkeit. #Axon Efeu Drückt aus:
 
-Axon Ivy Express:
+   * Erlaubt dienstliche Nutzer zu schaffen Arbeitsgänge ohne einen IT
+     Hintergrund.
+   * Automatisiert dienstliche Arbeitsgänge ohne IT Abteilung Verwicklung.
+   * Unterstützt alle tariflichen Charakterzüge wie #Email Mitteilungen, Task
+     Delegation, #usw.
+   * Bietet ein Importeur Tool zu reichen über eure Nein-#Kodieren dienstliche
+     Arbeitsgänge zu Nieder-Code oder Pro-Code Entwickler.
 
-   * Ermöglicht es dir, Prozesse ohne IT-Kenntnisse zu erstellen.
-   * Automatisiert Geschäftsprozesse ohne die Einbindung der IT-Abteilung.
-   * Unterstützt alle Standardfunktionen wie E-Mail-Benachrichtigungen, Aufgabenweiterleitung usw.
-   * Verfügt über ein Import-Tool, um deine No-Code-Geschäftsprozesse an Low-Code- oder Pro-Code-Entwickler:innen zu übergeben.
-
-![express-workflow-properties](images/express-workflow-properties.png)
+![#Express--workflow-#Besitz](images/express-workflow-properties.png)
 
 ## Demo
 
-### Erstelle einen neuen Express-Prozess
+### Schaff ein neues #Express- Arbeitsgang
 
-1. Starte die Axon Ivy Engine.
-2. Öffne die Seite **Prozesse**.
-3. Klicke auf den Prozess **Express Management**, um zum Express Management Dashboard zu gelangen.
+1. Starte den #Axon Efeu Motor
+2. Offen das **Arbeitsgänge** Seite
+3. Klick weiter **#Express- Management** verarbeitet zu befahren zu das
+   #Express- Management Armaturenbrett.
 
-![Express Management process](images/express-management-process.png)
+![#Express- Management Arbeitsgang](images/express-management-process.png)
 
-4. Klicke im **Express Management** auf die Schaltfläche **Erstellen**.
+4. Herein das **#Express- Management**, klickt das **Schafft** Knopf
 
-5. Die Seite **Workflow-Eigenschaften** wird geöffnet.
+5. Das **Workflow #Besitz** Seite ist geöffnet
 
-![Workflow properties](images/workflow-properties.png)
+![Workflow #Besitz](images/workflow-properties.png)
 
-#### Definiere die Workflow-Eigenschaften
+#### Definier workflow #Besitz
 
-1. **Prozessart** definieren:
+1. Definier das **Typ von Arbeitsgang**:
 
-   * Wähle die Option *Einmalig*, wenn du den Prozess nur einmal ausführen möchtest.
+   * Benutz die Option *#man misst* ob du möchtest den Arbeitsgang exekutieren
+     #nur einmal.
+   * Benutz die Option *Repeatable* ob du möchtest den Arbeitsgang speichern für
+     monoton Nutzung. Der Arbeitsgang will in dem Tisch fungieren weiter dem
+     **#Express--Management** Seite.
 
-   * Wähle die Option *Wiederkehrend*, wenn du den Prozess für wiederholte Nutzung speichern möchtest. Der Prozess wird dann in der Tabelle auf der Seite **Express Management** angezeigt.
+2. Definier eure **Nutzer Schnittstelle** :
 
-2. **Benutzeroberfläche** definieren:
+   * Mit der Option *Schafft eigen* du kannst euren eigenen Nutzer Zwiegespräch
+     schaffen für jede Arbeitsgang Stufe
+   * Mit der Option *Benutzt #voreingestellt*, die Nutzer Zwiegespräche wollen
+     automatisch sein generiert bei #Axon Efeu Drückt aus
 
-   * Mit der Option *Erstellen* kannst du für jeden Prozessschritt eigene Benutzerdialoge erstellen.
-   * Mit der Option *Standardoberfläche* werden die Benutzerdialoge automatisch von Axon Ivy Express generiert.
+3. Versieh unter einen #beschreibend Namen **Arbeitsgang Namen**
+4. Du dürfen ein Steckbrief zufügen unter **Arbeitsgang Steckbrief**. Wir
+   unterstützen kräftig dir zu benutzen den Steckbrief zu versehen Details von
+   euren Arbeitsgang.
+5. Klick auf dem Band **Änderung** neben Ikone zu #ausgewählt die Ikone besten
+   gepasst für euren Arbeitsgang.
 
-3. Gib unter **Prozessname** einen aussagekräftigen Namen ein.
+![#Express--workflow-#Besitz](images/express-workflow-properties.png)
 
-4. Optional kannst du unter **Prozessbeschreibung** eine Beschreibung hinzufügen. Wir empfehlen dir, die Beschreibung zu nutzen, um Details zu deinem Prozess anzugeben.
+6. Der erste Arbeitsgang Stufe ist schon verfügbar für Konfiguration.
+7. Du dürfen #fern Arbeitsgang Stufen zufügen benutzend den Knopf **Fügt zu
+   Arbeitsgang Stufe**
+8. Du darfst unnötige Arbeitsgang Stufen streichen benutzend den Knopf
+   **Entfernt Arbeitsgang Stufe**
+9. Für jede Arbeitsgang Stufe:
 
-5. Klicke auf den Link **Ändern** neben dem Icon, um das Icon auszuwählen, das am besten zu deinem Prozess passt.
+   * #Ausgewählt das **Task Typ**
 
-![express-workflow-properties](images/express-workflow-properties.png)
+     | **Task Typ**               | **Steckbrief**                                                                                                                                            |
+     | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+     | **Nutzer Task**            | Für diesen Task der Nutzer kann definieren ein UI                                                                                                         |
+     | **Nutzer Task mit #Email** | Außer dem normalen Nutzer Task, der Nutzer kann eine #Email senden direkt von den #Axon Efeu Portal, ohne die Notwendigkeit zu wechseln zu anderen System |
+     | **Auskunft #Email**        | Diese #Email kann sein definiert #bei dem Schöpfer von dem #Express- Workflow und will sein gesandt automatisch ohne Nutzer Aktion                        |
+     | **Genehmigung**            | Dieser Task Typ schafft einen Genehmigung Task                                                                                                            |
 
-6. Der erste Prozessschritt ist bereits zur Konfiguration verfügbar.
-7. Du kannst weitere Prozessschritte mit der Schaltfläche **Prozessschritt hinzufügen** hinzufügen.
-8. Du kannst unnötige Prozessschritte mit der Schaltfläche **Prozessschritt löschen** löschen.
-9. Für jeden Prozessschritt:
+   * Versieh herein einen #beschreibend Namen **Task Namen**
+   * Versieh herein einen optionalen Steckbrief **Task Steckbrief.**
 
-   * Wähle den **Aufgabentyp**:
+10. Für *#man misst* Arbeitsgang Typ, der erste Arbeitsgang Stufe definiert die
+    Nutzer oder Rollen unter **#Imstande zu starten** wer kann starten den
+    Arbeitsgang
 
-      |**Aufgabentyp**|**Beschreibung**|
-      | ----------- | ------------- |
-      |**Aufgabe**|Für diese Aufgabe kannst du eine Benutzeroberfläche definieren.|
-      |**Aufgabe mit E-Mail Schritt**|Zusätzlich zur normalen Benutzeraufgabe kannst du direkt aus dem Axon Ivy Portal eine E-Mail senden, ohne zu einem anderen System wechseln zu müssen.|
-      |**Information E-Mail**|Diese E-Mail wird vom Ersteller des Express-Workflows definiert und automatisch ohne Benutzeraktion versendet.|
-      |**Genehmigung**|ieser Aufgabentyp erstellt eine Genehmigungsaufgabe.|
+![#Imstande-zu-starte](images/able-to-start.png)
 
-   * Gib einen aussagekräftigen Namen unter **Aufgabenname** ein.
-   * Optional kannst du eine Beschreibung unter **Aufgabenbeschreibung** hinzufügen.
+11. Für jede anderen Arbeitsgang Stufen definieren den Nutzer oder Rollen wer
+    ist zuständig zu exekutieren herein den Task **Zuständig**.
 
-10. Für den Prozesstyp *Einmalig* definiert der erste Prozessschritt die Benutzer oder Rollen unter **Startberechtigung**, die den Prozess starten dürfen.
+![Zuständig](images/responsible.png)
 
-![able-to-start](images/able-to-start.png)
+12. Für jede Arbeitsgang Stufe außer die zuerst definieren die Zeit vor den Task
+    verfällt herein **Expiry in Tage**
+13. #Nachdem beendet #definieren alle die Stufen, klicken die **#Nächste**
+    #zuknöpfen zu konfigurieren jede Stufe Details
 
-11. Für alle anderen Prozessschritte definiere die Benutzer oder Rollen, die für die Ausführung der Aufgabe verantwortlich sind, unter **Verantwortlich**.
+![#Express--Vernissage](images/express-preview.png)
 
-![responsible](images/responsible.png)
+#### Konfigurier Arbeitsgang Stufen
 
-12. Für jeden Prozessschritt (außer dem ersten) definiere die Zeit, bevor die Aufgabe abläuft, unter **Fälligkeitsfrist in Tagen**.
-13. Nachdem du alle Schritte definiert hast, klicke auf die Schaltfläche **Weiter**, um die Details jedes Schrittes zu konfigurieren.
+![#Express--zufügen-#einlesen](images/express-add-input.png)
 
-![express-preview](images/express-preview.png)
+Ob der #Express- Arbeitsgang hat eine Stufe Typ **Nutzer Task** oder **Nutzer
+Task mit #Email**, die **Form Definition** Seite will sein geöffnet. Mit diesem
+Chefredakteur, du kannst schaffen UI für jeden Task von den erwähnte Typen. Das
+**Form Definition** schon versehen nötig UI Element #welche du können zufügen
+frei zu das UI von die Arbeitsgang Stufe.
 
-#### Prozessschritte konfigurieren
+| **UI Element**       | **Steckbrief und Optionen**                                                                                                                      |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Input Feld**       | Input Feld für Text, Nummern oder datieren <br> - Text Feld <br> - Nummer Feld <br> - Datum Pflücker                                             |
+| **Input Gegend**     | Text Input Feld zwischen 1 und 10 rudert                                                                                                         |
+| **Checkbox**         | Liste von Elemente #welche erlauben den Nutzer eine mehrfache Auslese                                                                            |
+| **Radio Knopf**      | Liste von Elemente #welche erlauben den Nutzer eine ledige Auslese                                                                               |
+| **Datei #Hochladen** | Versieht ein Datei #Hochladen Zwiegespräch zu dem Nutzer. Du darfst definieren: <br> - Erlaubt Datei Typen <br> - Nummer von erlaubte Anfügungen |
 
-![express-add-input](images/express-add-input.png)
+1. Wähl aus eins UI Element und konfigurieren ihm. #Jede UI Element hat seine
+   eigenen Konfigurationen. Beispielsweise, ob du mögen zufügen ein **Input
+   Feld** , du konntest konfigurieren ihm da unten:
 
-Wenn der Express-Prozess einen Schritt vom Typ **Aufgabe** oder **Aufgabe mit E-Mail** enthält, wird die Seite **Formular-definition** geöffnet. Mit diesem Editor kannst du eine Benutzeroberfläche für jede Aufgabe der genannten Typen erstellen. Die **Formular-definition** stellt bereits die notwendigen UI-Elemente bereit, die du nach Belieben zur Benutzeroberfläche des Prozessschrittes hinzufügen kannst.
+   * Versieh einen #beschreibend Namen für den Input herein **Etikett**
+   * #Ausgewählt der Input tippt ein **Input Typ**
+   * Deute hin ob den Input für dieses #Daten Stück ist bedürft mal den Schalter
+     #festknebeln **Dieses Feld ist bedürft**
 
-   |**UI-Element**|**Beschreibung und Optionen**|
-   | --------------- | ------------------------- |
-   |**Eingabefeld**|Eingabefeld für Text, Zahlen oder Daten  <br>   - Textfeld  <br>   - Nummernfeld  <br>   - Datumsauswahl|
-   |**Eingabebereich**|Text-Eingabefeld mit 1 bis 10 Zeilen|
-   |**Auswahlfeld**|Liste von Elementen, die dem Benutzer eine Mehrfachauswahl ermöglichen|
-   |**Optionsfeld**|Liste von Elementen, die dem Benutzer eine Einzelne Auswahl ermöglichen|
-   |**Dateiupload**|Bietet dem Benutzer ein Dialogfeld zum Hochladen von Dateien. Du kannst definieren:  <br>   - Erlaubte Dateitypen <br>   - Anzahl der erlaubten Anhänge|
+2. Nach du beendetest mit konfigurieren Lagen, klicken die **Schaffen**
+   #zuknöpfen zu zufügen die UI Element zu das **Form Elemente** Liste
+3. Für #jede UI Elemente herein die **Form Elemente** Liste, du kannst den
+   Kitsch Knopf klicken zu streichen ihnen
+4. Zu konfigurieren die Stelle von UI Elemente auf die Arbeitsgang Stufe Layout,
+   zieh und lass fallen jedes UI Element von das **Form Elemente** Liste hinein
+   #man von den Gegenden von den **Praktikum von Form Elemente** Sektion
+5. Klick das **Vernissage** Knopf auf der Spitze von der **Praktikum von Form
+   Elemente** Sektion zu sehen die Vernissage Version
+6. Für die Stufen von Typ **Auskunft E-Mail**, der #Email Chefredakteur will
+   fungieren stattdessen. Du kannst Auskunft für die #Email Stufe konfigurieren
+   hier
 
-1. Wähle ein UI-Element aus und konfiguriere es. Jedes UI-Element hat eigene Konfigurationsmöglichkeiten Zum Beispiel, wenn du ein **Eingabefeld** hinzufügen möchtest, könntest du es wie folgt konfigurieren:
+   * **E-Mail Adresse**: #Email von Empfänger. Getrennt bei Komma.
+   * **Antwort zu**: Die Antwort #Email Adresse. Dieses Feld ist optional.
+   * **Dienstbar**: Das #Email Sujet.
+   * **#Email Text**: #Einverstanden von der #Email.
+   * **Anfügung**: Anfügungen möchtest du senden mitsamt die #Email. Dieses Feld
+     ist optional.
 
-   * Gib einen aussagekräftigen Namen für das Eingabefeld unter **Label** ein.
-   * Wähle den Eingabetyp unter **Eingabe-Typ** aus.
-   * Gib an, ob das Eingabefeld für dieses Datenelement erforderlich ist, indem du den Schalter **Dies ist ein Pflichtfeld** umschaltest.
+7. Einmal beendest konfigurieren du UI für eine Stufe, klickt die **#Nächste**
+   #zuknöpfen zu definieren die nächste Stufe
 
-2. Nachdem du die Einstellungen konfiguriert hast, klicke auf die Schaltfläche Erstellen, um das UI-Element zur Liste der **Formularelemente** hinzuzufügen.
-3. Für jedes UI-Element in der Liste der **Formularelemente** kannst du auf die Papierkorb-Schaltfläche klicken, um es zu löschen.
-4. Um die Position der UI-Elemente im Layout des Prozessschrittes zu konfigurieren, ziehe jedes UI-Element aus der Liste der **Formularelemente** in einen der Bereiche der **Platzierung der Formularelemente**-Sektion.
-5. Klicke auf die Schaltfläche **Vorschau** oben in der **Platzierung der Formularelemente**-Sektion, um die Vorschau-Version zu sehen.
-6. Für Schritte vom Typ **Information E-Mail** wird stattdessen der E-Mail-Editor angezeigt. Hier kannst du die Informationen für den E-Mail-Schritt konfigurieren:
+#### Drück aus Dienstliche Übersicht
 
-   * **E-Mail Adresse**: E-Mail-Adressen der Empfänger, durch Komma getrennt.
-   * **Antwort an**: Die Antwort-E-Mail-Adresse. Dieses Feld ist optional.
-   * **Betreff**: Der Betreff der E-Mail.
-   * **Emailnachricht**: Der Inhalt der E-Mail.
-   * **Anhang**: Anhänge, die du zusammen mit der E-Mail senden möchtest. Dieses Feld ist optional.
+Seit Version 12.0.0, #Axon Efeu Drückt aus Kanister operiert selbstständig von
+#Axon Efeu Portal. Aber zu fertigbringen #Axon Efeu Drückt aus Fälle und
+beschäftigen, es ist kräftig weiterempfohlen zu benutzen Portal. Mal benutzen
+Portal, du kannst #der Übersicht #Daten von jeden #Express- Fall überprüfen mal
+zugreifen den **Dienstliche Details** Seite von jenem Fall in dem Portal.
 
-7. Nachdem du die Benutzeroberfläche für einen Schritt konfiguriert hast, klicke auf die Schaltfläche **Weiter**, um den nächsten Schritt zu definieren.
+![#Express--Geschäft-Fall-weis zu](images/express-business-case-detail.png)
 
-#### Express Geschäftsübersicht
+#### #Express- Management
 
-Seit Version 12.0.0 kann Axon Ivy Express unabhängig vom Axon Ivy Portal betrieben werden. Es wird jedoch dringend empfohlen, das Portal zu nutzen, um Axon Ivy Express-Fälle und -Aufgaben zu verwalten. Durch die Nutzung des Portals kannst du die Zusammenfassungsdaten jedes Express-Falles einsehen, indem du die Seite **Business Details** dieses Falls im Portal aufrufst.
+#Express- Management aktiviert dir zu fertigbringen genügend #Express-
+Arbeitsgänge. Ferner, du kannst Ausfuhr/importieren Drückt aus workflows
+benutzend JSON Dateien.
 
-![express-business-case-detail](images/express-business-case-detail.png)
+![#Express- Management](images/express-management-process.png)
 
-#### Express-Management
+Zu benutzen alle Charakterzüge von das #Express- Management Seite, und starten
+alle #Express- Arbeitsgänge, du brauchst zu sein gewährt die Rolle
+**AXONIVY_#EXPRESS-_ADMIN**.
 
-Die **Express-Management** ermöglicht es dir, Express-Prozesse effizient zu verwalten. Darüber hinaus kannst du Express-Workflows mit JSON-Dateien importieren/exportieren.
+##### HowTo: Exportier ein #Express- workflow
 
-![Express management](images/express-management-process.png)
+1. In dem #Express- workflows Tisch, lokalisier der gewünscht workflow und
+   klicken seine Speisekarte Ikone.
+2. Von das dropdown Speisekarte, #ausgewählt **Ausfuhr**.
 
-Um alle Funktionen der Express-Management-Seite zu nutzen und alle Express-Prozesse zu starten, musst du die Rolle **AXONIVY_EXPRESS_ADMIN** zugewiesen bekommen.
+![Ausfuhr-drück aus](images/export-express.png)
 
-##### HowTo: Exportiere einen Express-Workflow
+Das workflow wollen sein automatisch wie heruntergeladen ein JSON Datei.
 
-1. Suche im Express-Workflows-Tabellenbereich den gewünschten Workflow und klicke auf das Menü-Symbol.
-2. Wähle im Dropdown-Menü **Exportieren** aus.
+**Wichtig**: Die #ausgeführt Datei ist eine JSON Dokument zügelnd die Version
+Auskunft von #Axon Efeu Drückt aus und den #Express- Arbeitsgang #Daten.
+#Vermeiden bearbeiten manuell diese Datei zu sichern #Daten Integrität.
 
-![export-express](images/export-express.png)
+##### HowTo: Importier einen #Express- Arbeitsgang
 
-Der Workflow wird automatisch als JSON-Datei heruntergeladen.
+Das Einfuhr #Express- Arbeitsgang Aufgabe erlaubt den Administrator zu
+importieren #Express- Arbeitsgänge hinein das Portal von einer Sicherheitskopie
+JSON Datei. Klick das **Einfuhr** Knopf, das Einfuhr #Express- Arbeitsgänge
+Zwiegespräch will zeigen. Du kannst klicken das **#Ausgewählt** #zuknöpfen und
+auswählen das #Express- JSON Datei jene zügelt die workflows du möchtest
+importieren.
 
-**Wichtig**: Die exportierte Datei ist ein JSON-Dokument, das die Versionsinformationen von Axon Ivy Express und die Express-Prozessdaten enthält. Vermeide es, diese Datei manuell zu bearbeiten, um die Datenintegrität zu gewährleisten.
+![Einfuhr-#Express--Zwiegespräch](images/import-express-dialog.png)
 
-##### HowTo: Importiere einen Express-Prozess
+Dann, drücken das **#Aufbieten** #zuknöpfen und warten auf den #Aufstellen
+Arbeitsgang.
 
-Die Funktion **Express-Prozess importieren** ermöglicht es dem Administrator, Express-Prozesse aus einer Backup-JSON-Datei in das Portal zu importieren.
-Klicke auf die Schaltfläche **Importieren**, der Dialog zum Importieren von Express-Prozessen wird angezeigt. Du kannst auf die Schaltfläche **Auswählen** klicken und die Express-JSON-Datei auswählen, die die Workflows enthält, die du importieren möchtest.
+![Einfuhr-#Express--Aktion](images/import-express-action.png)
 
-![import-express-dialog](images/import-express-dialog.png)
+Nach den #Aufstellen Arbeitsgang ist vervollständigt, ein Ausgabe Log
+Diskussionsrunde will sein gezeigt. Du kannst sehen alle eingesammelt die
+Auskunft während den #Aufstellen Arbeitsgang.
 
-Drücke anschließend die Schaltfläche **Hochladen** und warte, bis der Bereitstellungsprozess abgeschlossen ist.
+Jetzt, ob der #Aufstellen Arbeitsgang ist erfolgreich, eure workflows ist
+importiert und einen Administrator kann überprüfen und/oder bearbeiten jene vor
+sie sind bereit zu benutzen.
 
-![import-express-action](images/import-express-action.png)
-
-Nach Abschluss des Bereitstellungsprozesses wird ein Ausgabenprotokoll-Panel angezeigt. Du kannst alle Informationen einsehen, die während des Bereitstellungsprozesses gesammelt wurden.
-
-Wenn der Bereitstellungsprozess erfolgreich war, sind deine Workflows importiert, und ein Administrator kann sie überprüfen und/oder bearbeiten, bevor sie bereit zur Nutzung sind.
-
-![import-express-status](images/import-express-status.png)
+![Einfuhr-#Express--Zustand](images/import-express-status.png)
 
 ## Migration
 
-### Migration auf 12.0.0
+### Migrier zu 12.0.0
 
-**Axon Ivy Express** ist jetzt eine eigenständige Anwendung und benötigt nicht mehr das Axon Ivy Portal. Darüber hinaus wurde es aktualisiert, um mit der neuesten Struktur des Axon Ivy Market-Projekttemplates übereinzustimmen.
+**#Axon Efeu Drückt aus** ist jetzt ein eigenständiger Antrag und nicht mehr
+bedürft #Axon Efeu Portal. Außerdem, es gewesen hat verbessert zu abstimmen mit
+der spätesten Struktur von den #Axon Efeu Vermarktet Projekt Vorlage.
 
-Wichtig: Workflows, die in früheren Versionen von Express erstellt wurden, sind mit Axon Ivy Express 12 nicht kompatibel. Um deine alten Workflows weiterhin zu verwenden:
+**Wichtig**: Workflows Geschafft in vorausgehend Versionen von #Express- ist
+unvereinbar mit #Axon Efeu Drückt aus 12. Zu fortdauern benutzen eure altes
+workflows:
 
-Exportiere alle Workflows aus der vorherigen Version.
+   1. Ausfuhr alle workflows von der vorausgehenden Version.
 
-Importiere sie in das neue Axon Ivy Express über die Workflow [importieren-Funktion](#howto-importiere-einen-express-prozess).
+   2. Importier jene hinein das neue #Axon Efeu #Express- benutzend das
+      [Importier workflow](#howto-import-an-express-process) biete.
