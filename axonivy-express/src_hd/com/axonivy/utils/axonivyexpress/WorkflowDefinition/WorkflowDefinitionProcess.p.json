@@ -205,9 +205,9 @@
     }, {
       "id" : "f16",
       "type" : "HtmlDialogMethodStart",
-      "name" : "iniAssginement(TaskDef)",
+      "name" : "initAssignment(TaskDef)",
       "config" : {
-        "signature" : "initAssginement",
+        "signature" : "initAssignment",
         "input" : {
           "params" : [
             { "name" : "taskDefinition", "type" : "gawfs.TaskDef", "desc" : "" }

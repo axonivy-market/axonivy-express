@@ -113,7 +113,7 @@ Dialogs:
             IconSelection:
               IconLinkTooltip: Haga clic para cambiar el icono
               IconSelectionDialogHeader: Seleccionar ícono
-              SeachIconByNamePlaceHolder: Buscar símbolo por nombre
+              SearchIconByNamePlaceHolder: Buscar símbolo por nombre
           generic:
             EndPage:
               Subtitle: La última tarea se completó con éxito.
