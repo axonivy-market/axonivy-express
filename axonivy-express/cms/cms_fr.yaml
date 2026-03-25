@@ -114,7 +114,7 @@ Dialogs:
             IconSelection:
               IconLinkTooltip: Cliquez pour changer d'icône
               IconSelectionDialogHeader: Choisir une icône
-              SeachIconByNamePlaceHolder: Recherche Icon par nom
+              SearchIconByNamePlaceHolder: Recherche Icon par nom
           generic:
             EndPage:
               Subtitle: La dernière tâche a été accomplie avec succès

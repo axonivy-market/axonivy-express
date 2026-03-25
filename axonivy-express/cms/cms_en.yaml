@@ -113,7 +113,7 @@ Dialogs:
             IconSelection:
               IconLinkTooltip: Click to change icon
               IconSelectionDialogHeader: Selecting icon
-              SeachIconByNamePlaceHolder: Search icon by name
+              SearchIconByNamePlaceHolder: Search icon by name
           generic:
             EndPage:
               Subtitle: The last task was completed successfully
@@ -201,7 +201,7 @@ Labels:
     ValidateProcessCoOwnerLog: '- Validate Process Co-Owner of {0}, user {1} is not available in system'
     ValidateProcessOwnerLog: '- Validate Process Owner of {0}, user {1} is not available in system, change process owner to {2}'
     ValidateProcessPermissionLog: '- Validate Process Permission of {0}, user {1} is not available in system'
-    ValidateTaskDefUserLog: '- Validate Task Definition Responsibles of {0}, user {1} is not available in system'
+    ValidateTaskDefUserLog: '- Validate Task Definition Responsible of {0}, user {1} is not available in system'
     VersionLog: 'Version of Express: {0}'
   Next: Next
   NoSelection: No Selection

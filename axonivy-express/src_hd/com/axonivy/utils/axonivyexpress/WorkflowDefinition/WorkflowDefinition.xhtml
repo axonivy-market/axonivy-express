@@ -229,7 +229,7 @@
                                 requiredMessage="#{data.data.processType == 'REPEAT' and gtask.position eq 1 ? ivy.cms.co('/Dialogs/com/axonivy/utils/axonivyexpress/WorkflowDefinition/AbleToStart'):ivy.cms.co('/Dialogs/com/axonivy/portal/components/Common/Task/Activator')} #{ivy.cms.co('/Dialogs/com/axonivy/portal/components/Common/RequiredFieldMessage')}" />
                               <p:commandLink id="task-responsible-link" immediate="true" styleClass="task-responsible-link"
                                 value="#{not empty gtask.responsibleDisplayName ? gtask.responsibleDisplayName : ivy.cms.co('/Labels/NoSelection')}"
-                                actionListener="#{logic.initAssginement(gtask)}" oncomplete="PF('choose-responsible-dialog').show();"
+                                actionListener="#{logic.initAssignment(gtask)}" oncomplete="PF('choose-responsible-dialog').show();"
                                 update="assignee-selection-form:assignee-selection-panel" global="false">
                                 <i class="si si-notes-quill" />
                               </p:commandLink>
@@ -292,7 +292,7 @@
                               requiredMessage="#{data.data.processType == 'REPEAT' and gtask.position eq 1 ? ivy.cms.co('/Dialogs/com/axonivy/utils/axonivyexpress/WorkflowDefinition/AbleToStart'):ivy.cms.co('/Dialogs/com/axonivy/portal/components/Common/Task/Activator')} #{ivy.cms.co('/Dialogs/com/axonivy/portal/components/Common/RequiredFieldMessage')}" />
                             <p:commandLink id="default-task-responsible-link" immediate="true" styleClass="task-responsible-link"
                               value="#{not empty gtask.responsibleDisplayName ? gtask.responsibleDisplayName : ivy.cms.co('/Labels/NoSelection')}"
-                              actionListener="#{logic.initAssginement(gtask)}" oncomplete="PF('choose-responsible-dialog').show();"
+                              actionListener="#{logic.initAssignment(gtask)}" oncomplete="PF('choose-responsible-dialog').show();"
                               update="assignee-selection-form:assignee-selection-panel" global="false">
                               <i class="si si-notes-quill" />
                             </p:commandLink>
