@@ -49,6 +49,14 @@ public class BusinessEntityConverter {
     }
   }
 
+  public static String entityToJsonValueExcludeInternalView(Object entity) {
+    try {
+      return getObjectMapper().writerWithView(ExpressJsonView.Public.class).writeValueAsString(entity);
+    } catch (JsonProcessingException e) {
+      throw new ExpressException(e);
+    }
+  }
+
   public static <T> T jsonValueToEntity(String jsonValue, Class<T> classType) {
     try {
       return getObjectMapper().readValue(jsonValue, classType);

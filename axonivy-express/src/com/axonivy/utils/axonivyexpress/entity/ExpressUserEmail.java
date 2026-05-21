@@ -6,6 +6,9 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonView;
+
+import com.axonivy.utils.axonivyexpress.service.ExpressJsonView;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ExpressUserEmail implements Serializable {
@@ -15,6 +18,8 @@ public class ExpressUserEmail implements Serializable {
   private String responseTo;
   private String subject;
   private String content;
+
+  @JsonView(ExpressJsonView.Internal.class)
   private List<ExpressAttachment> attachments;
 
   public String getRecipients() {
