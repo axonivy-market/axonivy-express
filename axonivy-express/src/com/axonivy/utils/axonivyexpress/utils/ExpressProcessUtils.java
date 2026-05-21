@@ -367,7 +367,7 @@ public class ExpressProcessUtils {
   }
 
   public void saveAttachments(String folder, List<TaskDef> taskDefs) {
-    String folderPath = "/Express/Process/" + folder + "/Attachment/";
+    String folderPath = "Express/Process/" + folder + "/Attachment/";
     for (TaskDef task : taskDefs) {
       saveAttachmentsForEmail(folderPath, task.getEmail());
     }
