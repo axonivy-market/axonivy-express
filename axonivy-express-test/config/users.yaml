@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/users.json
+Users:
+  - Name: express
+    Password: express
+    FullName: Express User
+    Roles:
+      - AXONIVY_EXPRESS_ADMIN
+  - Name: testUser
+    Password: testUser
+    FullName: Test User

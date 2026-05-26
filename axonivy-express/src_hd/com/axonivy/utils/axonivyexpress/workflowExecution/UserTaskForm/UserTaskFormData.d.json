@@ -1,15 +1,12 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "UserTaskFormData",
   "namespace" : "com.axonivy.utils.axonivyexpress.workflowExecution.UserTaskForm",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "executePredefinedWorkflowData",
-    "type" : "gawfs.ExecutePredefinedWorkflowData",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "gawfs.ExecutePredefinedWorkflowData"
   }, {
     "name" : "workingTask",
-    "type" : "gawfs.TaskDef",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "gawfs.TaskDef"
   } ]
 }

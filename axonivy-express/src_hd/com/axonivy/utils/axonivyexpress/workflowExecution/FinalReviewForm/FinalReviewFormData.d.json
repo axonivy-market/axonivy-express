@@ -1,19 +1,15 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "FinalReviewFormData",
   "namespace" : "com.axonivy.utils.axonivyexpress.workflowExecution.FinalReviewForm",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "finishedTasks",
-    "type" : "java.util.List<gawfs.TaskDef>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "java.util.List<gawfs.TaskDef>"
   }, {
     "name" : "steps",
-    "type" : "java.util.List<String>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "java.util.List<String>"
   }, {
     "name" : "actualStepIndex",
-    "type" : "Integer",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Integer"
   } ]
 }

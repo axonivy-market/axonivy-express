@@ -1,3 +1,4 @@
 /classes/
-/src_dataClasses/
+/src_generated/dataclass/
+src_generated/repo/
 /target/

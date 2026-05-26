@@ -1,87 +1,63 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "WorkflowDefinitionData",
   "namespace" : "com.axonivy.utils.axonivyexpress.WorkflowDefinition",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "data",
-    "type" : "gawfs.Data",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "gawfs.Data"
   }, {
     "name" : "taskDefinition",
-    "type" : "gawfs.TaskDef",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "gawfs.TaskDef"
   }, {
-    "name" : "autoCompleteQuery",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "autoCompleteQuery"
   }, {
     "name" : "selectedAssigneeList",
-    "type" : "List<ch.ivyteam.ivy.security.ISecurityMember>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<ch.ivyteam.ivy.security.ISecurityMember>"
   }, {
     "name" : "isAssignToUser",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "selectedUser",
-    "type" : "com.axonivy.portal.components.dto.UserDTO",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.portal.components.dto.UserDTO"
   }, {
     "name" : "selectedRole",
-    "type" : "com.axonivy.portal.components.dto.RoleDTO",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.portal.components.dto.RoleDTO"
   }, {
     "name" : "isValidAssignee",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
-    "name" : "selectedResponsibleFieldId",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "selectedResponsibleFieldId"
   }, {
     "name" : "defaultDragAndDropController",
-    "type" : "com.axonivy.utils.axonivyexpress.bean.DragAndDropController",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.utils.axonivyexpress.bean.DragAndDropController"
   }, {
     "name" : "resetData",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "isValidated",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
-    "name" : "originalProcessName",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "originalProcessName"
   }, {
     "name" : "isRepeatable",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "isDisplayProcessOwner",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "isSelectProcessOwnerResponsibles",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "importExpressFile",
-    "type" : "org.primefaces.model.file.UploadedFile",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "org.primefaces.model.file.UploadedFile"
   }, {
     "name" : "exportExpressFile",
-    "type" : "org.primefaces.model.StreamedContent",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "org.primefaces.model.StreamedContent"
   }, {
     "name" : "isTaskFinished",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "isAdhocProcess",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   } ]
 }

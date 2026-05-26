@@ -1,71 +1,54 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "FormDefinitionData",
   "namespace" : "com.axonivy.utils.axonivyexpress.FormDefinition",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "data",
-    "type" : "gawfs.Data",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "gawfs.Data"
   }, {
     "name" : "dragAndDropController",
-    "type" : "com.axonivy.utils.axonivyexpress.bean.DragAndDropController",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.utils.axonivyexpress.bean.DragAndDropController"
   }, {
     "name" : "formelement",
-    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement"
   }, {
     "name" : "createInputFieldTab",
-    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement"
   }, {
     "name" : "createInputAreaTab",
-    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement"
   }, {
     "name" : "createManyCheckboxTab",
-    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement"
   }, {
     "name" : "createOneRadioTab",
-    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement"
   }, {
     "name" : "createFileUploadTab",
-    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.utils.axonivyexpress.bean.Formelement"
   }, {
     "name" : "activeTab",
-    "type" : "Integer",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Integer"
   }, {
     "name" : "dynaFormController",
-    "type" : "com.axonivy.utils.axonivyexpress.controller.DynaFormController",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.utils.axonivyexpress.controller.DynaFormController"
   }, {
     "name" : "activeTaskIndex",
-    "type" : "Integer",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Integer"
   }, {
     "name" : "isAbleToExecute",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "displayNextBtn",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "selectedDataProvider",
-    "type" : "gawfs.ExternalDataProvider",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "gawfs.ExternalDataProvider"
   }, {
     "name" : "dataProviders",
-    "type" : "List<gawfs.ExternalDataProvider>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<gawfs.ExternalDataProvider>"
   }, {
     "name" : "isTaskFinished",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   } ]
 }
