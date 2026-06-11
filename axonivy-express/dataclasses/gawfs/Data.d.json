@@ -1,99 +1,85 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "Data",
   "namespace" : "gawfs",
   "isBusinessCaseData" : true,
   "fields" : [ {
     "name" : "id",
     "type" : "Integer",
-    "comment" : "Identifier",
-    "modifiers" : [ "PERSISTENT" ]
+    "comment" : "Identifier"
   }, {
     "name" : "steps",
     "type" : "List<String>",
-    "comment" : "Process Steps for ProcessChain",
-    "modifiers" : [ "PERSISTENT" ]
+    "comment" : "Process Steps for ProcessChain"
   }, {
     "name" : "definedTasks",
     "type" : "List<gawfs.TaskDef>",
-    "comment" : "List of Tasks for execution",
-    "modifiers" : [ "PERSISTENT" ]
+    "comment" : "List of Tasks for execution"
   }, {
     "name" : "processName",
-    "type" : "String",
-    "comment" : "Name of the Process also later CaseName",
-    "modifiers" : [ "PERSISTENT" ]
+    "comment" : "Name of the Process also later CaseName"
   }, {
     "name" : "processDescription",
-    "type" : "String",
-    "comment" : "Description of the Process later CaseDescription",
-    "modifiers" : [ "PERSISTENT" ]
+    "comment" : "Description of the Process later CaseDescription"
   }, {
     "name" : "processType",
     "type" : "com.axonivy.utils.axonivyexpress.enums.ProcessType",
-    "comment" : "Process type",
-    "modifiers" : [ "PERSISTENT" ]
+    "comment" : "Process type"
   }, {
     "name" : "wfusers",
-    "type" : "List<ch.ivyteam.ivy.security.IUser>"
+    "type" : "List<ch.ivyteam.ivy.security.IUser>",
+    "modifiers" : [ ]
   }, {
     "name" : "taskRepository",
-    "type" : "com.axonivy.utils.axonivyexpress.entity.ExpressTaskDefinition"
+    "type" : "com.axonivy.utils.axonivyexpress.entity.ExpressTaskDefinition",
+    "modifiers" : [ ]
   }, {
     "name" : "formelementRepository",
-    "type" : "com.axonivy.utils.axonivyexpress.entity.ExpressFormElement"
+    "type" : "com.axonivy.utils.axonivyexpress.entity.ExpressFormElement",
+    "modifiers" : [ ]
   }, {
     "name" : "backFlag",
-    "type" : "Boolean"
+    "type" : "Boolean",
+    "modifiers" : [ ]
   }, {
     "name" : "processID",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "taskId",
     "type" : "Number",
-    "comment" : "Task ID for Endpage"
+    "comment" : "Task ID for Endpage",
+    "modifiers" : [ ]
   }, {
     "name" : "discard",
-    "type" : "Boolean"
+    "type" : "Boolean",
+    "modifiers" : [ ]
   }, {
     "name" : "isUseDefaultUI",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "processFolder",
-    "type" : "String",
-    "comment" : "Folder to store file of this process",
-    "modifiers" : [ "PERSISTENT" ]
+    "comment" : "Folder to store file of this process"
   }, {
     "name" : "readyToExecute",
     "type" : "Boolean",
-    "comment" : "Flag to marked whether process is ready to execute or not",
-    "modifiers" : [ "PERSISTENT" ]
+    "comment" : "Flag to marked whether process is ready to execute or not"
   }, {
     "name" : "editFlag",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "savedFlag",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "originalTaskId",
     "type" : "Long",
-    "comment" : "This field store original task id which is trigger express adhoc WF",
-    "modifiers" : [ "PERSISTENT" ]
+    "comment" : "This field store original task id which is trigger express adhoc WF"
   }, {
     "name" : "processCoOwners",
     "type" : "List<String>",
-    "comment" : "This field store which user/role is co owener of express process, beside process creator",
-    "modifiers" : [ "PERSISTENT" ]
+    "comment" : "This field store which user/role is co owener of express process, beside process creator"
   }, {
-    "name" : "processCoOwnersDisplayName",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "processCoOwnersDisplayName"
   }, {
-    "name" : "processIcon",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "processIcon"
   } ]
 }

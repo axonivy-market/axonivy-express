@@ -1,95 +1,78 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "ExecutePredefinedWorkflowData",
   "namespace" : "gawfs",
   "isBusinessCaseData" : true,
   "fields" : [ {
     "name" : "id",
     "type" : "Integer",
-    "comment" : "Identifier",
-    "modifiers" : [ "PERSISTENT" ]
+    "comment" : "Identifier"
   }, {
     "name" : "actualStepIndex",
-    "type" : "Integer",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Integer"
   }, {
     "name" : "approvalTaskResult",
-    "type" : "gawfs.ApprovalTaskResult",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "gawfs.ApprovalTaskResult"
   }, {
     "name" : "approvalTaskResults",
-    "type" : "List<gawfs.ApprovalTaskResult>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<gawfs.ApprovalTaskResult>"
   }, {
     "name" : "taskSplittingCounter",
-    "type" : "Number"
+    "type" : "Number",
+    "modifiers" : [ ]
   }, {
     "name" : "currentTask",
-    "type" : "gawfs.TaskDef",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "gawfs.TaskDef"
   }, {
     "name" : "definedTasks",
-    "type" : "List<gawfs.TaskDef>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<gawfs.TaskDef>"
   }, {
     "name" : "finishedTasks",
-    "type" : "java.util.List<gawfs.TaskDef>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "java.util.List<gawfs.TaskDef>"
   }, {
     "name" : "hasRejectedApprovalTask",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "responsible",
-    "type" : "com.axonivy.utils.axonivyexpress.entity.SecurityMemberDTO",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.utils.axonivyexpress.entity.SecurityMemberDTO"
   }, {
     "name" : "shouldEndProcess",
-    "type" : "Boolean"
+    "type" : "Boolean",
+    "modifiers" : [ ]
   }, {
     "name" : "steps",
-    "type" : "List<String>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<String>"
   }, {
     "name" : "userTaskForApproval",
-    "type" : "gawfs.TaskDef",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "gawfs.TaskDef"
   }, {
     "name" : "workflowDescription",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "workflowID",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
-    "name" : "workflowName",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "workflowName"
   }, {
     "name" : "workflowType",
-    "type" : "com.axonivy.utils.axonivyexpress.enums.ProcessType",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.utils.axonivyexpress.enums.ProcessType"
   }, {
     "name" : "isAdhocProcess",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
-  }, {
-    "name" : "originalTaskId",
-    "type" : "Long",
-    "modifiers" : [ "PERSISTENT" ]
-  }, {
-    "name" : "doesCreatorHaveTask",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
-  }, {
-    "name" : "hasActiveTasks",
     "type" : "Boolean"
   }, {
-    "name" : "endPage",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "originalTaskId",
+    "type" : "Long"
+  }, {
+    "name" : "doesCreatorHaveTask",
+    "type" : "Boolean"
+  }, {
+    "name" : "hasActiveTasks",
+    "type" : "Boolean",
+    "modifiers" : [ ]
+  }, {
+    "name" : "endPage"
   }, {
     "name" : "useExpressEndPage",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   } ]
 }

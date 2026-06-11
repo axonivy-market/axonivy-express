@@ -1,40 +1,41 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "AvailWorkflow",
   "namespace" : "gawfs",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "id",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "processName",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "processDescription",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "processType",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "processPermission",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "processOwner",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "permitted",
-    "type" : "Boolean"
+    "type" : "Boolean",
+    "modifiers" : [ ]
   }, {
     "name" : "owner",
-    "type" : "Boolean"
+    "type" : "Boolean",
+    "modifiers" : [ ]
   }, {
     "name" : "processStartLink",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "processEditLink",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "ownerDetails",
-    "type" : "String"
+    "modifiers" : [ ]
   } ]
 }

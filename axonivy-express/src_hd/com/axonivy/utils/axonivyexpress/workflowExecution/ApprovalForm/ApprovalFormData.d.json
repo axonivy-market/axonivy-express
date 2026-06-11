@@ -1,35 +1,26 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "ApprovalFormData",
   "namespace" : "com.axonivy.utils.axonivyexpress.workflowExecution.ApprovalForm",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "steps",
-    "type" : "java.util.List<String>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "java.util.List<String>"
   }, {
     "name" : "actualStepIndex",
-    "type" : "Integer",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Integer"
   }, {
     "name" : "approvalResult",
-    "type" : "gawfs.ApprovalTaskResult",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "gawfs.ApprovalTaskResult"
   }, {
-    "name" : "comment",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "comment"
   }, {
     "name" : "finishedTasks",
-    "type" : "java.util.List<gawfs.TaskDef>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "java.util.List<gawfs.TaskDef>"
   }, {
     "name" : "isAdhocProcess",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "originalTaskId",
-    "type" : "Long",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Long"
   } ]
 }

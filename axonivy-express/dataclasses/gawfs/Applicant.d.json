@@ -1,46 +1,24 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "Applicant",
   "namespace" : "gawfs",
-  "isBusinessCaseData" : false,
   "entity" : { },
   "fields" : [ {
     "name" : "id",
     "type" : "Integer",
     "comment" : "Identifier",
-    "modifiers" : [ "PERSISTENT", "ID", "GENERATED" ],
-    "entity" : {
-      "cascadeTypes" : [ "PERSIST", "MERGE" ],
-      "orphanRemoval" : false
-    }
+    "modifiers" : [ "PERSISTENT", "ID", "GENERATED" ]
   }, {
     "name" : "email",
-    "type" : "String",
-    "entity" : {
-      "cascadeTypes" : [ "PERSIST", "MERGE" ],
-      "orphanRemoval" : false
-    }
+    "modifiers" : [ ]
   }, {
     "name" : "fullname",
-    "type" : "String",
-    "entity" : {
-      "cascadeTypes" : [ "PERSIST", "MERGE" ],
-      "orphanRemoval" : false
-    }
+    "modifiers" : [ ]
   }, {
     "name" : "user",
     "type" : "ch.ivyteam.ivy.security.IUser",
-    "entity" : {
-      "cascadeTypes" : [ "PERSIST", "MERGE" ],
-      "orphanRemoval" : false
-    }
+    "modifiers" : [ ]
   }, {
-    "name" : "username",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ],
-    "entity" : {
-      "cascadeTypes" : [ "PERSIST", "MERGE" ],
-      "orphanRemoval" : false
-    }
+    "name" : "username"
   } ]
 }

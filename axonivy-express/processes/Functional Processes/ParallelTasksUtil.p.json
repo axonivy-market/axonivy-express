@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "1549EAD7E9C3125A",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -64,13 +64,17 @@
             "id" : "TaskA",
             "name" : "System Task: Create Task",
             "responsible" : {
-              "activator" : "SYSTEM"
+              "roles" : [
+                "SYSTEM"
+              ]
             }
           }, {
             "id" : "TaskB",
             "name" : "System Task: Check for next Task",
             "responsible" : {
-              "activator" : "SYSTEM"
+              "roles" : [
+                "SYSTEM"
+              ]
             }
           } ]
       },

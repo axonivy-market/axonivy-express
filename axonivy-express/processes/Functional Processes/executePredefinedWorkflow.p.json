@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "163729F2CBAE7BE4",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -60,7 +60,7 @@
               "description" : "<%=in1.currentTask.description%>",
               "responsible" : {
                 "type" : "USER_FROM_ATTRIBUTE",
-                "activator" : "in1.responsible.getMemberName().substring(1)"
+                "script" : "in1.responsible.getMemberName().substring(1)"
               },
               "expiry" : {
                 "timeout" : "new Duration(0,0,in1.currentTask.untilDays,0,0,0)",
@@ -143,7 +143,7 @@
               "description" : "<%=in1.currentTask.description%>",
               "responsible" : {
                 "type" : "ROLE_FROM_ATTRIBUTE",
-                "activator" : "in1.responsible.getMemberName()"
+                "script" : "in1.responsible.getMemberName()"
               },
               "expiry" : {
                 "timeout" : "new Duration(0,0,in1.currentTask.untilDays,0,0,0)",
@@ -386,7 +386,9 @@
               "name" : "<%=in1.currentTask.subject%>",
               "description" : "<%=in1.currentTask.description%>",
               "responsible" : {
-                "activator" : "SELF"
+                "roles" : [
+                  "SELF"
+                ]
               },
               "skipTasklist" : true,
               "expiry" : {
@@ -729,7 +731,9 @@
               "name" : "<%=in1.workflowName%>: <%=in1.currentTask.subject%>",
               "description" : "<%=ivy.cms.co(\"/Dialogs/Tasks/FinalReview/TaskDescription\", java.util.Arrays.asList(in1.workflowName))%>",
               "responsible" : {
-                "activator" : "CREATOR"
+                "roles" : [
+                  "CREATOR"
+                ]
               },
               "code" : [
                 "import com.axonivy.utils.axonivyexpress.utils.ExecutingExpressProcessUtils;",
@@ -925,7 +929,7 @@
               "description" : "<%=in1.currentTask.description%>",
               "responsible" : {
                 "type" : "ROLE_FROM_ATTRIBUTE",
-                "activator" : "in1.responsible.getMemberName()"
+                "script" : "in1.responsible.getMemberName()"
               },
               "expiry" : {
                 "timeout" : "new Duration(0,0,in1.currentTask.untilDays,0,0,0)",
@@ -959,7 +963,7 @@
               "description" : "<%=in1.currentTask.description%>",
               "responsible" : {
                 "type" : "USER_FROM_ATTRIBUTE",
-                "activator" : "in1.responsible.getMemberName().substring(1)"
+                "script" : "in1.responsible.getMemberName().substring(1)"
               },
               "expiry" : {
                 "timeout" : "new Duration(0,0,in1.currentTask.untilDays,0,0,0)",
@@ -1189,7 +1193,9 @@
             "id" : "TaskA",
             "name" : "System Task: Close Task",
             "responsible" : {
-              "activator" : "SYSTEM"
+              "roles" : [
+                "SYSTEM"
+              ]
             }
           } ]
       },

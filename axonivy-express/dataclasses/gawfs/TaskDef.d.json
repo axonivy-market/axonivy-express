@@ -1,74 +1,56 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "TaskDef",
   "namespace" : "gawfs",
   "isBusinessCaseData" : true,
   "fields" : [ {
     "name" : "id",
     "type" : "Integer",
-    "comment" : "Identifier",
-    "modifiers" : [ "PERSISTENT" ]
+    "comment" : "Identifier"
   }, {
     "name" : "responsibles",
-    "type" : "java.util.List<String>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "java.util.List<String>"
   }, {
-    "name" : "subject",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "subject"
   }, {
     "name" : "prio",
-    "type" : "Number",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Number"
   }, {
-    "name" : "description",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "description"
   }, {
     "name" : "position",
     "type" : "Integer",
-    "comment" : "Position of defined task in the express process",
-    "modifiers" : [ "PERSISTENT" ]
+    "comment" : "Position of defined task in the express process"
   }, {
     "name" : "untilDays",
-    "type" : "Number",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Number"
   }, {
     "name" : "taskType",
-    "type" : "com.axonivy.utils.axonivyexpress.enums.TaskType",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.utils.axonivyexpress.enums.TaskType"
   }, {
-    "name" : "responsibleDisplayName",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "responsibleDisplayName"
   }, {
     "name" : "dynaFormController",
-    "type" : "com.axonivy.utils.axonivyexpress.controller.DynaFormController",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.utils.axonivyexpress.controller.DynaFormController"
   }, {
     "name" : "dragAndDropController",
-    "type" : "com.axonivy.utils.axonivyexpress.bean.DragAndDropController",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.utils.axonivyexpress.bean.DragAndDropController"
   }, {
     "name" : "counter",
     "type" : "Integer",
-    "comment" : "counter for split tasks purpose",
-    "modifiers" : [ "PERSISTENT" ]
+    "comment" : "counter for split tasks purpose"
   }, {
     "name" : "email",
     "type" : "com.axonivy.utils.axonivyexpress.entity.ExpressUserEmail",
-    "comment" : "Email information for taskType=EMAIL",
-    "modifiers" : [ "PERSISTENT" ]
+    "comment" : "Email information for taskType=EMAIL"
   }, {
     "name" : "approvalResultList",
-    "type" : "java.util.List<gawfs.ApprovalTaskResult>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "java.util.List<gawfs.ApprovalTaskResult>"
   }, {
-    "name" : "actualApplicantName",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "actualApplicantName"
   }, {
     "name" : "actualApplicant",
-    "type" : "ch.ivyteam.ivy.security.IUser"
+    "type" : "ch.ivyteam.ivy.security.IUser",
+    "modifiers" : [ ]
   } ]
 }
