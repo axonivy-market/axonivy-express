@@ -1,9 +1,10 @@
 # Axon Ivy Express
 
-> [!CAUTION]
+> [!WARNING]
 > ## Deprecated
-> These connectors are deprecated and will no longer be maintained or supported. It will be removed in Release 13.
+> This product is deprecated and will no longer be maintained or supported. It will be removed in Release 13.
 >
+> **Successor**: Migrate your express workflows to normal processes using the [express-importer](https://github.com/axonivy-market/express-importer).
 
 [![CI Build](https://github.com/axonivy-market/axonivy-express/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/axonivy-express/actions/workflows/ci.yml)
 
